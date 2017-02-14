@@ -1,8 +1,8 @@
 import * as http from 'http';
 import * as debug from 'debug';
-import * as io from 'socket.io';
+var io = require('socket.io')();
 import App from './App';
-import * as Wit from 'node-wit';
+var Wit = require('node-wit').Wit;
 
 debug('ts-express:server');
 
@@ -65,6 +65,7 @@ const actions = {
         const {sessionId, context, entities} = request;
         const {text, quickreplies} = response;
         console.log('user said...', request.text);
+        //io.sockets.emit('message', JSON.stringify(response.text));
         io.emit('message', JSON.stringify(response.text));
         console.log('Yay, got Wit.ai response: ' +  JSON.stringify(response.text) );
         console.log('wit said...', response);
@@ -73,7 +74,6 @@ const actions = {
 
 const client = new Wit({accessToken, actions});
 
-/*
 require('socketio-auth')(io, {
     authenticate: function (socket, data, callback) {
         //get credentials sent by the client
@@ -125,4 +125,4 @@ io.on('connection', function(socket) {
 
     });
 });
-*/
+
