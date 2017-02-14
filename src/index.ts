@@ -64,9 +64,10 @@ const actions = {
     send(request, response) {
         const {sessionId, context, entities} = request;
         const {text, quickreplies} = response;
+        console.log(request);
         console.log('user said...', request.text);
         //io.sockets.emit('message', JSON.stringify(response.text));
-        io.emit('message', JSON.stringify(response.text));
+        io.emit('message', response);
         console.log('Yay, got Wit.ai response: ' +  JSON.stringify(response.text) );
         console.log('wit said...', response);
     },
@@ -86,8 +87,6 @@ require('socketio-auth')(io, {
         } else {
             return callback(new Error("User not found"))
         }
-
-
     }
 });
 
@@ -96,10 +95,11 @@ io.on('connection', function(socket) {
     socket.on('message', function(msg){
 
         io.emit('message', msg);
+        console.log('got message', msg)
 
         client.runActions(
             sessionId, // the user's current session
-            msg, // the user's message
+            msg.text, // the user's message
             context // the user's current session state
         ).then((newContext) => {
             // Our bot did everything it has to do.
