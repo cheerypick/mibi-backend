@@ -7,10 +7,9 @@ import {PropertyReader} from "./config/PropertyReader";
 
 debug('ts-express:server');
 
-let pr = new PropertyReader();
 let io = IO();
 
-const port = normalizePort(pr.getServerPort() || process.env.PORT || 3000);
+const port = normalizePort(PropertyReader.getServerPort() || process.env.PORT || 3000);
 
 debug('Defined port: ' + port);
 
@@ -18,9 +17,7 @@ App.set('port', port);
 
 const server = http.createServer(App);
 
-server.listen(port, pr.getServerHost(), function(){
-    debug('Server details: ' + server.address());
-});
+server.listen(port, PropertyReader.getServerHost());
 
 server.on('error', onError);
 server.on('listening', onListening);
@@ -61,8 +58,8 @@ function onListening(): void {
 
 let user:client.Client = new client.Client();
 
-user.authenticate(io, pr);
-user.sendMessage(io, pr);
+user.authenticate(io, PropertyReader);
+user.sendMessage(io, PropertyReader);
 
 
 

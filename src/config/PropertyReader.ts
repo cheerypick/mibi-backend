@@ -1,22 +1,16 @@
-import * as PR from 'properties-reader';
-
 export class PropertyReader {
 
-    private properties = null;
+    private static config = require('../../config.json');
 
-    constructor(){
-        this.properties = PR('config.ini');
+    public static getAccessToken(){
+        return this.config.wit.authentication.accessToken;
     }
 
-    public getAccessToken(){
-        return this.properties.getRaw('wit.authentication.access.token');
+    public static getServerPort(){
+        return this.config.server.connection.port;
     }
 
-    public getServerPort(){
-        return this.properties.getRaw('server.connection.port');
-    }
-
-    public getServerHost(){
-        return this.properties.getRaw('server.connection.host');
+    public static getServerHost(){
+        return this.config.server.connection.host;
     }
 }
