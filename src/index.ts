@@ -80,7 +80,7 @@ const actions = {
 
 const client = new Wit({accessToken, actions});
 
-var authUser:auth.Authentication = new auth.Authentication("mibi","mibi");
+var authUser:auth.Authentication = new auth.Authentication();//("mibi","mibi");
 authUser.authenticate(io);
 authUser.sendMessage(io, client,sessionId, context);
 
