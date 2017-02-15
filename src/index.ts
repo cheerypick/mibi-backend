@@ -2,6 +2,7 @@ import * as http from 'http';
 import * as debug from 'debug';
 var io = require('socket.io')();
 import App from './App';
+import * as auth from './security/Authentication';
 var Wit = require('node-wit').Wit;
 
 debug('ts-express:server');
@@ -75,20 +76,8 @@ const actions = {
 
 const client = new Wit({accessToken, actions});
 
-require('socketio-auth')(io, {
-    authenticate: function (socket, data, callback) {
-        //get credentials sent by the client
-        var username = data.username;
-        var password = data.password;
-
-        if(username==='mibi') {
-            return callback(null, password==='mibi');
-
-        } else {
-            return callback(new Error("User not found"))
-        }
-    }
-});
+var authUser:auth.Authentication = new auth.Authentication("mibi","mibi");
+authUser.authenticate(io);
 
 io.on('connection', function(socket) {
     console.log('User Connected');
