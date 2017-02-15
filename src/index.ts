@@ -1,11 +1,15 @@
 import * as http from 'http';
 import * as debug from 'debug';
-var io = require('socket.io')();
+import * as IO from 'socket.io';
 import App from './App';
 import * as auth from './security/Authentication';
-var Wit = require('node-wit').Wit;
+import * as WIT from 'node-wit';
+// var Wit = require('node-wit').Wit;
 
 debug('ts-express:server');
+
+var io = IO();
+var Wit = WIT.Wit;
 
 const port = normalizePort(process.env.PORT || 3000);
 App.set('port', port);
