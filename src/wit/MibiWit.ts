@@ -1,4 +1,5 @@
 import {Wit} from "node-wit";
+
 export class MibiWit {
 
     public static sendMessage(io, msg) {
