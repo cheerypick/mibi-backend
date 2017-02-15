@@ -3,27 +3,37 @@ import * as debug from 'debug';
 import * as IO from 'socket.io';
 import App from './App';
 import * as client from './client/Client';
+import {PropertyReader} from "./config/PropertyReader";
 
 debug('ts-express:server');
 
+let pr = new PropertyReader();
 let io = IO();
 
-const port = normalizePort(process.env.PORT || 3000);
+const port = normalizePort(pr.getServerPort() || process.env.PORT || 3000);
+
+debug('Defined port: ' + port);
+
 App.set('port', port);
 
 const server = http.createServer(App);
-server.listen(port);
+
+server.listen(port, pr.getServerHost(), function(){
+    debug('Server details: ' + server.address());
+});
+
 server.on('error', onError);
 server.on('listening', onListening);
 
 io.listen(server);
 'use strict';
 
-function normalizePort(val: number|string): number|string|boolean {
+
+function normalizePort(val: number|string): number {
     let port: number = (typeof val === 'string') ? parseInt(val, 10) : val;
-    if (isNaN(port)) return val;
+    if (isNaN(port)) return 3000;
     else if (port >= 0) return port;
-    else return false;
+    else return 3000;
 }
 
 function onError(error: NodeJS.ErrnoException): void {
@@ -50,8 +60,9 @@ function onListening(): void {
 }
 
 let user:client.Client = new client.Client();
-user.authenticate(io);
-user.sendMessage(io);
+
+user.authenticate(io, pr);
+user.sendMessage(io, pr);
 
 
 
