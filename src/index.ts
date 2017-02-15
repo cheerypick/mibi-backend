@@ -4,7 +4,7 @@ import * as IO from 'socket.io';
 import App from './App';
 import * as auth from './security/Authentication';
 import * as WIT from 'node-wit';
-// var Wit = require('node-wit').Wit;
+// var mibiWit = require('node-wit').mibiWit;
 
 debug('ts-express:server');
 
@@ -73,7 +73,7 @@ const actions = {
         console.log('user said...', request.text);
         //io.sockets.emit('message', JSON.stringify(response.text));
         io.emit('message', response);
-        console.log('Yay, got Wit.ai response: ' +  JSON.stringify(response.text) );
+        console.log('Yay, got mibiWit.ai response: ' +  JSON.stringify(response.text) );
         console.log('wit said...', response);
     },
 };
@@ -82,7 +82,7 @@ const client = new Wit({accessToken, actions});
 
 var authUser:auth.Authentication = new auth.Authentication();//("mibi","mibi");
 authUser.authenticate(io);
-authUser.sendMessage(io, client,sessionId, context);
+authUser.sendMessage(io, client, sessionId, context);
 
 
 

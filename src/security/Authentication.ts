@@ -1,4 +1,4 @@
-import {Wit} from "../wit/Wit";
+import {mibiWit} from "../wit/Wit";
 
 export class Authentication {
 
@@ -27,7 +27,7 @@ export class Authentication {
                 io.emit('message', msg);
                 console.log('got message', msg)
 
-                Wit.sendMessage(client, sessionId, msg, context);
+                mibiWit.sendMessage(client, sessionId, msg, context);
 
                 console.log(msg);
 

@@ -1,5 +1,5 @@
 // declare module "lol"{
-export class Wit {
+export class mibiWit {
 
         // constructor(){};
 
@@ -24,9 +24,10 @@ export class Wit {
                 context = newContext;
             })
                 .catch((err) => {
-                    console.error('Oops! Got an error from Wit: ', err.stack || err);
+                    console.error('Oops! Got an error from mibiWit: ', err.stack || err);
                 })
         }
+
 
     // }
 
