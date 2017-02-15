@@ -8,7 +8,7 @@ export class PropertyReader {
         }catch(e){
             console.log('Could not find the configuration file!');
             console.log('Shutting down!');
-            process.exit(-1);
+            process.exit(0);
         }
     }
 
