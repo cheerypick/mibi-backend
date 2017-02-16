@@ -4,7 +4,7 @@ export class Client {
 
     private id = null;
 
-    public authenticate(io, pr){
+    public authenticate(io){
         require('socketio-auth')(io, {
             authenticate: function (socket, data, callback) {
                 //get credentials sent by the user
@@ -12,6 +12,7 @@ export class Client {
                 let password = data.password;
 
                 this.id = io.sessionId;
+
                 if(username==='mibi') {
                     return callback(null, password==='mibi');
 
@@ -22,18 +23,16 @@ export class Client {
         });
     }
 
-    public getMessage(io, pr){
+    public getMessage(io, propertyReader){
         io.on('connection', function(socket) {
             console.log('User Connected');
 
             socket.on('message', function(msg){
 
-                // io.sockets.connected[this.id].emit('message', msg);
                 io.to(this.id).emit('message', msg);
-                // io.emit('message', msg);
-                console.log('got message', msg)
+                console.log('got message', msg);
 
-                MibiWit.sendMessage(io, msg, pr, this.id);
+                MibiWit.sendMessage(io, msg, propertyReader, this.id);
 
                 console.log(msg);
 

@@ -2,12 +2,12 @@ import {Wit} from "node-wit";
 
 export class MibiWit {
 
-    public static sendMessage(io, msg, pr, id) {
+    public static sendMessage(io, msg, propertyReader, id) {
 
         let context = {};
         let sessionId = 'xep';
 
-        MibiWit.getClient(io, pr, id).runActions(
+        MibiWit.getClient(io, propertyReader, id).runActions(
             sessionId, // the user's current session
             msg.text, // the user's message
             context // the user's current session state
@@ -31,8 +31,8 @@ export class MibiWit {
             })
     }
 
-    private static getClient(io, pr, id){
-        const accessToken = pr.getAccessToken();
+    private static getClient(io, propertyReader, id){
+        const accessToken = propertyReader.getAccessToken();
 
         const actions = {
             send(request, response) {
