@@ -2,12 +2,12 @@ import {Wit} from "node-wit";
 
 export class MibiWit {
 
-    public static sendMessage(io, msg, pr) {
+    public static sendMessage(io, msg, pr, id) {
 
         let context = {};
         let sessionId = 'xep';
 
-        MibiWit.getClient(io, pr).runActions(
+        MibiWit.getClient(io, pr, id).runActions(
             sessionId, // the user's current session
             msg.text, // the user's message
             context // the user's current session state
@@ -31,7 +31,7 @@ export class MibiWit {
             })
     }
 
-    private static getClient(io, pr){
+    private static getClient(io, pr, id){
         const accessToken = pr.getAccessToken();
 
         const actions = {
@@ -41,7 +41,8 @@ export class MibiWit {
                 console.log(request);
                 console.log('user said...', request.text);
                 //io.sockets.emit('message', JSON.stringify(response.text));
-                io.emit('message', response);
+                // io.emit('message', response);
+                io.to(id).emit('message', response);
                 console.log('Yay, got MibiWit.ai response: ' +  JSON.stringify(response.text) );
                 console.log('wit said...', response);
             },

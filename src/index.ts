@@ -60,7 +60,7 @@ function onListening(): void {
 let user:client.Client = new client.Client();
 
 user.authenticate(io, pr);
-user.sendMessage(io, pr);
+user.getMessage(io, pr);
 
 
 

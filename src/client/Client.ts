@@ -2,6 +2,8 @@ import {MibiWit} from "../wit/MibiWit";
 
 export class Client {
 
+    private id = null;
+
     public authenticate(io, pr){
         require('socketio-auth')(io, {
             authenticate: function (socket, data, callback) {
@@ -9,6 +11,7 @@ export class Client {
                 let username = data.username;
                 let password = data.password;
 
+                this.id = io.sessionId;
                 if(username==='mibi') {
                     return callback(null, password==='mibi');
 
@@ -19,15 +22,18 @@ export class Client {
         });
     }
 
-    public sendMessage(io, pr){
+    public getMessage(io, pr){
         io.on('connection', function(socket) {
             console.log('User Connected');
+
             socket.on('message', function(msg){
 
-                io.emit('message', msg);
+                // io.sockets.connected[this.id].emit('message', msg);
+                io.to(this.id).emit('message', msg);
+                // io.emit('message', msg);
                 console.log('got message', msg)
 
-                MibiWit.sendMessage(io, msg, pr);
+                MibiWit.sendMessage(io, msg, pr, this.id);
 
                 console.log(msg);
 
