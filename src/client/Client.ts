@@ -1,4 +1,5 @@
 import {MibiWit} from "../wit/MibiWit";
+import {MessageValidator} from "./MessageValidator";
 
 export class Client {
 
@@ -31,6 +32,10 @@ export class Client {
 
                 io.to(this.id).emit('message', msg);
                 console.log('got message', msg);
+
+                if(MessageValidator.initiationMessage(msg)){
+                    msg.text = 'Hei';
+                }
 
                 MibiWit.sendMessage(io, msg, propertyReader, this.id);
 
