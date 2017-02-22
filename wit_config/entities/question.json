@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "question",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "question",
+    "values" : [
+      {
+        "value" : "Hva ",
+        "expressions" : [
+          "Hva "
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "data" : [
+    {
+      "id" : "function-callApi",
+      "type" : "function",
+      "name" : "callApi"
+    },
+    {
+      "id" : "function-fetchHighestUsage",
+      "type" : "function",
+      "name" : "fetchHighestUsage"
+    },
+    {
+      "id" : "function-fetchWeather",
+      "type" : "function",
+      "name" : "fetchWeather"
+    },
+    {
+      "id" : "template- Vil du at jeg skal bestille en ny datapakke til henne? ",
+      "type" : "template",
+      "template" : " Vil du at jeg skal bestille en ny datapakke til henne? ",
+      "requirements" : [
+        {
+          "name" : "greeting",
+          "negative" : false
+        }
+      ],
+      "quickreplies" : [
+        "Ja, takk, 1GB (79,-)",
+        "Gi henne 3GB (119,-)",
+        "Kjør på med 5GB (149,-)",
+        "Hun overlever uten"
+      ]
+    },
+    {
+      "id" : "template-1GB koster 79,-         ",
+      "type" : "template",
+      "template" : "1GB koster 79,-         "
+    },
+    {
+      "id" : "template-Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! ",
+      "type" : "template",
+      "template" : "Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! "
+    },
+    {
+      "id" : "template-Da har jeg bestilt {data} til henne.",
+      "type" : "template",
+      "template" : "Da har jeg bestilt {data} til henne.",
+      "requirements" : [
+        {
+          "name" : "data",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Dere har brukt 1000,- {duration}",
+      "type" : "template",
+      "template" : "Dere har brukt 1000,- {duration}",
+      "requirements" : [
+        {
+          "name" : "duration",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Dere har brukt 1000,- {time}",
+      "type" : "template",
+      "template" : "Dere har brukt 1000,- {time}",
+      "requirements" : [
+        {
+          "name" : "time",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Du vil bestille {number}",
+      "type" : "template",
+      "template" : "Du vil bestille {number}",
+      "requirements" : [
+        {
+          "name" : "number",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Hei Ole!",
+      "type" : "template",
+      "template" : "Hei Ole!",
+      "requirements" : [
+        {
+          "name" : "greeting",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Hva kan jeg hjelpe deg med?",
+      "type" : "template",
+      "template" : "Hva kan jeg hjelpe deg med?",
+      "quickreplies" : [
+        "Bestille datapakke 5GB",
+        "Bestille datapakke 1GB"
+      ]
+    },
+    {
+      "id" : "template-Jeg sier ifra neste gang det skjer noe.",
+      "type" : "template",
+      "template" : "Jeg sier ifra neste gang det skjer noe.",
+      "requirements" : [
+        {
+          "name" : "rejection",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Jeg skal bestille et nytt SIM-kort for {name} ",
+      "type" : "template",
+      "template" : "Jeg skal bestille et nytt SIM-kort for {name} ",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        }
+      ],
+      "quickreplies" : [
+        "Takk"
+      ]
+    },
+    {
+      "id" : "template-Jeg skal bestille {data} til henne.",
+      "type" : "template",
+      "template" : "Jeg skal bestille {data} til henne.",
+      "requirements" : [
+        {
+          "name" : "data",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Line har brukt 4,8GB av sin datapakke 5GB og det er 13 dager til at hun får mer data. ",
+      "type" : "template",
+      "template" : "Line har brukt 4,8GB av sin datapakke 5GB og det er 13 dager til at hun får mer data. ",
+      "requirements" : [
+        {
+          "name" : "greeting",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. ",
+      "type" : "template",
+      "template" : "Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. ",
+      "requirements" : [
+        {
+          "name" : "greeting",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Okay",
+      "type" : "template",
+      "template" : "Okay"
+    },
+    {
+      "id" : "template-Okay!",
+      "type" : "template",
+      "template" : "Okay!",
+      "requirements" : [
+        {
+          "name" : "rejection",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Strålende!",
+      "type" : "template",
+      "template" : "Strålende!"
+    },
+    {
+      "id" : "template-Vil du at jeg skal bestille en ny datapakke til henne?",
+      "type" : "template",
+      "template" : "Vil du at jeg skal bestille en ny datapakke til henne?",
+      "quickreplies" : [
+        "Ja, takk, 1GB",
+        "Gi henne 3GB",
+        "Kjør på med 5GB",
+        "Hun overlever uten"
+      ]
+    },
+    {
+      "id" : "template-You asked about {location}",
+      "type" : "template",
+      "template" : "You asked about {location}",
+      "requirements" : [
+        {
+          "name" : "location",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{}",
+      "type" : "template",
+      "template" : "{}"
+    }
+  ]
+}

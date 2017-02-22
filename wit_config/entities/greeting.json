@@ -1,0 +1,47 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "greeting",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "greeting",
+    "values" : [
+      {
+        "value" : "Hallo",
+        "expressions" : [
+          "Hallo"
+        ]
+      },
+      {
+        "value" : "Hey",
+        "expressions" : [
+          "Hey"
+        ]
+      },
+      {
+        "value" : "Mibi?",
+        "expressions" : [
+          "Mibi?"
+        ]
+      },
+      {
+        "value" : "halla",
+        "expressions" : [
+          "halla"
+        ]
+      },
+      {
+        "value" : "hei",
+        "expressions" : [
+          "Hallo",
+          "hei"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

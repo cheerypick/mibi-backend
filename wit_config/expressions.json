@@ -1,0 +1,1476 @@
+{
+  "data" : [
+    {
+      "text" : "!jqoi24",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"!jqoi24\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "'''''''''''''''''''''''"
+    },
+    {
+      "text" : "'Kjør på med 5GB (149,-)'",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Kjør på\"",
+          "start" : 1,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\" 5GB\"",
+          "start" : 13,
+          "end" : 16
+        },
+        {
+          "entity" : "number",
+          "value" : "149",
+          "start" : 18,
+          "end" : 21
+        }
+      ]
+    },
+    {
+      "text" : "09124oijadfælksnv''112æ39056snioa",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"09124oijadfælksnv''112æ39056snioa\"",
+          "start" : 0,
+          "end" : 33
+        }
+      ]
+    },
+    {
+      "text" : "09124oijadfælksnv''112æ390uasnioa",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"09124oijadfælksnv''112æ390uasnioa\"",
+          "start" : 0,
+          "end" : 33
+        }
+      ]
+    },
+    {
+      "text" : "09213lkas",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"09213lkas\"",
+          "start" : 0,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "123"
+    },
+    {
+      "text" : "19048rtu09weuhsgoigøzhzdnflvnmlhåIOEWU9013Å4829YTUTHWNEØKJFN<ALJPOVHåhuwqurh¨",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "19048",
+          "start" : 0,
+          "end" : 5
+        },
+        {
+          "entity" : "number",
+          "value" : "9",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "number",
+          "value" : "9013",
+          "start" : 38,
+          "end" : 42
+        },
+        {
+          "entity" : "number",
+          "value" : "4829",
+          "start" : 43,
+          "end" : 47
+        }
+      ]
+    },
+    {
+      "text" : "212 dsdas",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "212",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : ":)",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : ";(",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Adriano Stewart"
+    },
+    {
+      "text" : "Alex Lebowski"
+    },
+    {
+      "text" : "Alexander Borg"
+    },
+    {
+      "text" : "Alina Watson"
+    },
+    {
+      "text" : "Anna Kendrick"
+    },
+    {
+      "text" : "Bestille SIM-kort",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"SIM\""
+        }
+      ]
+    },
+    {
+      "text" : "Bestille datapakke 1GB"
+    },
+    {
+      "text" : "Bestille datapakke 3GB"
+    },
+    {
+      "text" : "Bestille datapakke 5GB",
+      "entities" : [
+        {
+          "entity" : "data",
+          "value" : "\" 5GB\"",
+          "start" : 18,
+          "end" : 22
+        }
+      ]
+    },
+    {
+      "text" : "Bestille pakke for Hans Fredrik Brastad"
+    },
+    {
+      "text" : "Bjørn Listog"
+    },
+    {
+      "text" : "Bra!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Bredbånd fungerer ikke :(",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Cool!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Det er fantastisk!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\"",
+          "start" : 7,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "Det er helt krise!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Det er rett og slett dårlig",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Det, vet du, vennen min, er kjempebra!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Dette er bare supert!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Dårlig",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Er det kaldt i Gøteborg?"
+    },
+    {
+      "text" : "Erik Story"
+    },
+    {
+      "text" : "Fantastisk!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\"",
+          "start" : 0,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "For Erik Story"
+    },
+    {
+      "text" : "For Hans Olav"
+    },
+    {
+      "text" : "For Katrine Lindblom"
+    },
+    {
+      "text" : "Få toppliste med høyest forbruk"
+    },
+    {
+      "text" : "Gi henne 3GB",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Gi henne\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"3GB\"",
+          "start" : 9,
+          "end" : 12
+        }
+      ]
+    },
+    {
+      "text" : "Gi henne 3GB (119,-)",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Gi henne\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"3GB\"",
+          "start" : 9,
+          "end" : 12
+        },
+        {
+          "entity" : "number",
+          "value" : "119",
+          "start" : 14,
+          "end" : 17
+        }
+      ]
+    },
+    {
+      "text" : "Gi meg 3 gigabyte",
+      "entities" : [
+        {
+          "entity" : "data",
+          "value" : "\"3 gigabyte\"",
+          "start" : 7,
+          "end" : 17
+        }
+      ]
+    },
+    {
+      "text" : "Haha",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Hallo!"
+    },
+    {
+      "text" : "Han er 33 år",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Hans Fredrik"
+    },
+    {
+      "text" : "Hei",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Hei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "Hente PUK-kode"
+    },
+    {
+      "text" : "Hey",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Hey\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "Hun overlever uten",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"Hun overlever uten\"",
+          "start" : 0,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "Hva er vårt forbruk denne måneden?",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"Hva \"",
+          "start" : 0,
+          "end" : 4
+        },
+        {
+          "entity" : "intent",
+          "value" : "\"forbruk \"",
+          "start" : 12,
+          "end" : 20
+        },
+        {
+          "entity" : "time",
+          "value" : "\"denne måneden\"",
+          "start" : 20,
+          "end" : 33
+        }
+      ]
+    },
+    {
+      "text" : "Hva er været i København?"
+    },
+    {
+      "text" : "Hva er været i London"
+    },
+    {
+      "text" : "Hva er været i London?"
+    },
+    {
+      "text" : "Hva er været i Oslo?"
+    },
+    {
+      "text" : "Hvor gammel er du"
+    },
+    {
+      "text" : "Ikke bra",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Ja, takk, 1GB",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "acceptance",
+          "value" : "\"Ja, takk\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"1GB\"",
+          "start" : 10,
+          "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "Ja, takk, 1GB (79,-)",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "acceptance",
+          "value" : "\"Ja, takk\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"1GB\"",
+          "start" : 10,
+          "end" : 13
+        },
+        {
+          "entity" : "number",
+          "value" : "79",
+          "start" : 15,
+          "end" : 17
+        }
+      ]
+    },
+    {
+      "text" : "Ja, takk, 5GB",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "acceptance",
+          "value" : "\"Ja, takk\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\" 5GB\"",
+          "start" : 10,
+          "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "Jeg bor i Møllefaret 64C"
+    },
+    {
+      "text" : "Jeg er 18 år"
+    },
+    {
+      "text" : "Jeg er 25 år gammel",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "\"25 \"",
+          "start" : 7,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "Jeg er 31 år "
+    },
+    {
+      "text" : "Jeg er ikke glad",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Jeg heter Alexander Borg"
+    },
+    {
+      "text" : "Jeg heter Anna"
+    },
+    {
+      "text" : "Jeg heter Erik Story",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Jeg heter Marina"
+    },
+    {
+      "text" : "Jeg heter Sofia Larsson"
+    },
+    {
+      "text" : "Jeg liker det",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\"",
+          "start" : 4,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "Jeg liker ikke det",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\"",
+          "start" : 4,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "Jeg skal bestill kort for Dana Black"
+    },
+    {
+      "text" : "Jeg trenger kort for Adriano Stewart"
+    },
+    {
+      "text" : "Jeg vil bestill et nytt simkort for Anna Karpova"
+    },
+    {
+      "text" : "Jer er 29 år gammel",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "number",
+          "value" : "29",
+          "start" : 7,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "Jer er fornøyd",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Jer er glad",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "Katten døde :(",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\"",
+          "start" : 11,
+          "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "Kjør på med 5GB",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Kjør på\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "data",
+          "value" : "\"5GB\"",
+          "start" : 12,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "Kjør på med 5GB (149,-)",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Kjør på\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "data",
+          "value" : "\"5GB\"",
+          "start" : 12,
+          "end" : 15
+        },
+        {
+          "entity" : "number",
+          "value" : "149",
+          "start" : 17,
+          "end" : 20
+        }
+      ]
+    },
+    {
+      "text" : "LSÆøsæØSAK",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"LSÆøsæØSAK\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "Line Melgård"
+    },
+    {
+      "text" : "Line har brukt"
+    },
+    {
+      "text" : "London"
+    },
+    {
+      "text" : "Maria Yusupova"
+    },
+    {
+      "text" : "Mary Adams"
+    },
+    {
+      "text" : "Mibi?",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Mibi?\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "Min datter heter Maria"
+    },
+    {
+      "text" : "Neimen, det er ikke bra",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Order 4GB",
+      "entities" : [
+        {
+          "entity" : "data",
+          "value" : "\"4GB\"",
+          "start" : 6,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "Skal jeg bestille SIM kort?"
+    },
+    {
+      "text" : "Takk"
+    },
+    {
+      "text" : "Vi er ikke fornøyde",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "afsrgdthfyguhijokplø'0987tfgjhbjknkm",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"0987tfgjhbjknkm\"",
+          "start" : 21,
+          "end" : 36
+        }
+      ]
+    },
+    {
+      "text" : "asdfghjkløæ'",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"asdfghjkløæ'\"",
+          "start" : 0,
+          "end" : 12
+        }
+      ]
+    },
+    {
+      "text" : "asdgh",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"asdgh\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "asdsasdads",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"asdsasdads\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "asdølaksdølskd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"asdølaksdølskd\"",
+          "start" : 0,
+          "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "atten",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "\"atten\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "denne uken"
+    },
+    {
+      "text" : "desember"
+    },
+    {
+      "text" : "dlskljfølskfj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"dlskljfølskfj\"",
+          "start" : 0,
+          "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "er det kaldt i Paris?"
+    },
+    {
+      "text" : "femten",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "\"femten\"",
+          "start" : 0,
+          "end" : 6
+        }
+      ]
+    },
+    {
+      "text" : "gdasaskjasdlkadS",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"gdasaskjasdlkadS\"",
+          "start" : 0,
+          "end" : 16
+        }
+      ]
+    },
+    {
+      "text" : "hEI",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"hei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "halla, hva skjer?",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"halla\"",
+          "start" : 0,
+          "end" : 5
+        },
+        {
+          "entity" : "question",
+          "value" : "\"Hva \"",
+          "start" : 7,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "hallo"
+    },
+    {
+      "text" : "hallo mibi, er du kul eller kjip eller hva skjer liksom lol omg",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Hallo\"",
+          "start" : 0,
+          "end" : 5
+        },
+        {
+          "entity" : "question",
+          "value" : "\"Hva \"",
+          "start" : 39,
+          "end" : 43
+        }
+      ]
+    },
+    {
+      "text" : "har du noen oppdateringer for meg?"
+    },
+    {
+      "text" : "har noen oppdateringer for meg?"
+    },
+    {
+      "text" : "hasdei"
+    },
+    {
+      "text" : "hei",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"hei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "hei er du kul idag?",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"hei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "hg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"hg\"",
+          "start" : 0,
+          "end" : 2
+        }
+      ]
+    },
+    {
+      "text" : "hva er været i oslo"
+    },
+    {
+      "text" : "hwi",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"hwi\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "i fjor",
+      "entities" : [
+        {
+          "entity" : "time",
+          "value" : "\"i fjor\"",
+          "start" : 0,
+          "end" : 6
+        }
+      ]
+    },
+    {
+      "text" : "ikke",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "iluhæ",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"iluhæ\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "jdslajskdhlkjasdah",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"jdslajskdsshlkjasdah\"",
+          "start" : 0,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "jdslajskdsshlkjasdah",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"jdslajskdsshlkjasdah\"",
+          "start" : 0,
+          "end" : 20
+        }
+      ]
+    },
+    {
+      "text" : "jeg er 31 år"
+    },
+    {
+      "text" : "jeg har bursdag!",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        }
+      ]
+    },
+    {
+      "text" : "jkasldg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"jkasldg\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "jzshdzdlkj3",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"\""
+        }
+      ]
+    },
+    {
+      "text" : "jøuimikløæ'6545komk"
+    },
+    {
+      "text" : "kjsaøldfkjølaksdjf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kjsaøldfkjølaksdjf\"",
+          "start" : 0,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "kjsfg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kjsfg\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "kjølasdf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kjølasdf\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "kkøjadølsfkmøl",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kkøjadølsfkmøl\"",
+          "start" : 0,
+          "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "klasøgas",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"klasøgas\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "kljdsaf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kljdsaf\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "kljøaeroiældkfn",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kljøaeroiældkfn\"",
+          "start" : 0,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "køljaøslkdfj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"køljaøslkdfj\"",
+          "start" : 0,
+          "end" : 12
+        }
+      ]
+    },
+    {
+      "text" : "l"
+    },
+    {
+      "text" : "laøjsdjflæskdjaf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"laøjsdjflæskdjaf\"",
+          "start" : 0,
+          "end" : 16
+        }
+      ]
+    },
+    {
+      "text" : "liker ikke det",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "lkjhjpøuuy,mnvyu"
+    },
+    {
+      "text" : "lklaskjdf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"lklaskjdf\"",
+          "start" : 0,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "lnkzkvlækjkaæåoijasd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"lnkzkvlækjkaæåoijasd\"",
+          "start" : 0,
+          "end" : 20
+        }
+      ]
+    },
+    {
+      "text" : "løkasjdføiowaeurpoijnsv",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"løkasjdføiowaeurpoijnsv\"",
+          "start" : 0,
+          "end" : 23
+        }
+      ]
+    },
+    {
+      "text" : "løkjkafd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"løkjkafd\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "mitt forbruk",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"forbruk \""
+        }
+      ]
+    },
+    {
+      "text" : "nlkøjasdf'",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"nlkøjasdf'\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "november",
+      "entities" : [
+        {
+          "entity" : "time",
+          "value" : "\"november\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "ouwierjfksdmc,z. '",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"ouwierjfksdmc\"",
+          "start" : 0,
+          "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "sdfgkjdfg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdfgkjdfg\"",
+          "start" : 0,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "sdfgkjdsfg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdfgkjdfg\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
+    },
+    {
+      "text" : "sdfægkljr9o",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdfægkljr9o\"",
+          "start" : 0,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "sdføgkjdsfg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdføgkjdsfg\"",
+          "start" : 0,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "sdføgkjsdfg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdføgkjsdfg\"",
+          "start" : 0,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "sdsdfsdf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdsdfsdf\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "sg+o4t9j",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sg+o4t9j\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "trolllolololol",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"trolllolololol\"",
+          "start" : 0,
+          "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "trololol123lololol"
+    },
+    {
+      "text" : "trololollolololhei123heilolol",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"trololollolololhei123heilolol\"",
+          "start" : 0,
+          "end" : 29
+        }
+      ]
+    },
+    {
+      "text" : "trololololl",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"trololololl\"",
+          "start" : 0,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "trolololololheilolololol123heilolol"
+    },
+    {
+      "text" : "uoiqwerjkøfs.d,mvnasdf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"uoiqwerjkøfs.d,mvnasdf\"",
+          "start" : 0,
+          "end" : 22
+        }
+      ]
+    },
+    {
+      "text" : "welklfæøfsdlkæfkldsøs",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"welklfæøfsdlkæfkldsøs\"",
+          "start" : 0,
+          "end" : 21
+        }
+      ]
+    },
+    {
+      "text" : "yguyfvlh",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"yguyfvlh\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "åpaweiojrølksgnfz,-v.mxc",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"åpaweiojrølksgnfz\"",
+          "start" : 0,
+          "end" : 17
+        }
+      ]
+    },
+    {
+      "text" : "ælknzxcvæoijwe",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"ælknzxcvæoijwe\"",
+          "start" : 0,
+          "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "æsldlkg",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"æsldlkg\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "øljkpåiuw",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"øljkpåiuw\"",
+          "start" : 0,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "ølkajsdfoijasdv",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"ølkajsdfoijasdv\"",
+          "start" : 0,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "øæ7",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"øæ7\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    }
+  ]
+}

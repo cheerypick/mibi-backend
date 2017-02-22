@@ -1,0 +1,208 @@
+{
+  "data" : [
+    {
+      "name" : "Update data",
+      "turns" : [
+        {
+          "user" : "Hei",
+          "entities" : [
+            {
+              "entity" : "greeting",
+              "value" : "\"Hei\"",
+              "start" : 0,
+              "end" : 3
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Hei Ole!"
+            },
+            {
+              "action" : "template-Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. "
+            },
+            {
+              "action" : "template- Vil du at jeg skal bestille en ny datapakke til henne? "
+            }
+          ]
+        },
+        {
+          "branches" : [
+            [
+              {
+                "user" : "Ja, takk, 1GB (79,-)",
+                "entities" : [
+                  {
+                    "entity" : "sentiment",
+                    "value" : "\"positive\""
+                  },
+                  {
+                    "entity" : "acceptance",
+                    "value" : "\"Ja, takk\"",
+                    "start" : 0,
+                    "end" : 8
+                  },
+                  {
+                    "entity" : "data",
+                    "value" : "\"1GB\"",
+                    "start" : 10,
+                    "end" : 13
+                  },
+                  {
+                    "entity" : "number",
+                    "value" : "79",
+                    "start" : 15,
+                    "end" : 17
+                  }
+                ],
+                "operations" : [
+                  {
+                    "bookmark" : "orderAccept"
+                  },
+                  {
+                    "action" : "template-Strålende!"
+                  },
+                  {
+                    "action" : "template-Da har jeg bestilt {data} til henne."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "user" : "Gi henne 3GB (119,-)",
+                "entities" : [
+                  {
+                    "entity" : "acceptance",
+                    "value" : "\"Gi henne\"",
+                    "start" : 0,
+                    "end" : 8
+                  },
+                  {
+                    "entity" : "data",
+                    "value" : "\"3GB\"",
+                    "start" : 9,
+                    "end" : 12
+                  },
+                  {
+                    "entity" : "number",
+                    "value" : "119",
+                    "start" : 14,
+                    "end" : 17
+                  }
+                ],
+                "operations" : [
+                  {
+                    "jump" : "orderAccept"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "user" : "Kjør på med 5GB (149,-)",
+                "entities" : [
+                  {
+                    "entity" : "acceptance",
+                    "value" : "\"Kjør på\"",
+                    "start" : 0,
+                    "end" : 7
+                  },
+                  {
+                    "entity" : "data",
+                    "value" : "\"5GB\"",
+                    "start" : 12,
+                    "end" : 15
+                  },
+                  {
+                    "entity" : "number",
+                    "value" : "149",
+                    "start" : 17,
+                    "end" : 20
+                  }
+                ],
+                "operations" : [
+                  {
+                    "jump" : "orderAccept"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "user" : "Hun overlever uten",
+                "entities" : [
+                  {
+                    "entity" : "rejection",
+                    "value" : "\"Hun overlever uten\"",
+                    "start" : 0,
+                    "end" : 18
+                  }
+                ],
+                "operations" : [
+                  {
+                    "action" : "template-Okay!"
+                  },
+                  {
+                    "action" : "template-Jeg sier ifra neste gang det skjer noe."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Hva er vårt forbruk denne måneden?",
+          "entities" : [
+            {
+              "entity" : "question",
+              "value" : "\"Hva \"",
+              "start" : 0,
+              "end" : 4
+            },
+            {
+              "entity" : "intent",
+              "value" : "\"forbruk \"",
+              "start" : 12,
+              "end" : 20
+            },
+            {
+              "entity" : "time",
+              "value" : "\"denne måneden\"",
+              "start" : 20,
+              "end" : 33
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Dere har brukt 1000,- {time}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "jzshdzdlkj3",
+          "entities" : [
+            {
+              "entity" : "intent",
+              "value" : "\"\""
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! "
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

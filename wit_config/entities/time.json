@@ -1,0 +1,52 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "time",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "time",
+    "values" : [
+      {
+        "value" : "april",
+        "expressions" : [
+          "april"
+        ]
+      },
+      {
+        "value" : "denne måneden",
+        "expressions" : [
+          "denne måneden"
+        ]
+      },
+      {
+        "value" : "desember",
+        "expressions" : [
+          "desember"
+        ]
+      },
+      {
+        "value" : "i fjor",
+        "expressions" : [
+          "i fjor"
+        ]
+      },
+      {
+        "value" : "mars",
+        "expressions" : [
+          "mars"
+        ]
+      },
+      {
+        "value" : "november",
+        "expressions" : [
+          "november"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

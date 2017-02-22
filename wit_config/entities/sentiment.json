@@ -1,0 +1,30 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords",
+      "trait"
+    ],
+    "name" : "sentiment",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "sentiment",
+    "values" : [
+      {
+        "value" : "negative",
+        "expressions" : [
+          " :("
+        ]
+      },
+      {
+        "value" : "positive",
+        "expressions" : [
+          "Fantastisk!",
+          "liker "
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}
