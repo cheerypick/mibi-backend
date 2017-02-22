@@ -1,7 +1,7 @@
 export class MessageValidator{
 
     public static initiationMessage(msg):boolean{
-        if(msg.text === 'Har du noen oppdateringer for meg?'){
+        if(msg.text.toLowerCase() === 'har du noen oppdateringer for meg?'){
             return true
         }
         return false;
