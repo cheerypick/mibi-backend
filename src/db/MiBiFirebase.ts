@@ -1,17 +1,34 @@
 import * as firebase from "firebase";
 import {Subscription} from "../entities/Subscription";
+import {PropertyReader} from "../config/PropertyReader";
 
+
+/*
+To get data call the function like this:
+getMyVariable(necessary,variables).then(function(snapshot){
+    let foo = snapshot.val();
+    foo.dataTotal
+    ...
+});
+ */
 export class MiBiFirebase{
     private config = {
-        apiKey: "AIzaSyANOj9JDBYXAYgqXl5sE58xpw1IVG9CudM",
-        authDomain: "mibi-55bb1.firebaseapp.com",
-        databaseURL: "https://mibi-55bb1.firebaseio.com",
-        storageBucket: "mibi-55bb1.appspot.com",
-        messagingSenderId: "271655106157"
+        apiKey: null,
+        authDomain: null,
+        databaseURL: null,
+        storageBucket: null,
+        messagingSenderId: null
     };
     private db = null;
+    private propertyReader = new PropertyReader();
 
     constructor(){
+        this.config.apiKey = this.propertyReader.getFirebaseApiKey();
+        this.config.authDomain = this.propertyReader.getFirebaseAuthDomain();
+        this.config.databaseURL = this.propertyReader.getFirebaseDatabaseURL();
+        this.config.storageBucket = this.propertyReader.getFirebaseStorageBucket();
+        this.config.messagingSenderId = this.propertyReader.getFirebaseMessagingSenderId();
+
         firebase.initializeApp(this.config);
         this.db = firebase.database();
     }
