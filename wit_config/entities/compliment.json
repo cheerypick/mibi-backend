@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "compliment",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "compliment",
+    "values" : [
+      {
+        "value" : "smart",
+        "expressions" : [
+          "smart"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

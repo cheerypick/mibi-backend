@@ -2,30 +2,23 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "keywords",
-      "trait"
+      "keywords"
     ],
-    "name" : "question",
+    "name" : "updates",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "question",
+    "id" : "updates",
     "values" : [
       {
-        "value" : "Hva ",
+        "value" : "Oppdatering ",
         "expressions" : [
-          "Hva "
+          "Oppdatering "
         ]
       },
       {
-        "value" : "Hvor",
+        "value" : "oppdateringer ",
         "expressions" : [
-          "Hvor"
-        ]
-      },
-      {
-        "value" : "Hvor mye",
-        "expressions" : [
-          "Hvor mye"
+          "oppdateringer "
         ]
       }
     ],

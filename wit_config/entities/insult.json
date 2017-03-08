@@ -4,51 +4,51 @@
       "free-text",
       "keywords"
     ],
-    "name" : "data",
+    "name" : "insult",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "data",
+    "id" : "insult",
     "values" : [
       {
-        "value" : " 5GB",
+        "value" : "Dumme ",
         "expressions" : [
-          " 5GB"
+          "Dumme "
         ]
       },
       {
-        "value" : "15gb",
+        "value" : "dum",
         "expressions" : [
-          "15gb"
+          "dum"
         ]
       },
       {
-        "value" : "1GB",
+        "value" : "dusi ",
         "expressions" : [
-          "1GB"
+          "dusi "
         ]
       },
       {
-        "value" : "3 gigabyte",
+        "value" : "dust",
         "expressions" : [
-          "3 gigabyte"
+          "dust"
         ]
       },
       {
-        "value" : "3GB",
+        "value" : "idiot",
         "expressions" : [
-          "3GB"
+          "idiot"
         ]
       },
       {
-        "value" : "4GB",
+        "value" : "idiotisk ",
         "expressions" : [
-          "4GB"
+          "idiotisk "
         ]
       },
       {
-        "value" : "B",
+        "value" : "smart",
         "expressions" : [
-          "B"
+          "smart"
         ]
       }
     ],
