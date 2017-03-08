@@ -1,61 +1,80 @@
 {
   "companies": {
-    "DinBegravelse": {
+    "Din Begravelse": {
       "orgNr": 1234567890,
       "admins": {
         "mibi": {
           "name": "Line Johnsen",
-          "companyName": "DinBegravelse",
+          "companyName": "Din Begravelse",
           "password": "mibi",
           "uuid": "342c5180-d9ab-4419-9c96-ddf907f3558b"
+        },
+        "mobo": {
+          "name": "John Abrahamsen",
+          "companyName": "Din Begravelse",
+          "password": "mobo",
+          "uuid": "fd2148be-fe6c-487e-a5f6-1fbd219defd7"
         }
       },
       "subscriptions": {
-        "94685512": {
-          "companyName": "DinBegravelse",
-          "name": "Line Johnsen",
-          "puk": 689461,
-          "dataDefault": 5000,
-          "dataTotal": 5000,
-          "dataUsed": 2312,
-          "dataNotified": false,
-          "priceDefault": 349,
-          "priceTotal": 349,
-          "additionalProducts": []
+        "phoneNumbers": {
+          "94685512": {
+            "companyName": "Din Begravelse",
+            "name": "Line Johnsen",
+            "puk": 689461,
+            "dataDefault": 5000,
+            "dataTotal": 5000,
+            "dataUsed": 2312,
+            "dataNotified": false,
+            "priceDefault": 349,
+            "priceTotal": 349,
+            "additionalProducts": []
+          },
+          "41639898": {
+            "companyName": "Din Begravelse",
+            "name": "John Abrahamsen",
+            "puk": 456812,
+            "dataDefault": 3000,
+            "dataTotal": 5000,
+            "dataUsed": 4384,
+            "dataNotified": false,
+            "priceDefault": 299,
+            "priceTotal": 499,
+            "additionalProducts": [
+              {
+                "productName": "DataPakke 2GB",
+                "endDate": "2017-04-01T00:00:00.000Z"
+              }
+            ]
+          },
+          "91454568": {
+            "companyName": "Din Begravelse",
+            "name": "Tone Fjellheim",
+            "puk": 124979,
+            "dataDefault": 5000,
+            "dataTotal": 10000,
+            "dataUsed": 7460,
+            "dataNotified": false,
+            "priceDefault": 349,
+            "priceTotal": 599,
+            "additionalProducts": [
+              {
+                "productName": "DataPakke 5GB",
+                "endDate": "2017-04-01T00:00:00.000Z"
+              }
+            ]
+          }
         },
-        "41639898": {
-          "companyName": "Din Begravelse",
-          "name": "John Abrahamsen",
-          "puk": 456812,
-          "dataDefault": 3000,
-          "dataTotal": 5000,
-          "dataUsed": 4384,
-          "dataNotified": false,
-          "priceDefault": 299,
-          "priceTotal": 499,
-          "additionalProducts": [
-            {
-              "productName": "DataPakke 2GB",
-              "endDate": "2017-04-01T00:00:00.000Z"
-            }
-          ]
-        },
-        "91454568": {
-          "companyName": "Din Begravelse",
-          "name": "Tone Fjellheim",
-          "puk": 124979,
-          "dataDefault": 5000,
-          "dataTotal": 10000,
-          "dataUsed": 7460,
-          "dataNotified": false,
-          "priceDefault": 349,
-          "priceTotal": 599,
-          "additionalProducts": [
-            {
-              "productName": "DataPakke 5GB",
-              "endDate": "2017-04-01T00:00:00.000Z"
-            }
-          ]
+        "names": {
+          "Tone Fjellheim":{
+            "phoneNumber": 91454568
+          },
+          "John Abrahamsen":{
+            "phoneNumber": 41639898
+          },
+          "Line Johnsen": {
+            "phoneNumber": 94685512
+          }
         }
       }
     },
@@ -71,17 +90,24 @@
         }
       },
       "subscriptions": {
-        "45696989":{
-          "companyName": "Smultekjappa",
-          "name": "Ole Nordmann",
-          "puk": 126543,
-          "dataDefault": 2000,
-          "dataTotal": 2000,
-          "dataUsed": 437,
-          "dataNotified": false,
-          "priceDefault": 299,
-          "priceTotal": 299,
-          "additionalProducts": []
+        "phoneNumbers": {
+          "45696989": {
+            "companyName": "Smultekjappa",
+            "name": "Ole Nordmann",
+            "puk": 126543,
+            "dataDefault": 2000,
+            "dataTotal": 2000,
+            "dataUsed": 437,
+            "dataNotified": false,
+            "priceDefault": 299,
+            "priceTotal": 299,
+            "additionalProducts": []
+          }
+        },
+        "names": {
+          "Ole Nordmann":{
+            "phoneNumber": 45696989
+          }
         }
       }
     }

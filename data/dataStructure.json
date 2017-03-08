@@ -10,22 +10,29 @@
         }
       },
       "subscriptions": {
-        "tlfnr": {
-          "companyName": "",
-          "name": "",
-          "puk": 0,
-          "dataDefault": 0,
-          "dataTotal": 0,
-          "dataUsed": 0,
-          "dataNotified": false,
-          "priceDefault": 0,
-          "priceTotal": 0,
-          "additionalProducts": [
-            {
-              "productName": "",
-              "endDate": "2017-03-08T14:04:55.607Z"
-            }
-          ]
+        "phoneNumbers": {
+          "tlfnr": {
+            "companyName": "",
+            "name": "",
+            "puk": 0,
+            "dataDefault": 0,
+            "dataTotal": 0,
+            "dataUsed": 0,
+            "dataNotified": false,
+            "priceDefault": 0,
+            "priceTotal": 0,
+            "additionalProducts": [
+              {
+                "productName": "",
+                "endDate": "2017-03-08T18:37:41.458Z"
+              }
+            ]
+          }
+        },
+        "names": {
+          "nameX": {
+            "phoneNumber": 0
+          }
         }
       }
     }
