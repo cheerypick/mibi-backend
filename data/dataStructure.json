@@ -5,6 +5,7 @@
       "orgNr": 0,
       "admin": [
         {
+          "name": "",
           "username": "",
           "password": "",
           "uuid": ""

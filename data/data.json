@@ -1,33 +1,91 @@
 {
   "companies": [
     {
-      "name": "",
-      "orgNr": 0,
+      "name": "Din Begravelse",
+      "orgNr": 1234567890,
       "admin": [
         {
-          "username": "",
-          "password": "",
-          "uuid": ""
+          "name": "Line Johnsen",
+          "username": "mibi",
+          "password": "mibi",
+          "uuid": "342c5180-d9ab-4419-9c96-ddf907f3558b"
         }
       ],
       "subscriptions": [
         {
-          "companyName": "",
-          "name": "",
-          "phoneNumber": 0,
-          "puk": 0,
-          "dataDefault": 0,
-          "dataTotal": 0,
-          "dataUsed": 0,
+          "companyName": "Din Begravelse",
+          "name": "Line Johnsen",
+          "phoneNumber": 94685512,
+          "puk": 689461,
+          "dataDefault": 5000,
+          "dataTotal": 5000,
+          "dataUsed": 2312,
           "dataNotified": false,
-          "priceDefault": 0,
-          "priceTotal": 0,
+          "priceDefault": 349,
+          "priceTotal": 349,
+          "additionalProducts": []
+        },
+        {
+          "companyName": "Din Begravelse",
+          "name": "John Abrahamsen",
+          "phoneNumber": 41639898,
+          "puk": 456812,
+          "dataDefault": 3000,
+          "dataTotal": 5000,
+          "dataUsed": 4384,
+          "dataNotified": false,
+          "priceDefault": 299,
+          "priceTotal": 499,
           "additionalProducts": [
             {
-              "productName": "",
-              "endDate": "2017-03-08T11:58:55.198Z"
+              "productName": "DataPakke 2GB",
+              "endDate": "2017-04-01T00:00:00.000Z"
             }
           ]
+        },
+        {
+          "companyName": "Din Begravelse",
+          "name": "Tone Fjellheim",
+          "phoneNumber": 91454568,
+          "puk": 124979,
+          "dataDefault": 5000,
+          "dataTotal": 10000,
+          "dataUsed": 7460,
+          "dataNotified": false,
+          "priceDefault": 349,
+          "priceTotal": 599,
+          "additionalProducts": [
+            {
+              "productName": "DataPakke 5GB",
+              "endDate": "2017-04-01T00:00:00.000Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smultekjappa",
+      "orgNr": 78923475,
+      "admin": [
+        {
+          "username": "Ole Nordmann",
+          "password": "smulteringErBest",
+          "uuid": "ddc24036-a85d-4818-9a34-845aa3f23b52"
+        }
+      ],
+      "subscriptions": [
+        {
+          "companyName": "Smultekjappa",
+          "name": "Ole Nodrmann",
+          "phoneNumber": 45494969,
+          "puk": 346494,
+          "dataDefault": 2000,
+          "dataTotal": 2000,
+          "dataUsed": 435,
+          "dataNotified": false,
+          "priceDefault": 249,
+          "priceTotal": 249,
+          "additionalProducts": []
         }
       ]
     }
