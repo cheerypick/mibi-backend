@@ -1,0 +1,13 @@
+{
+  "server": {
+    "connection": {
+      "port": 3000,
+      "host": "0.0.0.0"
+    }
+  },
+  "wit": {
+    "authentication": {
+      "accessToken": "JZJ3W6JJB7KGSLTM4NRZVCQZTW3M7A3F"
+    }
+  }
+}

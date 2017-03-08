@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "rejection",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "rejection",
+    "values" : [
+      {
+        "value" : "Hun overlever uten",
+        "expressions" : [
+          "Hun overlever uten"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

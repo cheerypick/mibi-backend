@@ -1,0 +1,29 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords",
+      "trait"
+    ],
+    "name" : "intent",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "intent",
+    "values" : [
+      {
+        "value" : ""
+      },
+      {
+        "value" : "SIM"
+      },
+      {
+        "value" : "forbruk ",
+        "expressions" : [
+          "forbruk "
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

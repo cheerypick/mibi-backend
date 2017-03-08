@@ -1,0 +1,46 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "data",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "data",
+    "values" : [
+      {
+        "value" : " 5GB",
+        "expressions" : [
+          " 5GB"
+        ]
+      },
+      {
+        "value" : "1GB",
+        "expressions" : [
+          "1GB"
+        ]
+      },
+      {
+        "value" : "3 gigabyte",
+        "expressions" : [
+          "3 gigabyte"
+        ]
+      },
+      {
+        "value" : "3GB",
+        "expressions" : [
+          "3GB"
+        ]
+      },
+      {
+        "value" : "4GB",
+        "expressions" : [
+          "4GB"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

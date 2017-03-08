@@ -1,0 +1,324 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "nonsense",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "nonsense",
+    "values" : [
+      {
+        "value" : "!jqoi24",
+        "expressions" : [
+          "!jqoi24"
+        ]
+      },
+      {
+        "value" : "09124oijadfælksnv''112æ39056snioa",
+        "expressions" : [
+          "09124oijadfælksnv''112æ39056snioa"
+        ]
+      },
+      {
+        "value" : "09124oijadfælksnv''112æ390uasnioa",
+        "expressions" : [
+          "09124oijadfælksnv''112æ390uasnioa"
+        ]
+      },
+      {
+        "value" : "09213lkas",
+        "expressions" : [
+          "09213lkas"
+        ]
+      },
+      {
+        "value" : "0987tfgjhbjknkm",
+        "expressions" : [
+          "0987tfgjhbjknkm"
+        ]
+      },
+      {
+        "value" : "LSÆøsæØSAK",
+        "expressions" : [
+          "LSÆøsæØSAK"
+        ]
+      },
+      {
+        "value" : "asdasdasdasdasdasdasdasdasdasdasdasd",
+        "expressions" : [
+          "asdasdasdasdasdasdasdasdasdasdasdasd"
+        ]
+      },
+      {
+        "value" : "asdfghjkløæ'",
+        "expressions" : [
+          "asdfghjkløæ'"
+        ]
+      },
+      {
+        "value" : "asdgh",
+        "expressions" : [
+          "asdgh"
+        ]
+      },
+      {
+        "value" : "asdsasdads",
+        "expressions" : [
+          "asdsasdads"
+        ]
+      },
+      {
+        "value" : "asdølaksdølskd",
+        "expressions" : [
+          "asdølaksdølskd"
+        ]
+      },
+      {
+        "value" : "dlskljfølskfj",
+        "expressions" : [
+          "dlskljfølskfj"
+        ]
+      },
+      {
+        "value" : "gdasaskjasdlkadS",
+        "expressions" : [
+          "gdasaskjasdlkadS"
+        ]
+      },
+      {
+        "value" : "hg",
+        "expressions" : [
+          "hg"
+        ]
+      },
+      {
+        "value" : "hwi",
+        "expressions" : [
+          "hwi"
+        ]
+      },
+      {
+        "value" : "iluhæ",
+        "expressions" : [
+          "iluhæ"
+        ]
+      },
+      {
+        "value" : "jdslajskdsshlkjasdah",
+        "expressions" : [
+          "jdslajskdhlkjasdah",
+          "jdslajskdsshlkjasdah"
+        ]
+      },
+      {
+        "value" : "jkasldg",
+        "expressions" : [
+          "jkasldg"
+        ]
+      },
+      {
+        "value" : "kjsaøldfkjølaksdjf",
+        "expressions" : [
+          "kjsaøldfkjølaksdjf"
+        ]
+      },
+      {
+        "value" : "kjsfg",
+        "expressions" : [
+          "kjsfg"
+        ]
+      },
+      {
+        "value" : "kjølasdf",
+        "expressions" : [
+          "kjølasdf"
+        ]
+      },
+      {
+        "value" : "kkøjadølsfkmøl",
+        "expressions" : [
+          "kkøjadølsfkmøl"
+        ]
+      },
+      {
+        "value" : "klasøgas",
+        "expressions" : [
+          "klasøgas"
+        ]
+      },
+      {
+        "value" : "kljdsaf",
+        "expressions" : [
+          "kljdsaf"
+        ]
+      },
+      {
+        "value" : "kljøaeroiældkfn",
+        "expressions" : [
+          "kljøaeroiældkfn"
+        ]
+      },
+      {
+        "value" : "køljaøslkdfj",
+        "expressions" : [
+          "køljaøslkdfj"
+        ]
+      },
+      {
+        "value" : "laøjsdjflæskdjaf",
+        "expressions" : [
+          "laøjsdjflæskdjaf"
+        ]
+      },
+      {
+        "value" : "lklaskjdf",
+        "expressions" : [
+          "lklaskjdf"
+        ]
+      },
+      {
+        "value" : "lnkzkvlækjkaæåoijasd",
+        "expressions" : [
+          "lnkzkvlækjkaæåoijasd"
+        ]
+      },
+      {
+        "value" : "løkasjdføiowaeurpoijnsv",
+        "expressions" : [
+          "løkasjdføiowaeurpoijnsv"
+        ]
+      },
+      {
+        "value" : "løkjkafd",
+        "expressions" : [
+          "løkjkafd"
+        ]
+      },
+      {
+        "value" : "nlkøjasdf'",
+        "expressions" : [
+          "nlkøjasdf'"
+        ]
+      },
+      {
+        "value" : "ouwierjfksdmc",
+        "expressions" : [
+          "ouwierjfksdmc"
+        ]
+      },
+      {
+        "value" : "sdfgkjdfg",
+        "expressions" : [
+          "sdfgkjdfg",
+          "sdfgkjdsfg"
+        ]
+      },
+      {
+        "value" : "sdfægkljr9o",
+        "expressions" : [
+          "sdfægkljr9o"
+        ]
+      },
+      {
+        "value" : "sdføgkjdsfg",
+        "expressions" : [
+          "sdføgkjdsfg"
+        ]
+      },
+      {
+        "value" : "sdføgkjsdfg",
+        "expressions" : [
+          "sdføgkjsdfg"
+        ]
+      },
+      {
+        "value" : "sdsdfsdf",
+        "expressions" : [
+          "sdsdfsdf"
+        ]
+      },
+      {
+        "value" : "sg+o4t9j",
+        "expressions" : [
+          "sg+o4t9j"
+        ]
+      },
+      {
+        "value" : "trolllolololol",
+        "expressions" : [
+          "trolllolololol"
+        ]
+      },
+      {
+        "value" : "trololollolololhei123heilolol",
+        "expressions" : [
+          "trololollolololhei123heilolol"
+        ]
+      },
+      {
+        "value" : "trololololl",
+        "expressions" : [
+          "trololololl"
+        ]
+      },
+      {
+        "value" : "uoiqwerjkøfs.d,mvnasdf",
+        "expressions" : [
+          "uoiqwerjkøfs.d,mvnasdf"
+        ]
+      },
+      {
+        "value" : "welklfæøfsdlkæfkldsøs",
+        "expressions" : [
+          "welklfæøfsdlkæfkldsøs"
+        ]
+      },
+      {
+        "value" : "yguyfvlh",
+        "expressions" : [
+          "yguyfvlh"
+        ]
+      },
+      {
+        "value" : "åpaweiojrølksgnfz",
+        "expressions" : [
+          "åpaweiojrølksgnfz"
+        ]
+      },
+      {
+        "value" : "ælknzxcvæoijwe",
+        "expressions" : [
+          "ælknzxcvæoijwe"
+        ]
+      },
+      {
+        "value" : "æsldlkg",
+        "expressions" : [
+          "æsldlkg"
+        ]
+      },
+      {
+        "value" : "øljkpåiuw",
+        "expressions" : [
+          "øljkpåiuw"
+        ]
+      },
+      {
+        "value" : "ølkajsdfoijasdv",
+        "expressions" : [
+          "ølkajsdfoijasdv"
+        ]
+      },
+      {
+        "value" : "øæ7",
+        "expressions" : [
+          "øæ7"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

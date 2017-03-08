@@ -1,0 +1,38 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "free-text",
+      "free-text",
+      "keywords",
+      "keywords",
+      "keywords"
+    ],
+    "name" : "acceptance",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "acceptance",
+    "values" : [
+      {
+        "value" : "Gi henne",
+        "expressions" : [
+          "Gi henne"
+        ]
+      },
+      {
+        "value" : "Ja, takk",
+        "expressions" : [
+          "Ja, takk"
+        ]
+      },
+      {
+        "value" : "Kjør på",
+        "expressions" : [
+          "Kjør på"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}
