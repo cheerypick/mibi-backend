@@ -25,6 +25,7 @@ server.on('listening', onListening);
 
 io.listen(server);
 'use strict';
+import {MiBiFirebase} from "./db/MiBiFirebase";
 
 
 function normalizePort(val: number|string): number {
@@ -58,7 +59,9 @@ function onListening(): void {
 }
 
 let user:client.Client = new client.Client();
+let mfb = new MiBiFirebase();
 
+console.log(mfb.getUsers());
 user.authenticate(io);
 user.getMessage(io, propertyReader);
 
