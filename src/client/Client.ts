@@ -34,7 +34,7 @@ export class Client {
                 console.log('got message', msg);
 
                 if(MessageValidator.initiationMessage(msg)){
-                    msg.text = 'Hei';
+                    msg.text = 'datausage';
                 }
 
                 MibiWit.sendMessage(io, msg, propertyReader, this.id);
