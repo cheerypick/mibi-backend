@@ -1,0 +1,35 @@
+{
+  "companies": [
+    {
+      "name": "",
+      "orgNr": 0,
+      "admin": [
+        {
+          "username": "",
+          "password": "",
+          "uuid": ""
+        }
+      ],
+      "subscriptions": [
+        {
+          "companyName": "",
+          "name": "",
+          "phoneNumber": 0,
+          "puk": 0,
+          "dataDefault": 0,
+          "dataTotal": 0,
+          "dataUsed": 0,
+          "dataNotified": false,
+          "priceDefault": 0,
+          "priceTotal": 0,
+          "additionalProducts": [
+            {
+              "productName": "",
+              "endDate": "2017-03-08T11:58:55.198Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
