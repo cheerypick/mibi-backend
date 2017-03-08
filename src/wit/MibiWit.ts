@@ -40,8 +40,6 @@ export class MibiWit {
                 const {text, quickreplies} = response;
                 console.log(request);
                 console.log('user said...', request.text);
-                //io.sockets.emit('message', JSON.stringify(response.text));
-                // io.emit('message', response);
                 io.to(id).emit('message', response);
                 console.log('Yay, got MibiWit.ai response: ' +  JSON.stringify(response.text) );
                 console.log('wit said...', response);
