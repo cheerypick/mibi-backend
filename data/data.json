@@ -5,6 +5,7 @@
       "orgNr": 1234567890,
       "admin": [
         {
+          "companyName": "Din Begravelse",
           "name": "Line Johnsen",
           "username": "mibi",
           "password": "mibi",
@@ -68,6 +69,7 @@
       "orgNr": 78923475,
       "admin": [
         {
+          "companyName": "Smultekjappa",
           "username": "Ole Nordmann",
           "password": "smulteringErBest",
           "uuid": "ddc24036-a85d-4818-9a34-845aa3f23b52"
