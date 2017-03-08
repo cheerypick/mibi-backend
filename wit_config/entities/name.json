@@ -1,0 +1,142 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "name",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "name",
+    "values" : [
+      {
+        "value" : "Adriano",
+        "expressions" : [
+          "Adriano"
+        ]
+      },
+      {
+        "value" : "Ahmad",
+        "expressions" : [
+          "Ahmad"
+        ]
+      },
+      {
+        "value" : "Alexander",
+        "expressions" : [
+          "Alexander"
+        ]
+      },
+      {
+        "value" : "Anton ",
+        "expressions" : [
+          "Anton "
+        ]
+      },
+      {
+        "value" : "Cecilie",
+        "expressions" : [
+          "Cecilie"
+        ]
+      },
+      {
+        "value" : "Hans",
+        "expressions" : [
+          "Hans"
+        ]
+      },
+      {
+        "value" : "Hans-Fredrik",
+        "expressions" : [
+          "Hans-Fredrik"
+        ]
+      },
+      {
+        "value" : "Katrine",
+        "expressions" : [
+          "Katrine"
+        ]
+      },
+      {
+        "value" : "Kristine",
+        "expressions" : [
+          "Kristine"
+        ]
+      },
+      {
+        "value" : "Lene",
+        "expressions" : [
+          "Lene"
+        ]
+      },
+      {
+        "value" : "Line ",
+        "expressions" : [
+          "Line "
+        ]
+      },
+      {
+        "value" : "Maria ",
+        "expressions" : [
+          "Maria "
+        ]
+      },
+      {
+        "value" : "Marius",
+        "expressions" : [
+          "Marius"
+        ]
+      },
+      {
+        "value" : "Mary",
+        "expressions" : [
+          "Mary"
+        ]
+      },
+      {
+        "value" : "Olav",
+        "expressions" : [
+          "Olav"
+        ]
+      },
+      {
+        "value" : "Ole",
+        "expressions" : [
+          "Ole"
+        ]
+      },
+      {
+        "value" : "Olga",
+        "expressions" : [
+          "Olga"
+        ]
+      },
+      {
+        "value" : "Per",
+        "expressions" : [
+          "Per"
+        ]
+      },
+      {
+        "value" : "Peter",
+        "expressions" : [
+          "Peter"
+        ]
+      },
+      {
+        "value" : "Petter",
+        "expressions" : [
+          "Petter"
+        ]
+      },
+      {
+        "value" : "Thomas ",
+        "expressions" : [
+          "Thomas "
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

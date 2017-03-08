@@ -2,30 +2,23 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "keywords",
-      "trait"
+      "keywords"
     ],
-    "name" : "question",
+    "name" : "general_question",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "question",
+    "id" : "general_question",
     "values" : [
       {
-        "value" : "Hva ",
+        "value" : "annet",
         "expressions" : [
-          "Hva "
+          "annet"
         ]
       },
       {
-        "value" : "Hvor",
+        "value" : "lærer du nå?",
         "expressions" : [
-          "Hvor"
-        ]
-      },
-      {
-        "value" : "Hvor mye",
-        "expressions" : [
-          "Hvor mye"
+          " "
         ]
       }
     ],
