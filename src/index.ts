@@ -61,7 +61,7 @@ function onListening(): void {
 let user:client.Client = new client.Client();
 let mfb = new MiBiFirebase();
 
-console.log(mfb.getUsers());
+mfb.getSubscriptions("Smultekjappa");
 user.authenticate(io);
 user.getMessage(io, propertyReader);
 
