@@ -25,8 +25,6 @@ server.on('listening', onListening);
 
 io.listen(server);
 'use strict';
-import {MiBiFirebase} from "./db/MiBiFirebase";
-
 
 function normalizePort(val: number|string): number {
     let port: number = (typeof val === 'string') ? parseInt(val, 10) : val;
@@ -62,6 +60,3 @@ let user:client.Client = new client.Client();
 
 user.authenticate(io);
 user.getMessage(io, propertyReader);
-
-
-
