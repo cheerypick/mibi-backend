@@ -42,7 +42,7 @@ export class Client {
         io.on('connection', function(socket) {
             socket.on('message', function(msg) {
                 console.log('ID that message has: '+this.id);
-                console.log('Data in users: ' + users);
+                console.log('users: '+JSON.stringify(users));
                 io.to(this.id).emit('message', msg);
                 // console.log('got message', msg);
 
