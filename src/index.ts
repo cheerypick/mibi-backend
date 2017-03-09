@@ -2,13 +2,16 @@ import * as http from 'http';
 import * as debug from 'debug';
 import * as IO from 'socket.io';
 import App from './App';
-import * as client from './client/Client';
+import {Client} from "./client/Client";
 import {PropertyReader} from "./config/PropertyReader";
+import {MiBiFirebase} from "./db/MiBiFirebase";
+import {User} from "./entities/User";
 
 debug('ts-express:server');
 
 let io = IO();
 let propertyReader = new PropertyReader();
+let mibiFirebase = new MiBiFirebase();
 
 const port = normalizePort(propertyReader.getServerPort() || process.env.PORT || 3000);
 
@@ -25,6 +28,7 @@ server.on('listening', onListening);
 
 io.listen(server);
 'use strict';
+
 
 function normalizePort(val: number|string): number {
     let port: number = (typeof val === 'string') ? parseInt(val, 10) : val;
@@ -56,7 +60,8 @@ function onListening(): void {
     debug(`Listening on ${bind}`);
 }
 
-let user:client.Client = new client.Client();
+let client = new Client();
+let users:User[] = [];
 
-user.authenticate(io);
-user.getMessage(io, propertyReader);
+client.authenticate(io, mibiFirebase, users);
+client.getMessage(io, propertyReader, users);

@@ -66,7 +66,7 @@ describe('GET api/v1/users/:id/updates', () => {
             });
     });
 
-    it('Should return 404 if user dont exist', () => {
+    it('Should return 404 if client dont exist', () => {
         return chai.request(app).get('/api/v1/users/0/updates')
             .then(res => {
                 expect(res.body.status).to.equal(404);

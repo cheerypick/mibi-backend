@@ -8,13 +8,13 @@ export class MibiWit {
         let sessionId = 'xep';
 
         MibiWit.getClient(io, propertyReader, id).runActions(
-            sessionId, // the user's current session
-            msg.text, // the user's message
-            context // the user's current session state
+            sessionId, // the client's current session
+            msg.text, // the client's message
+            context // the client's current session state
         ).then((newContext) => {
             // Our bot did everything it has to do.
             // Now it's waiting for further messages to proceed.
-            console.log('Waiting for next user messages');
+            console.log('Waiting for next client messages');
 
             // Based on the session state, you might want to reset the session.
             // This depends heavily on the business logic of your bot.
@@ -23,7 +23,7 @@ export class MibiWit {
             //   delete sessions[sessionId];
             // }
 
-            // Updating the user's current session state
+            // Updating the client's current session state
             context = newContext;
         })
             .catch((err) => {
@@ -38,11 +38,11 @@ export class MibiWit {
             send(request, response) {
                 const {sessionId, context, entities} = request;
                 const {text, quickreplies} = response;
-                console.log(request);
-                console.log('user said...', request.text);
+                // console.log(request);
+                // console.log('client said...', request.text);
                 io.to(id).emit('message', response);
-                console.log('Yay, got MibiWit.ai response: ' +  JSON.stringify(response.text) );
-                console.log('wit said...', response);
+                // console.log('Yay, got MibiWit.ai response: ' +  JSON.stringify(response.text) );
+                // console.log('wit said...', response);
             },
         };
         return new Wit({accessToken, actions});

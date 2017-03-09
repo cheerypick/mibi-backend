@@ -1,6 +1,6 @@
-import * as firebase from "firebase";
 import {Subscription} from "../entities/Subscription";
 import {PropertyReader} from "../config/PropertyReader";
+import * as firebase from "firebase";
 
 
 /*
@@ -83,12 +83,12 @@ export class MiBiFirebase{
         return this.db.ref('/companies/'+companyToGet+'/subscriptions/names/'+name).once('value');
     }
 
-    public getAdmins(companyToGet: string){
+    public getAdminsForCompany(companyToGet: string){
         return this.db.ref('/companies/'+companyToGet+'/admins').once('value');
     }
 
-    public getAdmin(companyToGet: string, username: string){
-        return this.db.ref('/companies/'+companyToGet+'/admins/'+username).once('value');
+    public getAdmin(username: string){
+        return this.db.ref('/admins/'+username).once('value');
     }
 
     public updatePassword(companyToEdit: string, username: string, newPassword: string){
