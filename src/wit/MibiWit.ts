@@ -1,5 +1,7 @@
 import {Wit} from "node-wit";
 import {MiBiFirebase} from "../db/MiBiFirebase";
+// import * as _ from 'lodash';
+var _ = require('lodash');
 
 export class MibiWit {
 
@@ -62,7 +64,7 @@ export class MibiWit {
 
                         for (let number in array) {
                             for (let num in array[number]) {
-                                quickreplies.push(array[number][num])
+                                quickreplies.push(array[number][num]);
                             }
                         }
                         quickreplies.push("Nei, det er ingen av de nummerene");
@@ -77,7 +79,7 @@ export class MibiWit {
             },
             getPuk({context, entities}) {
                 return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-                    context.name = subscription.val().name;
+                    context.name = _.startCase(subscription.val().name);
                     context.puk = subscription.val().puk;
                     context.number = entities.number[0].value;
                     return context;
