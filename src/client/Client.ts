@@ -55,6 +55,21 @@ export class Client {
             });
         });
     }
+
+    public cleanup(users){
+        setInterval(() => {
+            let time = new Date();
+            for(let user in users){
+                console.log('Time for ' + user + ' is ' + (time.getTime() - users[user].lastContact.getTime()) / 1000);
+                if(((time.getTime() - users[user].lastContact.getTime()) / 1000) > 10){
+                    console.log('trying to delete: '+user);
+                    delete users[user];
+                }
+            }
+            console.log('Cleaned up now!');
+            console.log(users);
+        }, 1000);
+    }
 }
 
 
