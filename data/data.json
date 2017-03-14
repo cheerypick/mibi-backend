@@ -69,7 +69,7 @@
           },
           "91454568": {
             "companyName": "Din Begravelse",
-            "name": "Tone Fjellheim",
+            "name": "tone fjellheim",
             "puk": 124979,
             "dataDefault": 5000,
             "dataTotal": 10000,
@@ -86,9 +86,9 @@
           }
         },
         "names": {
-          "Tone Fjellheim": [91454568],
-          "john abrahamsen":[41639898],
-          "line johnsen": [94685512]
+          "tone fjellheim": ["91454568"],
+          "john abrahamsen":["41639898"],
+          "line johnsen": ["94685512"]
         }
       }
     },
@@ -118,9 +118,7 @@
           }
         },
         "names": {
-          "ole nordmann":{
-            "phoneNumber": 45696989
-          }
+          "ole nordmann": ["45696989"]
         }
       }
     }
