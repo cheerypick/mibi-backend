@@ -48,33 +48,39 @@ export class MibiWit {
             },
             getPukPhoneNumber({context, entities}) {
                 mibiFirebase.getNumbers(socket._userInfo.company,entities.name[0].value).then((numbers) => {
-                    let quickreplies = [];
+                    let numberNotFound = numbers.val() == null;
 
-                    let array = numbers.val();
+                    if(numberNotFound){
+                        let response = {
+                            text: 'Beklager, jeg finner ikke det navnet for ditt selskap.'
+                        };
+                        io.to(socket.id).emit('message', response);
+                    }else {
+                        let quickreplies = [];
 
-                    for(let number in array){
-                        for (let num in array[number]){
-                            quickreplies.push(array[number][num])
+                        let array = numbers.val();
+
+                        for (let number in array) {
+                            for (let num in array[number]) {
+                                quickreplies.push(array[number][num])
+                            }
                         }
+                        quickreplies.push("Nei, det er ingen av de nummerene");
+
+                        let response = {
+                            text: 'Hvilke av disse nummerene vil du ha PUK for?',
+                            quickreplies: quickreplies
+                        };
+                        io.to(socket.id).emit('message', response);
                     }
-                    quickreplies.push("Nei, det er ingen av de nummerene");
-
-                    console.log(quickreplies);
-
-                    let response = { text: 'Hvilke av disse nummerene vil du ha PUK for?',
-                        quickreplies: quickreplies
-                    };
-
-                    console.log(response);
-                    io.to(socket.id).emit('message', response);
                 });
             },
             getPuk({context, entities}) {
                 return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-                   context.name = subscription.val().name;
-                   context.puk = subscription.val().puk;
-                   context.number = entities.number[0].value;
-                   return context;
+                    context.name = subscription.val().name;
+                    context.puk = subscription.val().puk;
+                    context.number = entities.number[0].value;
+                    return context;
                 });
             }
         };
