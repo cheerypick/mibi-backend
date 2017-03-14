@@ -80,7 +80,7 @@ export class MiBiFirebase{
     }
 
     public getNumbers(companyToGet: string, name: string){
-        return this.db.ref('/companies/'+companyToGet+'/subscriptions/names/'+name).once('value');
+        return this.db.ref('/companies/'+companyToGet+'/subscriptions/names/').orderByKey().startAt(name.toLowerCase()).endAt(name.toLowerCase()+'\uf8ff').once('value');
     }
 
     public getAdminsForCompany(companyToGet: string){
