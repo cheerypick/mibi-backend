@@ -9,5 +9,12 @@
     "authentication": {
       "accessToken": "JZJ3W6JJB7KGSLTM4NRZVCQZTW3M7A3F"
     }
+  },
+  "firebase":{
+    "apiKey": "AIzaSyANOj9JDBYXAYgqXl5sE58xpw1IVG9CudM",
+    "authDomain": "mibi-55bb1.firebaseapp.com",
+    "databaseURL": "https://mibi-55bb1.firebaseio.com",
+    "storageBucket": "mibi-55bb1.appspot.com",
+    "messagingSenderId": "271655106157"
   }
 }

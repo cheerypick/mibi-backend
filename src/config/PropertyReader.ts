@@ -23,4 +23,24 @@ export class PropertyReader {
     public getServerHost(){
         return this.config.server.connection.host;
     }
+
+    public getFirebaseApiKey(){
+        return this.config.firebase.apiKey;
+    }
+
+    public getFirebaseAuthDomain(){
+        return this.config.firebase.authDomain;
+    }
+
+    public getFirebaseDatabaseURL(){
+        return this.config.firebase.databaseURL;
+    }
+
+    public getFirebaseStorageBucket(){
+        return this.config.firebase.storageBucket;
+    }
+
+    public getFirebaseMessagingSenderId(){
+        return this.config.firebase.messagingSenderId;
+    }
 }

@@ -14,6 +14,18 @@
         "value" : ""
       },
       {
+        "value" : "Gi meg",
+        "expressions" : [
+          "Gi meg"
+        ]
+      },
+      {
+        "value" : "Kan jeg få",
+        "expressions" : [
+          "Kan jeg få"
+        ]
+      },
+      {
         "value" : "SIM"
       },
       {
@@ -21,6 +33,9 @@
         "expressions" : [
           "forbruk "
         ]
+      },
+      {
+        "value" : "giPuk"
       }
     ],
     "doc" : "User-defined entity",
