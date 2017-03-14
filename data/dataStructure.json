@@ -1,4 +1,11 @@
 {
+  "admins": {
+    "username": {
+      "companyName": "",
+      "password": "",
+      "uuid": ""
+    }
+  },
   "companies": {
     "companyX": {
       "orgNr": 0,
@@ -10,7 +17,7 @@
         }
       },
       "subscriptions": {
-        "phoneNumbers": {
+        "phoneNumber": {
           "tlfnr": {
             "companyName": "",
             "name": "",
@@ -24,14 +31,29 @@
             "additionalProducts": [
               {
                 "productName": "",
-                "endDate": "2017-03-08T18:37:41.458Z"
+                "endDate": "2017-03-09T08:55:01.400Z"
               }
             ]
           }
         },
-        "names": {
+        "name": {
           "nameX": {
-            "phoneNumber": 0
+            "phoneNumber": 0,
+            "companyName": "",
+            "name": "",
+            "puk": 0,
+            "dataDefault": 0,
+            "dataTotal": 0,
+            "dataUsed": 0,
+            "dataNotified": false,
+            "priceDefault": 0,
+            "priceTotal": 0,
+            "additionalProducts": [
+              {
+                "productName": "",
+                "endDate": "2017-03-09T08:55:01.401Z"
+              }
+            ]
           }
         }
       }
