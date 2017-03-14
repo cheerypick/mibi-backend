@@ -52,7 +52,7 @@ export class MibiWit {
 
                     if(numberNotFound){
                         let response = {
-                            text: 'Beklager, jeg finner ikke det navnet for ditt selskap.'
+                            text: 'Beklager, jeg finner ikke det navnet for din bedrift.'
                         };
                         io.to(socket.id).emit('message', response);
                     }else {
