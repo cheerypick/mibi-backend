@@ -61,12 +61,6 @@ function onListening(): void {
 }
 
 let client = new Client();
-// mibiFirebase.getSubscription("Din Begravelse",94685512).then((subscription) => {
-//     console.log(subscription.val().name);
-//     console.log(subscription.val().puk);
-// }).then( () => {
-//     console.log('done');
-// });
 
 client.authenticate(io, mibiFirebase);
 client.getMessage(io, propertyReader, mibiFirebase);
