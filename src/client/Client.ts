@@ -31,6 +31,9 @@ export class Client {
                 });
             },
             postAuthenticate: function(socket, data) {
+                if(data.token.length > 0){
+                    mibiFirebase.updateDeviceTokens(data.username, data.token);
+                }
                 socket._userInfo = new User(companyAuth, data.username);
             }
         });
