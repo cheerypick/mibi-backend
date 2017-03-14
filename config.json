@@ -10,11 +10,18 @@
       "accessToken": "JZJ3W6JJB7KGSLTM4NRZVCQZTW3M7A3F"
     }
   },
-  "firebase":{
+  "firebaseAdriano":{
     "apiKey": "AIzaSyANOj9JDBYXAYgqXl5sE58xpw1IVG9CudM",
     "authDomain": "mibi-55bb1.firebaseapp.com",
     "databaseURL": "https://mibi-55bb1.firebaseio.com",
     "storageBucket": "mibi-55bb1.appspot.com",
     "messagingSenderId": "271655106157"
+  },
+  "firebaseProduction":{
+    "apiKey": "AIzaSyCybd1m2gcbHCcDkkrx8h3DZw7WPGIdxdE",
+    "authDomain": "mibi-f0d90.firebaseapp.com",
+    "databaseURL": "https://mibi-f0d90.firebaseio.com",
+    "storageBucket": "mibi-f0d90.appspot.com",
+    "messagingSenderId": "703686049206"
   }
 }

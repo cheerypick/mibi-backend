@@ -12,24 +12,15 @@ getMyVariable(necessary,variables).then(function(snapshot){
 });
  */
 export class MiBiFirebase{
-    private config = {
-        apiKey: null,
-        authDomain: null,
-        databaseURL: null,
-        storageBucket: null,
-        messagingSenderId: null
-    };
+
     private db = null;
     private propertyReader = new PropertyReader();
 
     constructor(){
-        this.config.apiKey = this.propertyReader.getFirebaseApiKey();
-        this.config.authDomain = this.propertyReader.getFirebaseAuthDomain();
-        this.config.databaseURL = this.propertyReader.getFirebaseDatabaseURL();
-        this.config.storageBucket = this.propertyReader.getFirebaseStorageBucket();
-        this.config.messagingSenderId = this.propertyReader.getFirebaseMessagingSenderId();
+        let config = this.propertyReader.getAdrianoFireBaseConfiguration();
+        //let config = this.propertyReader.getProductionFireBaseConfiguration();
 
-        firebase.initializeApp(this.config);
+        firebase.initializeApp(config);
         this.db = firebase.database();
     }
 
