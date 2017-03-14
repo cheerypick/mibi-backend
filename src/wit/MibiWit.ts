@@ -39,11 +39,12 @@ export class MibiWit {
             send(request, response) {
                 const {sessionId, context, entities} = request;
                 const {text, quickreplies} = response;
-                // console.log(request);
+                 console.log(request);
                 // console.log('client said...', request.text);
+
                 io.to(socket.id).emit('message', response);
                 // console.log('Yay, got MibiWit.ai response: ' +  JSON.stringify(response.text) );
-                // console.log('wit said...', response);
+                 console.log('wit said...', response);
             },
             getPukPhoneNumber({context, entities}) {
                 mibiFirebase.getNumbers(socket._userInfo.company,entities.name[0].value).then((numbers) => {
@@ -69,30 +70,13 @@ export class MibiWit {
                 });
             },
             getPuk({context, entities}) {
-                // console.log(socket._userInfo.company + ' and ' +  entities.number[0].value);
-                mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-                    console.log(context);
-                   // context.name = subscription.val().name;
-                   // context.puk = subscription.val().puk;
-                   // context.number = entities.number[0].value;
-                    // console.log(subscription.val().name);
-                    // console.log(subscription.val().puk);
-                });//.then( () => {
-                //     return context;
-                // });
+                return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
+                   context.name = subscription.val().name;
+                   context.puk = subscription.val().puk;
+                   context.number = entities.number[0].value;
+                   return context;
+                });
             }
-            // getForecast({context, entities}) {
-            //     var location = firstEntityValue(entities, 'location')
-            //     if (location) {
-            //         console.log('got', location)
-            //         context.forecast = 'sunny in ' + location; // we should call a weather API here
-            //         delete context.missingLocation;
-            //     } else {
-            //         context.missingLocation = true;
-            //         delete context.forecast;
-            //     }
-            //     return context;
-            // },
         };
         return new Wit({accessToken, actions});
     }
