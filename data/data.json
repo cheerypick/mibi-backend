@@ -1,20 +1,20 @@
 {
   "admins":{
     "mibi": {
-      "name": "Line Johnsen",
+      "name": "line johnsen",
       "companyName": "Din Begravelse",
       "password": "mibi",
       "tokens": []
     },
     "mobo": {
-      "name": "John Abrahamsen",
+      "name": "john abrahamsen",
       "companyName": "Din Begravelse",
       "password": "mobo",
       "tokens": []
     },
     "smulteringen": {
       "companyName": "Smultekjappa",
-      "name": "Ole Nordmann",
+      "name": "ole nordmann",
       "password": "smulteringErBest",
       "tokens": []
     }
@@ -24,13 +24,13 @@
       "orgNr": 1234567890,
       "admins": {
         "mibi": {
-          "name": "Line Johnsen",
+          "name": "line johnsen",
           "companyName": "Din Begravelse",
           "password": "mibi",
           "tokens": []
         },
         "mobo": {
-          "name": "John Abrahamsen",
+          "name": "john abrahamsen",
           "companyName": "Din Begravelse",
           "password": "mobo",
           "tokens": []
@@ -40,7 +40,7 @@
         "phoneNumbers": {
           "94685512": {
             "companyName": "Din Begravelse",
-            "name": "Line Johnsen",
+            "name": "line johnsen",
             "puk": 689461,
             "dataDefault": 5000,
             "dataTotal": 5000,
@@ -52,7 +52,7 @@
           },
           "41639898": {
             "companyName": "Din Begravelse",
-            "name": "John Abrahamsen",
+            "name": "john abrahamsen",
             "puk": 456812,
             "dataDefault": 3000,
             "dataTotal": 5000,
@@ -69,7 +69,7 @@
           },
           "91454568": {
             "companyName": "Din Begravelse",
-            "name": "Tone Fjellheim",
+            "name": "tone fjellheim",
             "puk": 124979,
             "dataDefault": 5000,
             "dataTotal": 10000,
@@ -86,15 +86,9 @@
           }
         },
         "names": {
-          "Tone Fjellheim":{
-            "phoneNumber": 91454568
-          },
-          "John Abrahamsen":{
-            "phoneNumber": 41639898
-          },
-          "Line Johnsen": {
-            "phoneNumber": 94685512
-          }
+          "tone fjellheim": ["91454568"],
+          "john abrahamsen":["41639898"],
+          "line johnsen": ["94685512"]
         }
       }
     },
@@ -103,7 +97,7 @@
       "admins": {
         "smulteringen": {
           "companyName": "Smultekjappa",
-          "name": "Ole Nordmann",
+          "name": "ole nordmann",
           "password": "smulteringErBest",
           "tokens": []
         }
@@ -112,7 +106,7 @@
         "phoneNumbers": {
           "45696989": {
             "companyName": "Smultekjappa",
-            "name": "Ole Nordmann",
+            "name": "ole nordmann",
             "puk": 126543,
             "dataDefault": 2000,
             "dataTotal": 2000,
@@ -124,9 +118,7 @@
           }
         },
         "names": {
-          "Ole Nordmann":{
-            "phoneNumber": 45696989
-          }
+          "ole nordmann": ["45696989"]
         }
       }
     }
