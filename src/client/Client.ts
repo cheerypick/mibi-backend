@@ -7,7 +7,7 @@ export class Client {
 
     id = null;
 
-    public authenticate(io, mibiFirebase:MiBiFirebase, users){//: User[]){
+    public authenticate(io, mibiFirebase:MiBiFirebase){
         let username = null;
         let password = null;
         let companyAuth = null;
@@ -31,59 +31,25 @@ export class Client {
                 });
             },
             postAuthenticate: function(socket, data) {
-                 console.log("Adding to users");
-                 users[socket.id] = new User(companyAuth, data.username);
-                 console.log(users);
+                socket._userInfo = new User(companyAuth, data.username);
             }
         });
     }
 
-    public getMessage(io, propertyReader, users){//: User[]){
+    public getMessage(io, propertyReader){
         io.on('connection', function(socket) {
+            console.log(socket.id + ' connected');
             socket.on('message', function(msg) {
-                console.log('ID that message has: '+this.id);
-                console.log('users: '+JSON.stringify(users));
-                io.to(this.id).emit('message', msg);
-                // console.log('got message', msg);
+                console.log(JSON.stringify(socket._userInfo));
+                io.to(socket.id).emit('message', msg);
 
                 if(MessageValidator.initiationMessage(msg)){
                     msg.text = 'Hei';
                 }
 
                 MibiWit.sendMessage(io, msg, propertyReader, this.id);
-                console.log(msg);
+                // console.log(msg);
             });
         });
     }
-
-    public cleanup(users){
-        setInterval(() => {
-            let time = new Date();
-            for(let user in users){
-                console.log('Time for ' + user + ' is ' + (time.getTime() - users[user].lastContact.getTime()) / 1000);
-                if(((time.getTime() - users[user].lastContact.getTime()) / 1000) > 10){
-                    console.log('trying to delete: '+user);
-                    delete users[user];
-                }
-            }
-            console.log('Cleaned up now!');
-            console.log(users);
-        }, 1000);
-    }
 }
-
-
-
-
-// let found = false;
-// users.filter(user => {
-//    if(data.username === username){
-//        user = socket.id;
-//        found = true;
-//    }
-// });
-//
-// if(!found){
-//     users.push(socket.id);
-//     users[socket.id] = new User();
-// }

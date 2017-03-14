@@ -61,8 +61,6 @@ function onListening(): void {
 }
 
 let client = new Client();
-let users = {};
 
-client.authenticate(io, mibiFirebase, users);
-client.getMessage(io, propertyReader, users);
-client.cleanup(users);
+client.authenticate(io, mibiFirebase);
+client.getMessage(io, propertyReader);
