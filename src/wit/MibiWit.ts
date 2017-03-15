@@ -1,5 +1,5 @@
 import {Wit} from "node-wit";
-import {MiBiFirebase} from "../db/MiBiFirebase";
+import {FirebaseDatabaseReader} from "../db/FirebaseDatabaseReader";
 import {MibiWitFunctions} from "./MibiWitFunctions";
 // var _ = require('lodash');
 
@@ -34,7 +34,7 @@ export class MibiWit {
             })
     }
 
-    private static getClient(io, propertyReader, socket, mibiFirebase:MiBiFirebase){
+    private static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader){
         const accessToken = propertyReader.getAccessToken();
 
         const actions = {
