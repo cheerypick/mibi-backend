@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "wrong_number",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "wrong_number",
+    "values" : [
+      {
+        "value" : " feil nummer",
+        "expressions" : [
+          " feil nummer"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "bot",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "bot",
+    "values" : [
+      {
+        "value" : "mibi",
+        "expressions" : [
+          "mibi"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

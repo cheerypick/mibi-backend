@@ -34,10 +34,40 @@
         ]
       },
       {
+        "value" : "halla mibi",
+        "expressions" : [
+          "halla mibi"
+        ]
+      },
+      {
         "value" : "hei",
         "expressions" : [
           "Hallo",
           "hei"
+        ]
+      },
+      {
+        "value" : "hei mibi",
+        "expressions" : [
+          "hei mibi"
+        ]
+      },
+      {
+        "value" : "hello",
+        "expressions" : [
+          "hello"
+        ]
+      },
+      {
+        "value" : "sup",
+        "expressions" : [
+          "sup"
+        ]
+      },
+      {
+        "value" : "zup",
+        "expressions" : [
+          "zup"
         ]
       }
     ],

@@ -2,10 +2,6 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "free-text",
-      "free-text",
-      "keywords",
-      "keywords",
       "keywords"
     ],
     "name" : "acceptance",
@@ -20,6 +16,18 @@
         ]
       },
       {
+        "value" : "Ja",
+        "expressions" : [
+          "Ja"
+        ]
+      },
+      {
+        "value" : "Ja, det stemmer",
+        "expressions" : [
+          "Ja, det stemmer"
+        ]
+      },
+      {
         "value" : "Ja, takk",
         "expressions" : [
           "Ja, takk"
@@ -29,6 +37,18 @@
         "value" : "Kjør på",
         "expressions" : [
           "Kjør på"
+        ]
+      },
+      {
+        "value" : "ja takk",
+        "expressions" : [
+          "ja takk"
+        ]
+      },
+      {
+        "value" : "stemmer",
+        "expressions" : [
+          "stemmer"
         ]
       }
     ],

@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "gratuity",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "gratuity",
+    "values" : [
+      {
+        "value" : "tusen takk",
+        "expressions" : [
+          "tusen takk"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

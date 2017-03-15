@@ -14,6 +14,24 @@
         "expressions" : [
           "Hun overlever uten"
         ]
+      },
+      {
+        "value" : "Nei",
+        "expressions" : [
+          "Nei"
+        ]
+      },
+      {
+        "value" : "Nei, det er feil",
+        "expressions" : [
+          "Nei, det er feil"
+        ]
+      },
+      {
+        "value" : "feil",
+        "expressions" : [
+          "feil"
+        ]
       }
     ],
     "doc" : "User-defined entity",

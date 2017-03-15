@@ -37,7 +37,7 @@ export class UserRouter {
         if (user) {
             res.status(200).send(user.updates);
         } else {
-            res.send({message: 'No updates found on given user.', status: 404});
+            res.send({message: 'No updates found on given client.', status: 404});
         }
     }
 }

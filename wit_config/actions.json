@@ -1,30 +1,9 @@
 {
   "data" : [
     {
-      "id" : "function-callApi",
-      "type" : "function",
-      "name" : "callApi"
-    },
-    {
-      "id" : "function-fetchHighestUsage",
-      "type" : "function",
-      "name" : "fetchHighestUsage"
-    },
-    {
-      "id" : "function-fetchWeather",
-      "type" : "function",
-      "name" : "fetchWeather"
-    },
-    {
       "id" : "template- Vil du at jeg skal bestille en ny datapakke til henne? ",
       "type" : "template",
       "template" : " Vil du at jeg skal bestille en ny datapakke til henne? ",
-      "requirements" : [
-        {
-          "name" : "greeting",
-          "negative" : false
-        }
-      ],
       "quickreplies" : [
         "Ja, takk, 1GB (79,-)",
         "Gi henne 3GB (119,-)",
@@ -33,14 +12,35 @@
       ]
     },
     {
-      "id" : "template-1GB koster 79,-         ",
+      "id" : "template-Beklager, jeg finner ingen andre nummere for Line!",
       "type" : "template",
-      "template" : "1GB koster 79,-         "
+      "template" : "Beklager, jeg finner ingen andre nummere for Line!"
+    },
+    {
+      "id" : "template-Beklager, jeg finner ingen andre nummere for {name}!",
+      "type" : "template",
+      "template" : "Beklager, jeg finner ingen andre nummere for {name}!",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Beklager, jeg finner ingen andre nummere å sjekke",
+      "type" : "template",
+      "template" : "Beklager, jeg finner ingen andre nummere å sjekke"
     },
     {
       "id" : "template-Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! ",
       "type" : "template",
       "template" : "Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! "
+    },
+    {
+      "id" : "template-Beklager, jeg prøver bare å hjelpe.",
+      "type" : "template",
+      "template" : "Beklager, jeg prøver bare å hjelpe."
     },
     {
       "id" : "template-Da har jeg bestilt {data} til henne.",
@@ -49,17 +49,6 @@
       "requirements" : [
         {
           "name" : "data",
-          "negative" : false
-        }
-      ]
-    },
-    {
-      "id" : "template-Dere har brukt 1000,- {duration}",
-      "type" : "template",
-      "template" : "Dere har brukt 1000,- {duration}",
-      "requirements" : [
-        {
-          "name" : "duration",
           "negative" : false
         }
       ]
@@ -76,109 +65,86 @@
       ]
     },
     {
-      "id" : "template-Du vil bestille {number}",
-      "type" : "template",
-      "template" : "Du vil bestille {number}",
-      "requirements" : [
-        {
-          "name" : "number",
-          "negative" : false
-        }
-      ]
-    },
-    {
       "id" : "template-Hei Ole!",
       "type" : "template",
-      "template" : "Hei Ole!",
-      "requirements" : [
-        {
-          "name" : "greeting",
-          "negative" : false
-        }
-      ]
+      "template" : "Hei Ole!"
     },
     {
-      "id" : "template-Hva kan jeg hjelpe deg med?",
+      "id" : "template-Jeg finner ingen andre nummere",
       "type" : "template",
-      "template" : "Hva kan jeg hjelpe deg med?",
-      "quickreplies" : [
-        "Bestille datapakke 5GB",
-        "Bestille datapakke 1GB"
-      ]
+      "template" : "Jeg finner ingen andre nummere"
     },
     {
-      "id" : "template-Jeg sier ifra neste gang det skjer noe.",
+      "id" : "template-Jeg finner ingen andre nummere for {name}",
       "type" : "template",
-      "template" : "Jeg sier ifra neste gang det skjer noe.",
-      "requirements" : [
-        {
-          "name" : "rejection",
-          "negative" : false
-        }
-      ]
-    },
-    {
-      "id" : "template-Jeg skal bestille et nytt SIM-kort for {name} ",
-      "type" : "template",
-      "template" : "Jeg skal bestille et nytt SIM-kort for {name} ",
+      "template" : "Jeg finner ingen andre nummere for {name}",
       "requirements" : [
         {
           "name" : "name",
           "negative" : false
         }
-      ],
-      "quickreplies" : [
-        "Takk"
       ]
     },
     {
-      "id" : "template-Jeg skal bestille {data} til henne.",
+      "id" : "template-Jeg finner ingen andre nummere å sjekke",
       "type" : "template",
-      "template" : "Jeg skal bestille {data} til henne.",
-      "requirements" : [
-        {
-          "name" : "data",
-          "negative" : false
-        }
-      ]
+      "template" : "Jeg finner ingen andre nummere å sjekke"
     },
     {
-      "id" : "template-Line har brukt 4,8GB av sin datapakke 5GB og det er 13 dager til at hun får mer data. ",
+      "id" : "template-Jeg sier ifra neste gang det skjer noe.",
       "type" : "template",
-      "template" : "Line har brukt 4,8GB av sin datapakke 5GB og det er 13 dager til at hun får mer data. ",
-      "requirements" : [
-        {
-          "name" : "greeting",
-          "negative" : false
-        }
-      ]
+      "template" : "Jeg sier ifra neste gang det skjer noe."
+    },
+    {
+      "id" : "template-La meg sjekke.",
+      "type" : "template",
+      "template" : "La meg sjekke."
+    },
+    {
+      "id" : "template-La meg undersøke dette for deg.",
+      "type" : "template",
+      "template" : "La meg undersøke dette for deg."
     },
     {
       "id" : "template-Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. ",
       "type" : "template",
-      "template" : "Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. ",
-      "requirements" : [
-        {
-          "name" : "greeting",
-          "negative" : false
-        }
-      ]
+      "template" : "Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. "
     },
     {
-      "id" : "template-Okay",
+      "id" : "template-Ok",
       "type" : "template",
-      "template" : "Okay"
+      "template" : "Ok"
     },
     {
       "id" : "template-Okay!",
       "type" : "template",
-      "template" : "Okay!",
+      "template" : "Okay!"
+    },
+    {
+      "id" : "template-PUK koden er 12345678",
+      "type" : "template",
+      "template" : "PUK koden er 12345678"
+    },
+    {
+      "id" : "template-PUK koden til er 12345678",
+      "type" : "template",
+      "template" : "PUK koden til er 12345678"
+    },
+    {
+      "id" : "template-PUK koden til {name} er 12345678",
+      "type" : "template",
+      "template" : "PUK koden til {name} er 12345678",
       "requirements" : [
         {
-          "name" : "rejection",
+          "name" : "name",
           "negative" : false
         }
       ]
+    },
+    {
+      "id" : "template-PUK koden ti} er 12345678",
+      "type" : "template",
+      "template" : "PUK koden ti} er 12345678"
     },
     {
       "id" : "template-Strålende!",
@@ -186,31 +152,74 @@
       "template" : "Strålende!"
     },
     {
-      "id" : "template-Vil du at jeg skal bestille en ny datapakke til henne?",
+      "id" : "template-Vil du ha PUK koden til telefon nummer: 91234567?",
       "type" : "template",
-      "template" : "Vil du at jeg skal bestille en ny datapakke til henne?",
+      "template" : "Vil du ha PUK koden til telefon nummer: 91234567?",
       "quickreplies" : [
-        "Ja, takk, 1GB",
-        "Gi henne 3GB",
-        "Kjør på med 5GB",
-        "Hun overlever uten"
+        "Ja, det stemmer",
+        "Nei, det er feil"
       ]
     },
     {
-      "id" : "template-You asked about {location}",
+      "id" : "template-Vil du ha PUK koden til telefonnummer: 91234567?",
       "type" : "template",
-      "template" : "You asked about {location}",
+      "template" : "Vil du ha PUK koden til telefonnummer: 91234567?",
+      "quickreplies" : [
+        "Ja, det stemmer",
+        "Nei, det er feil"
+      ]
+    },
+    {
+      "id" : "template-Vil du ha PUK koden til {name} med telefon nummer: 91234567?",
+      "type" : "template",
+      "template" : "Vil du ha PUK koden til {name} med telefon nummer: 91234567?",
       "requirements" : [
         {
-          "name" : "location",
+          "name" : "name",
+          "negative" : false
+        }
+      ],
+      "quickreplies" : [
+        "Ja, det stemmer",
+        "Nei, det er feil"
+      ]
+    },
+    {
+      "id" : "template-Vil du ha PUK koden til {name} telefon nummer: 91234567?",
+      "type" : "template",
+      "template" : "Vil du ha PUK koden til {name} telefon nummer: 91234567?",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        }
+      ],
+      "quickreplies" : [
+        "Ja, det stemmer",
+        "Nei, det er feil"
+      ]
+    },
+    {
+      "id" : "template-{name} har brukt 4,8 GB av sin datapakke på 5GB.",
+      "type" : "template",
+      "template" : "{name} har brukt 4,8 GB av sin datapakke på 5GB.",
+      "requirements" : [
+        {
+          "name" : "name",
           "negative" : false
         }
       ]
     },
     {
-      "id" : "template-{}",
+      "id" : "template-{name} sin PUK er 12345678",
       "type" : "template",
-      "template" : "{}"
+      "template" : "{name} sin PUK er 12345678",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        }
+      ]
     }
   ]
 }

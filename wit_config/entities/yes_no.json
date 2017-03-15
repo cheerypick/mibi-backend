@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "trait",
+      "trait"
+    ],
+    "name" : "yes_no",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "yes_no",
+    "values" : [
+      {
+        "value" : "ja"
+      },
+      {
+        "value" : "nei"
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

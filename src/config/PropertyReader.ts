@@ -1,3 +1,4 @@
+import {FireBaseConfig} from "../entities/FireBaseConfig";
 export class PropertyReader {
 
     private config = null;
@@ -12,6 +13,14 @@ export class PropertyReader {
         }
     }
 
+    public getProductionFireBaseConfiguration():FireBaseConfig{
+        return this.readFireBaseConfiguration(this.config.firebaseProduction);
+    }
+
+    public getAdrianoFireBaseConfiguration():FireBaseConfig{
+        return this.readFireBaseConfiguration(this.config.firebaseAdriano);
+    }
+
     public getAccessToken(){
         return this.config.wit.authentication.accessToken;
     }
@@ -22,5 +31,17 @@ export class PropertyReader {
 
     public getServerHost(){
         return this.config.server.connection.host;
+    }
+
+    private readFireBaseConfiguration(config):FireBaseConfig{
+        let fireBaseConfig:FireBaseConfig = {
+            apiKey: config.apiKey,
+            authDomain: config.authDomain,
+            databaseURL: config.databaseURL,
+            storageBucket: config.storageBucket,
+            messagingSenderId: config.messagingSenderId
+        };
+
+        return fireBaseConfig;
     }
 }

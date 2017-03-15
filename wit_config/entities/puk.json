@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "puk",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "puk",
+    "values" : [
+      {
+        "value" : "PUK",
+        "expressions" : [
+          "PUK"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}
