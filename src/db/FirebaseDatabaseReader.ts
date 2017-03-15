@@ -11,14 +11,14 @@ getMyVariable(necessary,variables).then(function(snapshot){
     ...
 });
  */
-export class MiBiFirebase{
+export class FirebaseDatabaseReader{
 
     private db = null;
     private propertyReader = new PropertyReader();
 
     constructor(){
-        let config = this.propertyReader.getAdrianoFireBaseConfiguration();
-        //let config = this.propertyReader.getProductionFireBaseConfiguration();
+        //let config = this.propertyReader.getAdrianoFireBaseConfiguration();
+        let config = this.propertyReader.getProductionFireBaseConfiguration();
 
         firebase.initializeApp(config);
         this.db = firebase.database();
@@ -96,5 +96,27 @@ export class MiBiFirebase{
 
     public updatePassword(companyToEdit: string, username: string, newPassword: string){
         this.db.ref('/companies/'+companyToEdit+'/admins/'+username).update({password: newPassword});
+    }
+
+    public getDeviceTokens(username: string){
+        return this.db.ref('/admins/'+username+'/tokens').once('value');
+    }
+
+    public updateDeviceTokens(username: string, token:string){
+        this.getDeviceTokens(username).then((tokens) => {
+            let tokenFound:boolean = false;
+            let tokenMap = tokens.val();
+
+           for(let key in tokenMap){
+               let currentToken = tokenMap[key];
+               if(currentToken === token){
+                   tokenFound = true;
+               }
+           }
+
+            if(tokenFound == false){
+                this.db.ref('/admins/'+username+'/tokens/').push(token);
+            }
+        });
     }
 }

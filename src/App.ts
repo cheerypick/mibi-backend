@@ -2,7 +2,9 @@ import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
-import UserRouter from "./routes/UserRouter";
+import {NotificationRouter} from "./routes/NotificationRouter";
+import {UserRouter} from "./routes/UserRouter";
+
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -37,8 +39,13 @@ class App {
                 message: 'Hello World!'
             });
         });
+
+        const notificationRoutes = new NotificationRouter();
+        const userRouter = new UserRouter();
+
         this.express.use('/', router);
-        this.express.use('/api/v1/users', UserRouter);
+        this.express.use('/api/v1/users', userRouter.router);
+        this.express.use('/api/v1/push', notificationRoutes.router);
     }
 
 }

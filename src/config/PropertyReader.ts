@@ -33,6 +33,10 @@ export class PropertyReader {
         return this.config.server.connection.host;
     }
 
+    public getPushNotificationServerKey(){
+        return this.config.pushNotificationSetup.serverKey;
+    }
+
     private readFireBaseConfiguration(config):FireBaseConfig{
         let fireBaseConfig:FireBaseConfig = {
             apiKey: config.apiKey,
