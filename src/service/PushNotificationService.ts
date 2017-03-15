@@ -4,11 +4,13 @@ import {FirebaseDatabaseReader} from "../db/FirebaseDatabaseReader";
 import {fbDbReader} from "../index";
 
 /**
- *
+ * Example usage of class:
+ * let pushNotificationService = new PushNotificationService();
+ * let result = pushNotificationService.sendNotificationToAll(new Notification("From web", "Only a test", "No action"));
  */
-
 export class PushNotificationService{
 
+    readonly ALL = "/topics/all";
     readonly IOS = "/topics/ios";
     readonly ANDROID = "/topics/android";
 
@@ -20,8 +22,15 @@ export class PushNotificationService{
         this.fbDatabaseReader = fbDbReader;
     }
 
-    public sendNotificationToAllUsers(notification:Notification){
+    public sendNotificationToAll(notification:Notification){
+        this.fbRestClient.postNotification(this.ALL, notification);
+    }
+
+    public sendNotificationToIos(notification:Notification){
         this.fbRestClient.postNotification(this.IOS, notification);
+    }
+
+    public sendNotificationToAndroid(notification:Notification){
         this.fbRestClient.postNotification(this.ANDROID, notification);
     }
 

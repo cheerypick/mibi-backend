@@ -41,8 +41,3 @@ export class UserRouter {
         }
     }
 }
-
-const userRoutes = new UserRouter();
-export default userRoutes.router;
-
-
