@@ -10,6 +10,30 @@
     "id" : "compliment",
     "values" : [
       {
+        "value" : "awesome",
+        "expressions" : [
+          "awesome"
+        ]
+      },
+      {
+        "value" : "bra ",
+        "expressions" : [
+          "bra "
+        ]
+      },
+      {
+        "value" : "flink",
+        "expressions" : [
+          "flink"
+        ]
+      },
+      {
+        "value" : "kul",
+        "expressions" : [
+          "kul"
+        ]
+      },
+      {
         "value" : "smart",
         "expressions" : [
           "smart"

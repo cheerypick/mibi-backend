@@ -1,8 +1,8 @@
 {
   "version" : 20160513,
-  "zip-command" : "zip MiBi.zip MiBi/app.json MiBi/entities/*.json MiBi/actions.json MiBi/stories.json MiBi/expressions.json",
+  "zip-command" : "zip MiBi_v2.zip MiBi_v2/app.json MiBi_v2/entities/*.json MiBi_v2/actions.json MiBi_v2/stories.json MiBi_v2/expressions.json",
   "data" : {
-    "name" : "MiBi",
+    "name" : "MiBi_v2",
     "description" : "",
     "lang" : "nb"
   }

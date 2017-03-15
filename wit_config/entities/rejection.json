@@ -28,9 +28,27 @@
         ]
       },
       {
+        "value" : "Nei, det er ingen av de nummerene",
+        "expressions" : [
+          "Nei, det er ingen av de nummerene"
+        ]
+      },
+      {
         "value" : "feil",
         "expressions" : [
           "feil"
+        ]
+      },
+      {
+        "value" : "slutt med dette",
+        "expressions" : [
+          "slutt med dette"
+        ]
+      },
+      {
+        "value" : "stop",
+        "expressions" : [
+          "stop"
         ]
       }
     ],

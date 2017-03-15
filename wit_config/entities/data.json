@@ -50,6 +50,12 @@
         "expressions" : [
           "B"
         ]
+      },
+      {
+        "value" : "data",
+        "expressions" : [
+          "data"
+        ]
       }
     ],
     "doc" : "User-defined entity",

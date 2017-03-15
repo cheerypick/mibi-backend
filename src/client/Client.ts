@@ -5,8 +5,6 @@ import {User} from "../entities/User";
 
 export class Client {
 
-    id = null;
-
     public authenticate(io, mibiFirebase:FirebaseDatabaseReader){
         let username = null;
         let password = null;
@@ -16,8 +14,6 @@ export class Client {
                 //get credentials sent by the client
                 username = data.username;
                 password = data.password;
-
-                this.id = io.sessionId;
 
                 mibiFirebase.getAdmin(username).then((snapshot) => {
                     let userNotFound = snapshot.val() == null;
@@ -39,18 +35,18 @@ export class Client {
         });
     }
 
-    public getMessage(io, propertyReader){
+    public getMessage(io, propertyReader, mibiFirebase:FirebaseDatabaseReader){
         io.on('connection', function(socket) {
             console.log(socket.id + ' connected');
             socket.on('message', function(msg) {
-                console.log(JSON.stringify(socket._userInfo));
+                console.log(msg);
                 io.to(socket.id).emit('message', msg);
 
                 if(MessageValidator.initiationMessage(msg)){
                     msg.text = 'Hei';
                 }
 
-                MibiWit.sendMessage(io, msg, propertyReader, this.id);
+                MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase);
                 // console.log(msg);
             });
         });

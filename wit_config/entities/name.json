@@ -52,6 +52,12 @@
         ]
       },
       {
+        "value" : "Jonas",
+        "expressions" : [
+          "Jonas"
+        ]
+      },
+      {
         "value" : "Katrine",
         "expressions" : [
           "Katrine"
@@ -73,6 +79,12 @@
         "value" : "Line ",
         "expressions" : [
           "Line "
+        ]
+      },
+      {
+        "value" : "Line Johnsen",
+        "expressions" : [
+          "Line Johnsen"
         ]
       },
       {
@@ -112,6 +124,12 @@
         ]
       },
       {
+        "value" : "Ove",
+        "expressions" : [
+          "Ove"
+        ]
+      },
+      {
         "value" : "Per",
         "expressions" : [
           "Per"
@@ -133,6 +151,24 @@
         "value" : "Thomas ",
         "expressions" : [
           "Thomas "
+        ]
+      },
+      {
+        "value" : "erik",
+        "expressions" : [
+          "erik"
+        ]
+      },
+      {
+        "value" : "henne",
+        "expressions" : [
+          "henne"
+        ]
+      },
+      {
+        "value" : "tone",
+        "expressions" : [
+          "tone"
         ]
       }
     ],
