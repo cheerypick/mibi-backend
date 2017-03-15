@@ -53,6 +53,9 @@ export class MibiWit {
             },
             getPuk({context, entities}) {
                 return MibiWitFunctions.getPuk(context, entities, socket, mibiFirebase);
+            },
+            getInvoice({context, entities}) {
+                return MibiWitFunctions.getInvoice(context, entities, io, socket, mibiFirebase);
             }
         };
         return new Wit({accessToken, actions});

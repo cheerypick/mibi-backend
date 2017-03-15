@@ -1,6 +1,104 @@
 {
   "data" : [
     {
+      "id" : "function-getFa",
+      "type" : "function",
+      "name" : "getFa"
+    },
+    {
+      "id" : "function-getFaktura",
+      "type" : "function",
+      "name" : "getFaktura"
+    },
+    {
+      "id" : "function-getInvoice",
+      "type" : "function",
+      "name" : "getInvoice"
+    },
+    {
+      "id" : "function-getPhoneNumber",
+      "type" : "function",
+      "name" : "getPhoneNumber"
+    },
+    {
+      "id" : "function-getPuk",
+      "type" : "function",
+      "name" : "getPuk"
+    },
+    {
+      "id" : "function-getPukPhoneNumber",
+      "type" : "function",
+      "name" : "getPukPhoneNumber"
+    },
+    {
+      "id" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer: {link}",
+      "type" : "template",
+      "template" : " Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer: {link}",
+      "requirements" : [
+        {
+          "name" : "link",
+          "negative" : false
+        },
+        {
+          "name" : "time",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template- Selvfølgelig. Dere har totalt brukt {total} i {datetime}. Her er en link med flere detaljer: {link}",
+      "type" : "template",
+      "template" : " Selvfølgelig. Dere har totalt brukt {total} i {datetime}. Her er en link med flere detaljer: {link}",
+      "requirements" : [
+        {
+          "name" : "datetime",
+          "negative" : false
+        },
+        {
+          "name" : "link",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template- Selvfølgelig. Dere har totalt brukt {total} i {time}. Her er en link med flere detaljer: {link}",
+      "type" : "template",
+      "template" : " Selvfølgelig. Dere har totalt brukt {total} i {time}. Her er en link med flere detaljer: {link}",
+      "requirements" : [
+        {
+          "name" : "link",
+          "negative" : false
+        },
+        {
+          "name" : "time",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template- Selvfølgelig. Her er linken til fakturaen for {time}:  ",
+      "type" : "template",
+      "template" : " Selvfølgelig. Her er linken til fakturaen for {time}:  ",
+      "requirements" : [
+        {
+          "name" : "time",
+          "negative" : false
+        }
+      ]
+    },
+    {
       "id" : "template- Vil du at jeg skal bestille en ny datapakke til henne? ",
       "type" : "template",
       "template" : " Vil du at jeg skal bestille en ny datapakke til henne? ",
@@ -15,6 +113,17 @@
       "id" : "template-Beklager, jeg finner ingen andre nummere for Line!",
       "type" : "template",
       "template" : "Beklager, jeg finner ingen andre nummere for Line!"
+    },
+    {
+      "id" : "template-Beklager, jeg finner ingen andre nummere for {name}",
+      "type" : "template",
+      "template" : "Beklager, jeg finner ingen andre nummere for {name}",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        }
+      ]
     },
     {
       "id" : "template-Beklager, jeg finner ingen andre nummere for {name}!",
@@ -40,7 +149,13 @@
     {
       "id" : "template-Beklager, jeg prøver bare å hjelpe.",
       "type" : "template",
-      "template" : "Beklager, jeg prøver bare å hjelpe."
+      "template" : "Beklager, jeg prøver bare å hjelpe.",
+      "requirements" : [
+        {
+          "name" : "greeting",
+          "negative" : true
+        }
+      ]
     },
     {
       "id" : "template-Da har jeg bestilt {data} til henne.",
@@ -65,9 +180,24 @@
       ]
     },
     {
+      "id" : "template-Det var",
+      "type" : "template",
+      "template" : "Det var"
+    },
+    {
       "id" : "template-Hei Ole!",
       "type" : "template",
       "template" : "Hei Ole!"
+    },
+    {
+      "id" : "template-Hei!",
+      "type" : "template",
+      "template" : "Hei!"
+    },
+    {
+      "id" : "template-Hvilket nummer vil du ha PUK for?",
+      "type" : "template",
+      "template" : "Hvilket nummer vil du ha PUK for?"
     },
     {
       "id" : "template-Jeg finner ingen andre nummere",
@@ -108,7 +238,18 @@
     {
       "id" : "template-Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. ",
       "type" : "template",
-      "template" : "Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. "
+      "template" : "Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. ",
+      "requirements" : [
+        {
+          "name" : "datausage",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Link",
+      "type" : "template",
+      "template" : "Link"
     },
     {
       "id" : "template-Ok",
@@ -147,9 +288,36 @@
       "template" : "PUK koden ti} er 12345678"
     },
     {
+      "id" : "template-Selvfølgelig. Her er linken til fakturaen for {time}: ",
+      "type" : "template",
+      "template" : "Selvfølgelig. Her er linken til fakturaen for {time}: ",
+      "requirements" : [
+        {
+          "name" : "time",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Selvfølgelig. Her er linken til fakturaen: ",
+      "type" : "template",
+      "template" : "Selvfølgelig. Her er linken til fakturaen: ",
+      "requirements" : [
+        {
+          "name" : "faktura",
+          "negative" : false
+        }
+      ]
+    },
+    {
       "id" : "template-Strålende!",
       "type" : "template",
       "template" : "Strålende!"
+    },
+    {
+      "id" : "template-Takk, hyggelig å høre!",
+      "type" : "template",
+      "template" : "Takk, hyggelig å høre!"
     },
     {
       "id" : "template-Vil du ha PUK koden til telefon nummer: 91234567?",
@@ -200,6 +368,22 @@
       ]
     },
     {
+      "id" : "template-asd",
+      "type" : "template",
+      "template" : "asd"
+    },
+    {
+      "id" : "template-bot sends {numbers}",
+      "type" : "template",
+      "template" : "bot sends {numbers}",
+      "requirements" : [
+        {
+          "name" : "numbers",
+          "negative" : false
+        }
+      ]
+    },
+    {
       "id" : "template-{name} har brukt 4,8 GB av sin datapakke på 5GB.",
       "type" : "template",
       "template" : "{name} har brukt 4,8 GB av sin datapakke på 5GB.",
@@ -220,6 +404,87 @@
           "negative" : false
         }
       ]
+    },
+    {
+      "id" : "template-{name} sin PUK med nummer {number} er {puk}",
+      "type" : "template",
+      "template" : "{name} sin PUK med nummer {number} er {puk}",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        },
+        {
+          "name" : "number",
+          "negative" : false
+        },
+        {
+          "name" : "puk",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{name} sin PUK med nummer {number} er:         {puk}",
+      "type" : "template",
+      "template" : "{name} sin PUK med nummer {number} er:         {puk}",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        },
+        {
+          "name" : "number",
+          "negative" : false
+        },
+        {
+          "name" : "puk",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{name} sin PUK med nummer {number} er:    {puk}",
+      "type" : "template",
+      "template" : "{name} sin PUK med nummer {number} er:    {puk}",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        },
+        {
+          "name" : "number",
+          "negative" : false
+        },
+        {
+          "name" : "puk",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{name} sin PUK med nummer {number} er:{puk}",
+      "type" : "template",
+      "template" : "{name} sin PUK med nummer {number} er:{puk}",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        },
+        {
+          "name" : "number",
+          "negative" : false
+        },
+        {
+          "name" : "puk",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{}",
+      "type" : "template",
+      "template" : "{}"
     }
   ]
 }

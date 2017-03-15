@@ -120,6 +120,39 @@
       "text" : "123"
     },
     {
+      "text" : "1234",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "1234",
+          "start" : 0,
+          "end" : 4
+        }
+      ]
+    },
+    {
+      "text" : "12345",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "12345",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "12345678",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "12345678",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
       "text" : "19048rtu09weuhsgoigøzhzdnflvnmlhåIOEWU9013Å4829YTUTHWNEØKJFN<ALJPOVHåhuwqurh¨",
       "entities" : [
         {
@@ -156,6 +189,61 @@
           "value" : "212",
           "start" : 0,
           "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "45456565",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "45456565",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "45696989",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "45696989",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "54321",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "54321",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "91454568",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "91454568",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "94685512",
+      "entities" : [
+        {
+          "entity" : "number",
+          "value" : "94685512",
+          "start" : 0,
+          "end" : 8
         }
       ]
     },
@@ -453,11 +541,45 @@
       ]
     },
     {
+      "text" : "Gi meg puk kode til Jonas",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"Gi meg\"",
+          "start" : 0,
+          "end" : 6
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 7,
+          "end" : 10
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Jonas\"",
+          "start" : 20,
+          "end" : 25
+        }
+      ]
+    },
+    {
       "text" : "HEI DU",
       "entities" : [
         {
           "entity" : "greeting",
           "value" : "\"hei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
+      "text" : "HHH",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"HHH\"",
           "start" : 0,
           "end" : 3
         }
@@ -593,6 +715,17 @@
       ]
     },
     {
+      "text" : "Hei!",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"hei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
       "text" : "Hei! ",
       "entities" : [
         {
@@ -651,6 +784,52 @@
       ]
     },
     {
+      "text" : "Hva er PUK koden for Marius",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"Hva \"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 7,
+          "end" : 10
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Marius\"",
+          "start" : 21,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "Hva er PUK koden til Katrine?",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"Hva \"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 7,
+          "end" : 10
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Katrine\"",
+          "start" : 21,
+          "end" : 28
+        }
+      ]
+    },
+    {
       "text" : "Hva er PUK koden til Line?",
       "entities" : [
         {
@@ -674,7 +853,7 @@
       ]
     },
     {
-      "text" : "Hva er forbruk denne m�ned",
+      "text" : "Hva er forbruk denne måned",
       "entities" : [
         {
           "entity" : "question",
@@ -803,6 +982,35 @@
     },
     {
       "text" : "Hvor gammel er du"
+    },
+    {
+      "text" : "Hvor mye data har Erik brukt?",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"Hvor mye\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"data\"",
+          "start" : 9,
+          "end" : 13
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Erik\"",
+          "start" : 18,
+          "end" : 22
+        },
+        {
+          "entity" : "usage",
+          "value" : "\"brukt\"",
+          "start" : 23,
+          "end" : 28
+        }
+      ]
     },
     {
       "text" : "Hvor mye data har Hans brukt?",
@@ -1245,6 +1453,12 @@
           "value" : "\"1GB\"",
           "start" : 10,
           "end" : 13
+        },
+        {
+          "entity" : "number",
+          "value" : "79",
+          "start" : 15,
+          "end" : 17
         }
       ]
     },
@@ -1287,6 +1501,17 @@
           "value" : "\" 5GB\"",
           "start" : 10,
           "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "Jdjdjdjdj\nJsdjdjjd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Jdjdjdjdj\\nJsdjdjjd\"",
+          "start" : 0,
+          "end" : 18
         }
       ]
     },
@@ -1462,6 +1687,79 @@
       ]
     },
     {
+      "text" : "Kan jeg få en PUK kode for Marius",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 14,
+          "end" : 17
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Marius\"",
+          "start" : 27,
+          "end" : 33
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få faktura for mars?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "time",
+          "value" : "\"mars\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få fakturakopi for mars?",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"faktura\""
+        },
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"fakturakopi\"",
+          "start" : 11,
+          "end" : 22
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 27,
+          "end" : 31
+        }
+      ]
+    },
+    {
       "text" : "Katten døde :(",
       "entities" : [
         {
@@ -1507,6 +1805,17 @@
           "value" : "\"5GB\"",
           "start" : 12,
           "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "Ksjfjd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Ksjfjd\"",
+          "start" : 0,
+          "end" : 6
         }
       ]
     },
@@ -1561,6 +1870,23 @@
           "value" : "\"dum\"",
           "start" : 8,
           "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "Mibi du er dum",
+      "entities" : [
+        {
+          "entity" : "bot",
+          "value" : "\"mibi\"",
+          "start" : 0,
+          "end" : 4
+        },
+        {
+          "entity" : "insult",
+          "value" : "\"dum\"",
+          "start" : 11,
+          "end" : 14
         }
       ]
     },
@@ -1633,6 +1959,35 @@
       ]
     },
     {
+      "text" : "Mibi, kan jeg få PUK for min kolega Ove?",
+      "entities" : [
+        {
+          "entity" : "bot",
+          "value" : "\"mibi\"",
+          "start" : 0,
+          "end" : 4
+        },
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 10,
+          "end" : 13
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 17,
+          "end" : 20
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Ove\"",
+          "start" : 36,
+          "end" : 39
+        }
+      ]
+    },
+    {
       "text" : "Mibi?",
       "entities" : [
         {
@@ -1697,6 +2052,17 @@
       ]
     },
     {
+      "text" : "Nei, det er ingen av de nummerene",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"Nei, det er ingen av de nummerene\"",
+          "start" : 0,
+          "end" : 33
+        }
+      ]
+    },
+    {
       "text" : "Neimen, det er ikke bra",
       "entities" : [
         {
@@ -1757,6 +2123,23 @@
           "value" : "\"4GB\"",
           "start" : 6,
           "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "PUK til Line",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line\"",
+          "start" : 8,
+          "end" : 12
         }
       ]
     },
@@ -1875,6 +2258,28 @@
       ]
     },
     {
+      "text" : "aøsldlkæØLKÆlkøadæØÆADSLK",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"aøsldlkæØLKÆlkøadæØÆADSLK\"",
+          "start" : 0,
+          "end" : 25
+        }
+      ]
+    },
+    {
+      "text" : "datausage",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        }
+      ]
+    },
+    {
       "text" : "denne uken"
     },
     {
@@ -1925,6 +2330,17 @@
       ]
     },
     {
+      "text" : "dskølsdkaødaskl",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"dskølsdkaødaskl\"",
+          "start" : 0,
+          "end" : 15
+        }
+      ]
+    },
+    {
       "text" : "du er IdIOt",
       "entities" : [
         {
@@ -1932,6 +2348,32 @@
           "value" : "\"idiot\"",
           "start" : 6,
           "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "du er awesome",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "compliment",
+          "value" : "\"awesome\"",
+          "start" : 6,
+          "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "du er bra ",
+      "entities" : [
+        {
+          "entity" : "compliment",
+          "value" : "\"bra \"",
+          "start" : 6,
+          "end" : 10
         }
       ]
     },
@@ -1977,6 +2419,36 @@
           "value" : "\"mibi\"",
           "start" : 14,
           "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "du er flink",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"compliment\""
+        },
+        {
+          "entity" : "compliment",
+          "value" : "\"flink\"",
+          "start" : 6,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "du er kul",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "compliment",
+          "value" : "\"kul\"",
+          "start" : 6,
+          "end" : 9
         }
       ]
     },
@@ -2057,6 +2529,37 @@
           "value" : "\"dum\"",
           "start" : 6,
           "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "faktura",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "fakturakopi",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"faktura\""
+        }
+      ]
+    },
+    {
+      "text" : "februar",
+      "entities" : [
+        {
+          "entity" : "time",
+          "value" : "\"februar\"",
+          "start" : 0,
+          "end" : 7
         }
       ]
     },
@@ -2160,6 +2663,17 @@
       ]
     },
     {
+      "text" : "g",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"g\"",
+          "start" : 0,
+          "end" : 1
+        }
+      ]
+    },
+    {
       "text" : "gdasaskjasdlkadS",
       "entities" : [
         {
@@ -2200,6 +2714,52 @@
           "value" : "\"3GB\"",
           "start" : 3,
           "end" : 6
+        }
+      ]
+    },
+    {
+      "text" : "gi meg katrine sin puk kode",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"Gi meg\"",
+          "start" : 0,
+          "end" : 6
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Katrine\"",
+          "start" : 7,
+          "end" : 14
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 19,
+          "end" : 22
+        }
+      ]
+    },
+    {
+      "text" : "gi meg marius sin puk",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"Gi meg\"",
+          "start" : 0,
+          "end" : 6
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Marius\"",
+          "start" : 7,
+          "end" : 13
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 18,
+          "end" : 21
         }
       ]
     },
@@ -2311,6 +2871,23 @@
       ]
     },
     {
+      "text" : "hei hei",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"hei\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "greeting",
+          "value" : "\"hei\"",
+          "start" : 4,
+          "end" : 7
+        }
+      ]
+    },
+    {
       "text" : "hei mibi",
       "entities" : [
         {
@@ -2361,6 +2938,17 @@
       ]
     },
     {
+      "text" : "hsløæfgldelj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"hsløæfgldelj\"",
+          "start" : 0,
+          "end" : 12
+        }
+      ]
+    },
+    {
       "text" : "hun overlever uten",
       "entities" : [
         {
@@ -2373,6 +2961,35 @@
     },
     {
       "text" : "hva er været i oslo"
+    },
+    {
+      "text" : "hvor mye data har Jeg brukt?",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"Hvor mye\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"data\"",
+          "start" : 9,
+          "end" : 13
+        },
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 18,
+          "end" : 21
+        },
+        {
+          "entity" : "usage",
+          "value" : "\"brukt\"",
+          "start" : 22,
+          "end" : 27
+        }
+      ]
     },
     {
       "text" : "hvor mye data har hans brukt?",
@@ -2407,6 +3024,12 @@
           "end" : 8
         },
         {
+          "entity" : "data",
+          "value" : "\"data\"",
+          "start" : 9,
+          "end" : 13
+        },
+        {
           "entity" : "user",
           "value" : "\"jeg\"",
           "start" : 18,
@@ -2417,6 +3040,35 @@
           "value" : "\"brukt\"",
           "start" : 22,
           "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "hvor mye data har marius brukt?",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"Hvor mye\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"data\"",
+          "start" : 9,
+          "end" : 13
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Marius\"",
+          "start" : 18,
+          "end" : 24
+        },
+        {
+          "entity" : "usage",
+          "value" : "\"brukt\"",
+          "start" : 25,
+          "end" : 30
         }
       ]
     },
@@ -2557,6 +3209,17 @@
       ]
     },
     {
+      "text" : "ijlkjghftvhjøn",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"ijlkjghftvhjøn\"",
+          "start" : 0,
+          "end" : 14
+        }
+      ]
+    },
+    {
       "text" : "ikke",
       "entities" : [
         {
@@ -2577,6 +3240,28 @@
       ]
     },
     {
+      "text" : "ja",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Ja\"",
+          "start" : 0,
+          "end" : 2
+        }
+      ]
+    },
+    {
+      "text" : "ja line",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"ja line\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
       "text" : "ja takk",
       "entities" : [
         {
@@ -2584,6 +3269,32 @@
           "value" : "\"ja takk\"",
           "start" : 0,
           "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "ja, takk",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "acceptance",
+          "value" : "\"Ja, takk\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "januar",
+      "entities" : [
+        {
+          "entity" : "time",
+          "value" : "\"januar\"",
+          "start" : 0,
+          "end" : 6
         }
       ]
     },
@@ -2656,6 +3367,44 @@
       "text" : "jøuimikløæ'6545komk"
     },
     {
+      "text" : "kan du sende meg fakturakopi for mars?",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"faktura\""
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"fakturakopi\"",
+          "start" : 17,
+          "end" : 28
+        },
+        {
+          "entity" : "time",
+          "value" : "\"mars\"",
+          "start" : 33,
+          "end" : 37
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        }
+      ]
+    },
+    {
       "text" : "kan jeg få puk koden til line?",
       "entities" : [
         {
@@ -2675,6 +3424,29 @@
           "value" : "\"line\"",
           "start" : 25,
           "end" : 29
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få puk koden til marius?",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"Kan jeg få\"",
+          "start" : 0,
+          "end" : 10
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Marius\"",
+          "start" : 25,
+          "end" : 31
         }
       ]
     },
@@ -2914,6 +3686,15 @@
       ]
     },
     {
+      "text" : "men du er ikke wit",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"negative\""
+        }
+      ]
+    },
+    {
       "text" : "mibi er dum",
       "entities" : [
         {
@@ -2979,6 +3760,17 @@
       ]
     },
     {
+      "text" : "nei",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"Nei\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
       "text" : "nlkøjasdf'",
       "entities" : [
         {
@@ -3023,6 +3815,23 @@
       ]
     },
     {
+      "text" : "puk line",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"line\"",
+          "start" : 4,
+          "end" : 8
+        }
+      ]
+    },
+    {
       "text" : "puk til Alexander",
       "entities" : [
         {
@@ -3057,6 +3866,40 @@
       ]
     },
     {
+      "text" : "puk til Line",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line\"",
+          "start" : 8,
+          "end" : 12
+        }
+      ]
+    },
+    {
+      "text" : "puk til Line Johnsen",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line Johnsen\"",
+          "start" : 8,
+          "end" : 20
+        }
+      ]
+    },
+    {
       "text" : "puk til Maria",
       "entities" : [
         {
@@ -3074,6 +3917,57 @@
       ]
     },
     {
+      "text" : "puk til adriano",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Adriano\"",
+          "start" : 8,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "puk til erik",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"erik\"",
+          "start" : 8,
+          "end" : 12
+        }
+      ]
+    },
+    {
+      "text" : "puk til lene",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Lene\"",
+          "start" : 8,
+          "end" : 12
+        }
+      ]
+    },
+    {
       "text" : "puk til line",
       "entities" : [
         {
@@ -3085,6 +3979,57 @@
         {
           "entity" : "name",
           "value" : "\"line\"",
+          "start" : 8,
+          "end" : 12
+        }
+      ]
+    },
+    {
+      "text" : "puk til line johnsen",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line Johnsen\"",
+          "start" : 8,
+          "end" : 20
+        }
+      ]
+    },
+    {
+      "text" : "puk til ole",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Ole\"",
+          "start" : 8,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "puk til tone",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"tone\"",
           "start" : 8,
           "end" : 12
         }
@@ -3226,6 +4171,17 @@
       ]
     },
     {
+      "text" : "slutt med dette",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"slutt med dette\"",
+          "start" : 0,
+          "end" : 15
+        }
+      ]
+    },
+    {
       "text" : "ss",
       "entities" : [
         {
@@ -3233,6 +4189,17 @@
           "value" : "\"ss\"",
           "start" : 0,
           "end" : 2
+        }
+      ]
+    },
+    {
+      "text" : "stop",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"stop\"",
+          "start" : 0,
+          "end" : 4
         }
       ]
     },
@@ -3309,6 +4276,17 @@
           "value" : "\"welklfæøfsdlkæfkldsøs\"",
           "start" : 0,
           "end" : 21
+        }
+      ]
+    },
+    {
+      "text" : "wit er dum",
+      "entities" : [
+        {
+          "entity" : "insult",
+          "value" : "\"dum\"",
+          "start" : 7,
+          "end" : 10
         }
       ]
     },

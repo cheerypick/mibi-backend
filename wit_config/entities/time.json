@@ -16,6 +16,12 @@
         ]
       },
       {
+        "value" : "august",
+        "expressions" : [
+          "august"
+        ]
+      },
+      {
         "value" : "denne måneden",
         "expressions" : [
           "denne måneden"
@@ -28,9 +34,39 @@
         ]
       },
       {
+        "value" : "februar",
+        "expressions" : [
+          "februar"
+        ]
+      },
+      {
         "value" : "i fjor",
         "expressions" : [
           "i fjor"
+        ]
+      },
+      {
+        "value" : "januar",
+        "expressions" : [
+          "januar"
+        ]
+      },
+      {
+        "value" : "juli",
+        "expressions" : [
+          "juli"
+        ]
+      },
+      {
+        "value" : "juni",
+        "expressions" : [
+          "juni"
+        ]
+      },
+      {
+        "value" : "mai",
+        "expressions" : [
+          "mai"
         ]
       },
       {
@@ -43,6 +79,18 @@
         "value" : "november",
         "expressions" : [
           "november"
+        ]
+      },
+      {
+        "value" : "oktober",
+        "expressions" : [
+          "oktober"
+        ]
+      },
+      {
+        "value" : "september",
+        "expressions" : [
+          "september"
         ]
       }
     ],

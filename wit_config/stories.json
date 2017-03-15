@@ -4,44 +4,13 @@
       "name" : "",
       "turns" : [
         {
-          "user" : "Hva er vårt forbruk denne måneden?",
-          "entities" : [
-            {
-              "entity" : "question",
-              "value" : "\"Hva \"",
-              "start" : 0,
-              "end" : 4
-            },
-            {
-              "entity" : "intent",
-              "value" : "\"forbruk \"",
-              "start" : 12,
-              "end" : 20
-            },
-            {
-              "entity" : "time",
-              "value" : "\"denne måneden\"",
-              "start" : 20,
-              "end" : 33
-            }
-          ],
-          "operations" : [
-            {
-              "action" : "template-Dere har brukt 1000,- {time}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name" : "",
-      "turns" : [
-        {
           "user" : "jzshdzdlkj3",
           "entities" : [
             {
-              "entity" : "intent",
-              "value" : "\"\""
+              "entity" : "nonsense",
+              "value" : "\"jzshdzdlkj3\"",
+              "start" : 0,
+              "end" : 11
             }
           ],
           "operations" : [
@@ -152,7 +121,7 @@
           ],
           "operations" : [
             {
-              "action" : "template-Vil du ha PUK koden til telefonnummer: 91234567?"
+              "action" : "function-getPukPhoneNumber"
             }
           ]
         },
@@ -160,36 +129,53 @@
           "branches" : [
             [
               {
-                "user" : "Ja, det stemmer",
+                "user" : "12345678",
                 "entities" : [
                   {
-                    "entity" : "acceptance",
-                    "value" : "\"Ja, det stemmer\"",
+                    "entity" : "number",
+                    "value" : "12345678",
                     "start" : 0,
-                    "end" : 15
+                    "end" : 8
                   }
                 ],
                 "operations" : [
                   {
-                    "action" : "template-PUK koden er 12345678"
+                    "action" : "function-getPuk"
+                  },
+                  {
+                    "branches" : [
+                      {
+                        "predicates" : [
+                          {
+                            "name" : "number puk name",
+                            "negative" : false
+                          }
+                        ],
+                        "operations" : [
+                          {
+                            "action" : "template-{name} sin PUK med nummer {number} er:         {puk}"
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
             ],
             [
               {
-                "user" : "Nei, det er feil",
+                "user" : "Nei, det er ingen av de nummerene",
                 "entities" : [
                   {
                     "entity" : "rejection",
-                    "value" : "\"Nei, det er feil\"",
+                    "value" : "\"Nei, det er ingen av de nummerene\"",
                     "start" : 0,
-                    "end" : 16
+                    "end" : 33
                   }
                 ],
                 "operations" : [
                   {
-                    "action" : "template-Beklager, jeg finner ingen andre nummere å sjekke"
+                    "action" : "template-Beklager, jeg finner ingen andre nummere for {name}"
                   }
                 ]
               }
@@ -202,13 +188,13 @@
       "name" : "Update data",
       "turns" : [
         {
-          "user" : "Hei",
+          "user" : "datausage",
           "entities" : [
             {
-              "entity" : "greeting",
-              "value" : "\"hei\"",
+              "entity" : "datausage",
+              "value" : "\"datausage\"",
               "start" : 0,
-              "end" : 3
+              "end" : 9
             }
           ],
           "operations" : [
@@ -336,6 +322,129 @@
                 ]
               }
             ]
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Kan jeg få fakturakopi for mars?",
+          "entities" : [
+            {
+              "entity" : "intent",
+              "value" : "\"faktura\""
+            },
+            {
+              "entity" : "user",
+              "value" : "\"jeg\"",
+              "start" : 4,
+              "end" : 7
+            },
+            {
+              "entity" : "faktura",
+              "value" : "\"fakturakopi\"",
+              "start" : 11,
+              "end" : 22
+            },
+            {
+              "entity" : "datetime",
+              "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+              "start" : 27,
+              "end" : 31
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "function-getInvoice"
+            },
+            {
+              "branches" : [
+                {
+                  "predicates" : [
+                    {
+                      "name" : "total link time",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer: {link}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "du er flink",
+          "entities" : [
+            {
+              "entity" : "intent",
+              "value" : "\"compliment\""
+            },
+            {
+              "entity" : "compliment",
+              "value" : "\"flink\"",
+              "start" : 6,
+              "end" : 11
+            }
+          ],
+          "operations" : [
+            {
+              "bookmark" : "thanks"
+            },
+            {
+              "action" : "template-Takk, hyggelig å høre!"
+            }
+          ]
+        },
+        {
+          "user" : "du er kul",
+          "entities" : [
+            {
+              "entity" : "sentiment",
+              "value" : "\"positive\""
+            },
+            {
+              "entity" : "compliment",
+              "value" : "\"kul\"",
+              "start" : 6,
+              "end" : 9
+            }
+          ],
+          "operations" : [
+            {
+              "jump" : "thanks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Hei",
+          "entities" : [
+            {
+              "entity" : "greeting",
+              "value" : "\"hei\"",
+              "start" : 0,
+              "end" : 3
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Hei!"
+            }
           ]
         }
       ]
