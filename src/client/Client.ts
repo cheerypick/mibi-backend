@@ -16,13 +16,13 @@ export class Client {
                 password = data.password;
 
                 mibiFirebase.getAdmin(username).then(snapshot => {
-                    let userNotFound = snapshot.val() == null;
+                    let userNotFound = snapshot == null;
 
                     if(userNotFound){
                         return callback(new Error("User not found"));
                     }else{
-                        companyAuth = snapshot.val().companyName;
-                        return callback(null, password===snapshot.val().password);
+                        companyAuth = snapshot.companyName;
+                        return callback(null, password===snapshot.password);
                     }
                 });
             },

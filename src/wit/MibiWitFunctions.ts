@@ -5,7 +5,7 @@ export class MibiWitFunctions{
 
     public static getPukPhoneNumber(context, entities, io, socket, mibiFirebase) {
         mibiFirebase.getNumbers(socket._userInfo.company,entities.name[0].value).then((numbers) => {
-            let numberNotFound = numbers.val() == null;
+            let numberNotFound = numbers == null;
 
             if(numberNotFound){
                 let response = {
@@ -15,11 +15,11 @@ export class MibiWitFunctions{
             }else {
                 let quickreplies = [];
 
-                let array = numbers.val();
+                // let array = numbers.val();
 
-                for (let number in array) {
-                    for (let num in array[number]) {
-                        quickreplies.push(array[number][num]);
+                for (let number in numbers) {
+                    for (let num in numbers[number]) {
+                        quickreplies.push(numbers[number][num]);
                     }
                 }
                 quickreplies.push("Nei, det er ingen av de nummerene");
@@ -35,8 +35,8 @@ export class MibiWitFunctions{
 
     public static getPuk(context, entities, socket, mibiFirebase) {
         return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-            context.name = _.startCase(subscription.val().name);
-            context.puk = subscription.val().puk;
+            context.name = _.startCase(subscription.name);
+            context.puk = subscription.puk;
             context.number = entities.number[0].value;
             return context;
         });
@@ -60,10 +60,10 @@ export class MibiWitFunctions{
                 let link = 'https://fakturahotel.no/' + socket._userInfo.company + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
                 link = _.replace(link, ' ', '_');
 
-                let array = subscriptions.val();
+                // let array = subscriptions.val();
 
-                for (let subscription in array) {
-                    total += array[subscription].priceTotal;
+                for (let subscription in subscriptions) {
+                    total += subscriptions[subscription].priceTotal;
                 }
 
                 context.time = dateformat(date, 'mm/yyyy');

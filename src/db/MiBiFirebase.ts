@@ -25,7 +25,9 @@ export class MiBiFirebase{
     }
 
     public getPuk(companyToGet: string, phone: number){
-        return this.db.ref('/companies/'+companyToGet+'/subscriptions/phoneNumbers/'+phone).once('value');
+        return this.db.ref('/companies/'+companyToGet+'/subscriptions/phoneNumbers/'+phone+'/puk').once('value').then((snapshot) => {
+            return snapshot.val();
+        });
     }
 
     public updatePuk(companyToEdit: string, phone: number, newPuk: number){
@@ -33,11 +35,15 @@ export class MiBiFirebase{
     }
 
     public getSubscriptions(companyToGet: string){
-        return this.db.ref('/companies/'+companyToGet+'/subscriptions/phoneNumbers').once('value');
+        return this.db.ref('/companies/'+companyToGet+'/subscriptions/phoneNumbers').once('value').then((snapshot) => {
+            return snapshot.val();
+        });
     }
 
     public getSubscription(companyToGet: string, phoneNumber: number){
-        return this.db.ref('/companies/'+companyToGet+'/subscriptions/phoneNumbers/'+phoneNumber).once('value');
+        return this.db.ref('/companies/'+companyToGet+'/subscriptions/phoneNumbers/'+phoneNumber).once('value').then((snapshot) => {
+            return snapshot.val();
+        });
     }
 
     public addProduct(companyToEdit: string, phoneNumber: number, productName: string, dataTotal:number, priceTotal: number, endDate: Date){
@@ -71,15 +77,21 @@ export class MiBiFirebase{
     }
 
     public getNumbers(companyToGet: string, name: string){
-        return this.db.ref('/companies/'+companyToGet+'/subscriptions/names/').orderByKey().startAt(name.toLowerCase()).endAt(name.toLowerCase()+'\uf8ff').once('value');
+        return this.db.ref('/companies/'+companyToGet+'/subscriptions/names/').orderByKey().startAt(name.toLowerCase()).endAt(name.toLowerCase()+'\uf8ff').once('value').then((snapshot) => {
+            return snapshot.val();
+        });
     }
 
     public getAdminsForCompany(companyToGet: string){
-        return this.db.ref('/companies/'+companyToGet+'/admins').once('value');
+        return this.db.ref('/companies/'+companyToGet+'/admins').once('value').then((snapshot) => {
+            return snapshot.val();
+        });
     }
 
     public getAdmin(username: string){
-        return this.db.ref('/admins/'+username).once('value');
+        return this.db.ref('/admins/'+username).once('value').then((snapshot) => {
+            return snapshot.val();
+        });
     }
 
     public updatePassword(companyToEdit: string, username: string, newPassword: string){
