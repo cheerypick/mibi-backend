@@ -4,14 +4,27 @@ import * as IO from 'socket.io';
 import App from './App';
 import {Client} from "./client/Client";
 import {PropertyReader} from "./config/PropertyReader";
-import {MiBiFirebase} from "./db/MiBiFirebase";
+import {FirebaseDatabaseReader} from "./db/FirebaseDatabaseReader";
 import {User} from "./entities/User";
+import {Notification} from  "./entities/Notification";
+import {PushNotificationService} from "./service/PushNotificationService";
+import {FirebaseRestClient} from "./client/FirebaseRestClient";
+
+
 
 debug('ts-express:server');
 
 let io = IO();
 let propertyReader = new PropertyReader();
-let mibiFirebase = new MiBiFirebase();
+
+export let fbDbReader = new FirebaseDatabaseReader();
+
+let pushNotificationService = new PushNotificationService();
+
+let notification = new Notification("This is the title", "This is the body", "NoAction");
+pushNotificationService.sendNotificationToAllUsers(notification);
+pushNotificationService.sendNotificationToUserDevices("mibi", notification);
+
 
 const port = normalizePort(propertyReader.getServerPort() || process.env.PORT || 3000);
 
@@ -62,5 +75,5 @@ function onListening(): void {
 
 let client = new Client();
 
-client.authenticate(io, mibiFirebase);
+client.authenticate(io, fbDbReader);
 client.getMessage(io, propertyReader);

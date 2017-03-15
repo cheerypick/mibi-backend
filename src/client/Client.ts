@@ -1,13 +1,13 @@
 import {MibiWit} from "../wit/MibiWit";
 import {MessageValidator} from "./MessageValidator";
-import {MiBiFirebase} from "../db/MiBiFirebase";
+import {FirebaseDatabaseReader} from "../db/FirebaseDatabaseReader";
 import {User} from "../entities/User";
 
 export class Client {
 
     id = null;
 
-    public authenticate(io, mibiFirebase:MiBiFirebase){
+    public authenticate(io, mibiFirebase:FirebaseDatabaseReader){
         let username = null;
         let password = null;
         let companyAuth = null;
@@ -19,7 +19,7 @@ export class Client {
 
                 this.id = io.sessionId;
 
-                mibiFirebase.getAdmin(username).then(snapshot => {
+                mibiFirebase.getAdmin(username).then((snapshot) => {
                     let userNotFound = snapshot.val() == null;
 
                     if(userNotFound){

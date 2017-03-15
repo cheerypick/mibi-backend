@@ -23,5 +23,8 @@
     "databaseURL": "https://mibi-f0d90.firebaseio.com",
     "storageBucket": "mibi-f0d90.appspot.com",
     "messagingSenderId": "703686049206"
+  },
+  "pushNotificationSetup": {
+    "serverKey" : "key=AAAAo9b0_bY:APA91bE0jIqBiNLEnPy12NT9seGvVpv5pKe4afjlqfUyZbZU1vsjfB8VL6yFAQyYge00sWmhY9ZqS1GDO8dpvcRHlY7tA2Y217H6mC9q-VsQgfbKqWFzcbVcJUDuv4xu5Pj6ONWGAOf5"
   }
 }

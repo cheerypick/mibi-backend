@@ -11,7 +11,7 @@ getMyVariable(necessary,variables).then(function(snapshot){
     ...
 });
  */
-export class MiBiFirebase{
+export class FirebaseDatabaseReader{
 
     private db = null;
     private propertyReader = new PropertyReader();
