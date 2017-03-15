@@ -40,6 +40,12 @@
         ]
       },
       {
+        "value" : "ja line",
+        "expressions" : [
+          "ja line"
+        ]
+      },
+      {
         "value" : "ja takk",
         "expressions" : [
           "ja takk"

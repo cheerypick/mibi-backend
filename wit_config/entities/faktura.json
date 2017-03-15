@@ -1,0 +1,28 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "faktura",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "faktura",
+    "values" : [
+      {
+        "value" : "faktura",
+        "expressions" : [
+          "faktura"
+        ]
+      },
+      {
+        "value" : "fakturakopi",
+        "expressions" : [
+          "fakturakopi"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

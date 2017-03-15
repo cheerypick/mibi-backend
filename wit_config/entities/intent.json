@@ -29,6 +29,12 @@
         "value" : "SIM"
       },
       {
+        "value" : "compliment"
+      },
+      {
+        "value" : "faktura"
+      },
+      {
         "value" : "forbruk ",
         "expressions" : [
           "forbruk "
@@ -36,6 +42,12 @@
       },
       {
         "value" : "giPuk"
+      },
+      {
+        "value" : "greeting"
+      },
+      {
+        "value" : "nonsense"
       }
     ],
     "doc" : "User-defined entity",
