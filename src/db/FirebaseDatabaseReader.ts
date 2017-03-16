@@ -159,11 +159,10 @@ export class FirebaseDatabaseReader {
                     this.getSpecificPath(response.path).then((subscription) => {
                         let prosent = DataService.dataUsed(subscription.dataUsed, subscription.dataTotal);
                         if(prosent > this.propertyReader.getDataBeforeNotification()){
-                            this.getAdmins().then((admins) => {
-                                console.log('Checking admins:\n');
-                                let a = DataService.filterAdmins(admins, subscription.companyName);
-                                for(let admin in a){
-                                    let result = pushNotificationService.sendNotificationToUserDevices(a[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "No action"));
+                            this.getAdmins().then((a) => {
+                                let admins = DataService.filterAdmins(a, subscription.companyName);
+                                for(let admin in admins){
+                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "No action"));
                                 }
                             })
                         }
