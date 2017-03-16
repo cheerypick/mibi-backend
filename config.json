@@ -3,6 +3,9 @@
     "connection": {
       "port": 3000,
       "host": "0.0.0.0"
+    },
+    "rules": {
+      "dataBeforeNotification": 80
     }
   },
   "wit": {

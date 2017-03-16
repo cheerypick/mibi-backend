@@ -37,6 +37,10 @@ export class PropertyReader {
         return this.config.pushNotificationSetup.serverKey;
     }
 
+    public getDataBeforeNotification(){
+        return this.config.server.rules.dataBeforeNotification;
+    }
+
     private readFireBaseConfiguration(config):FireBaseConfig{
         let fireBaseConfig:FireBaseConfig = {
             apiKey: config.apiKey,

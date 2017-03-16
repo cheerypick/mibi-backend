@@ -45,6 +45,7 @@
     "@types/node-wit": "^4.2.1",
     "@types/socket.io": "^1.4.27",
     "chai-as-promised": "^6.0.0",
+    "deep-diff": "^0.3.4",
     "firebase": "^3.7.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.1",

@@ -31,6 +31,7 @@ export class Client {
                     mibiFirebase.updateDeviceTokens(data.username, data.token);
                 }
                 socket._userInfo = new User(companyAuth, data.username);
+
             }
         });
     }
