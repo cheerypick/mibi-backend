@@ -10,9 +10,8 @@ import {DataService} from "../service/DataService";
 
 /*
  To get data call the function like this:
- getMyVariable(necessary,variables).then(function(snapshot){
- let foo = snapshot.val();
- foo.dataTotal
+ getMyVariable(necessary,variables).then((data) => {
+ let foo = data.myVariable;
  ...
  });
  */
