@@ -65,20 +65,44 @@ let subscriptions = {
         puk: 689461
     }
 }
+let admin_name = 'mibi';
+let admin = {
+        companyName: 'Din Begravelse',
+        name: 'line johnsen',
+        password: 'mibi',
+        uuid: '342c5180-d9ab-4419-9c96-ddf907f3558b'
+}
+let admins = {
+    mibi: {
+        companyName: 'Din Begravelse',
+        name: 'line johnsen',
+        password: 'mibi',
+        uuid: '342c5180-d9ab-4419-9c96-ddf907f3558b'
+    },
+    mobo: {
+        companyName: 'Din Begravelse',
+        name: 'john abrahamsen',
+        password: 'mobo',
+        uuid: 'fd2148be-fe6c-487e-a5f6-1fbd219defd7'
+    }
+}
+
 
 describe('Getting subscriptions', () => {
-    it('Should return subscription for company and be equal to expected values', () => {
-        return expect(db.getSubscription(company, phone)).to.eventually.deep.equal(subscription);
-    });
-    it('Should return all subscriptions for a company and be equal to expected values', () => {
-        return expect(db.getSubscriptions(company)).to.eventually.contain.keys(['94685512','91454568','41639898']);
-    });
-});
+        it('Should return subscription for company and be equal to expected values', () => {
+            return expect(db.getSubscription(company, phone)).to.eventually.deep.equal(subscription);
+        });
+        it('Should return all subscriptions for a company and be equal to expected values', () => {
+            return expect(db.getSubscriptions(company)).to.eventually.contain.keys(['94685512', '91454568', '41639898']);
+        });
+    }
+)
+;
 
 describe('Getting puk', () => {
-   it('Should return the puk of the requested user', () => {
-       return expect(db.getPuk(company, phone)).to.eventually.equal(puk);
-   });
+    it('Should return the puk of the requested user', () => {
+        return expect(db.getPuk(company, phone)).to.eventually.equal(puk);
+    });
 });
 
 describe('Getting numbers for person', () => {
@@ -86,7 +110,15 @@ describe('Getting numbers for person', () => {
         return expect(db.getNumbers(company, name)).to.eventually.have.key(name);
     });
     it('Should return all numbers for a person with an incomplete name', () => {
-        return expect(db.getNumbers(company, name.substring(0,6))).to.eventually.have.key(name);
+        return expect(db.getNumbers(company, name.substring(0, 6))).to.eventually.have.key(name);
     });
 });
 
+describe('Getting admins for company', () => {
+    it('Should return all admins for a company', () => {
+        return expect(db.getAdminsForCompany(company)).to.eventually.deep.equal(admins);
+    });
+    it('Should return a single admin', () => {
+        return expect(db.getAdmin(admin_name)).to.eventually.deep.equal(admin);
+    });
+});
