@@ -116,13 +116,15 @@ export class FirebaseDatabaseReader {
     }
 
     public getDeviceTokens(username: string) {
-        return this.db.ref('/admins/' + username + '/tokens').once('value');
+        return this.db.ref('/admins/' + username + '/tokens').once('value').then((snapshot) => {
+            return snapshot.val()
+        });
     }
 
     public updateDeviceTokens(username: string, token: string) {
         this.getDeviceTokens(username).then((tokens) => {
             let tokenFound: boolean = false;
-            let tokenMap = tokens.val();
+            let tokenMap = tokens;
 
             for (let key in tokenMap) {
                 let currentToken = tokenMap[key];
