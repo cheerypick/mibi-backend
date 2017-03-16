@@ -9,13 +9,13 @@ export class DataService{
             for (let key in json[0].path) {
                 path += "/" + json[0].path[key];
             }
-            let isDataUpdate = (_.includes(path, 'dataUsed');
+            let isDataUpdate = (_.includes(path, 'dataUsed'));
             path = _.replace(path, 'dataUsed','');
             return {path: path, isDataUpdate: isDataUpdate}
         }
     }
     public static dataUsed(dataUsed, dataTotal): number {
-        return (dataUsed/dataTotal*100);
+        return Math.round((dataUsed/dataTotal*100));
     }
 
     public static filterAdmins(admins, company){
