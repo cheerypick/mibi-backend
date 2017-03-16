@@ -4,7 +4,8 @@
     "module": "commonjs"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "test/**/*.test.ts"
   ],
   "exclude": [
     "node_modules"
