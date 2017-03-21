@@ -163,7 +163,7 @@ export class FirebaseDatabaseReader {
                             this.getAdmins().then((a) => {
                                 let admins = DataService.filterAdmins(a, subscription.companyName);
                                 for(let admin in admins){
-                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "No action"));
+                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage"));
                                 }
                             })
                         }
