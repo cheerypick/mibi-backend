@@ -370,7 +370,10 @@
                   ],
                   "operations" : [
                     {
-                      "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer: {link}"
+                      "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer"
+                    },
+                    {
+                      "action" : "template-link   {link}  "
                     }
                   ]
                 }

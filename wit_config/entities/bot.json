@@ -10,6 +10,12 @@
     "id" : "bot",
     "values" : [
       {
+        "value" : "Miiibiii",
+        "expressions" : [
+          "Miiibiii"
+        ]
+      },
+      {
         "value" : "mibi",
         "expressions" : [
           "mibi"

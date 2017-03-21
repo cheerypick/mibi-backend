@@ -31,6 +31,45 @@
       "name" : "getPukPhoneNumber"
     },
     {
+      "id" : "template- ",
+      "type" : "template",
+      "template" : " "
+    },
+    {
+      "id" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer",
+      "type" : "template",
+      "template" : " Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer",
+      "requirements" : [
+        {
+          "name" : "time",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer:  {link} ",
+      "type" : "template",
+      "template" : " Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer:  {link} ",
+      "requirements" : [
+        {
+          "name" : "link",
+          "negative" : false
+        },
+        {
+          "name" : "time",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        }
+      ]
+    },
+    {
       "id" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer: {link}",
       "type" : "template",
       "template" : " Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer: {link}",
@@ -107,6 +146,17 @@
         "Gi henne 3GB (119,-)",
         "Kjør på med 5GB (149,-)",
         "Hun overlever uten"
+      ]
+    },
+    {
+      "id" : "template- {link}",
+      "type" : "template",
+      "template" : " {link}",
+      "requirements" : [
+        {
+          "name" : "link",
+          "negative" : false
+        }
       ]
     },
     {
@@ -379,6 +429,17 @@
       "requirements" : [
         {
           "name" : "numbers",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-link   {link}  ",
+      "type" : "template",
+      "template" : "link   {link}  ",
+      "requirements" : [
+        {
+          "name" : "link",
           "negative" : false
         }
       ]
