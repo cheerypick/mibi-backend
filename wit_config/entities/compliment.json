@@ -1,0 +1,46 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "compliment",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "compliment",
+    "values" : [
+      {
+        "value" : "awesome",
+        "expressions" : [
+          "awesome"
+        ]
+      },
+      {
+        "value" : "bra ",
+        "expressions" : [
+          "bra "
+        ]
+      },
+      {
+        "value" : "flink",
+        "expressions" : [
+          "flink"
+        ]
+      },
+      {
+        "value" : "kul",
+        "expressions" : [
+          "kul"
+        ]
+      },
+      {
+        "value" : "smart",
+        "expressions" : [
+          "smart"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "person",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "person",
+    "values" : [
+      {
+        "value" : "hun ",
+        "expressions" : [
+          "hun "
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

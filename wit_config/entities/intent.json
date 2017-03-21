@@ -14,13 +14,40 @@
         "value" : ""
       },
       {
+        "value" : "Gi meg",
+        "expressions" : [
+          "Gi meg"
+        ]
+      },
+      {
+        "value" : "Kan jeg få",
+        "expressions" : [
+          "Kan jeg få"
+        ]
+      },
+      {
         "value" : "SIM"
+      },
+      {
+        "value" : "compliment"
+      },
+      {
+        "value" : "faktura"
       },
       {
         "value" : "forbruk ",
         "expressions" : [
           "forbruk "
         ]
+      },
+      {
+        "value" : "giPuk"
+      },
+      {
+        "value" : "greeting"
+      },
+      {
+        "value" : "nonsense"
       }
     ],
     "doc" : "User-defined entity",

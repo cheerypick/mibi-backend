@@ -1,48 +1,64 @@
 import {MibiWit} from "../wit/MibiWit";
 import {MessageValidator} from "./MessageValidator";
+import {FirebaseDatabaseReader} from "../db/FirebaseDatabaseReader";
+import {User} from "../entities/User";
 
 export class Client {
 
-    private id = null;
-
-    public authenticate(io){
+    public authenticate(io, mibiFirebase:FirebaseDatabaseReader){
+        let username = null;
+        let password = null;
+        let companyAuth = null;
         require('socketio-auth')(io, {
-            authenticate: function (socket, data, callback) {
-                //get credentials sent by the user
-                let username = data.username;
-                let password = data.password;
+            authenticate: function(socket, data, callback) {
+                //get credentials sent by the client
+                username = data.username;
+                password = data.password;
 
-                this.id = io.sessionId;
+                mibiFirebase.getAdmin(username).then(snapshot => {
+                    let userNotFound = snapshot == null;
 
-                if(username==='mibi') {
-                    return callback(null, password==='mibi');
+                    if(userNotFound){
+                        return callback(new Error("User not found"));
+                    }else{
+                        companyAuth = snapshot.companyName;
+                        return callback(null, password===snapshot.password);
+                    }
+                });
+            },
+            postAuthenticate: function(socket, data) {
+                if(data.token && data.token.length > 0){
+                    mibiFirebase.updateDeviceTokens(data.username, data.token);
+                }
+                socket._userInfo = new User(companyAuth, data.username);
 
-                } else {
-                    return callback(new Error("User not found"))
+            },
+            disconnect: function(socket, data) {
+                if(socket && socket._userInfo && socket._userInfo.username){
+                    console.log(socket._userInfo);
+                    console.log(socket._userInfo.username + ' has disconnected');
+
+                }else{
+                    console.log('An unidentified user has disconnected');
                 }
             }
         });
     }
 
-    public getMessage(io, propertyReader){
+    public getMessage(io, propertyReader, mibiFirebase:FirebaseDatabaseReader){
         io.on('connection', function(socket) {
-            console.log('User Connected');
-
-            socket.on('message', function(msg){
-
-                io.to(this.id).emit('message', msg);
-                console.log('got message', msg);
+            console.log(socket.id + ' connected');
+            socket.on('message', function(msg) {
+                console.log(msg);
+                io.to(socket.id).emit('message', msg);
 
                 if(MessageValidator.initiationMessage(msg)){
                     msg.text = 'Hei';
                 }
 
-                MibiWit.sendMessage(io, msg, propertyReader, this.id);
-
-                console.log(msg);
-
+                MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase);
+                // console.log(msg);
             });
         });
     }
 }
-

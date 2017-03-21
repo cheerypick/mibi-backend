@@ -1,16 +1,200 @@
 {
   "data" : [
     {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "jzshdzdlkj3",
+          "entities" : [
+            {
+              "entity" : "nonsense",
+              "value" : "\"jzshdzdlkj3\"",
+              "start" : 0,
+              "end" : 11
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Hvor mye har Line brukt?",
+          "entities" : [
+            {
+              "entity" : "question",
+              "value" : "\"Hvor mye\"",
+              "start" : 0,
+              "end" : 8
+            },
+            {
+              "entity" : "name",
+              "value" : "\"Line \"",
+              "start" : 13,
+              "end" : 18
+            },
+            {
+              "entity" : "usage",
+              "value" : "\"brukt\"",
+              "start" : 18,
+              "end" : 23
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-La meg sjekke."
+            },
+            {
+              "action" : "template-{name} har brukt 4,8 GB av sin datapakke på 5GB."
+            }
+          ]
+        },
+        {
+          "user" : "og jeg?",
+          "entities" : [
+            {
+              "entity" : "user",
+              "value" : "\"jeg\"",
+              "start" : 3,
+              "end" : 6
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-La meg undersøke dette for deg."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Du er dum",
+          "entities" : [
+            {
+              "entity" : "insult",
+              "value" : "\"dum\"",
+              "start" : 6,
+              "end" : 9
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Beklager, jeg prøver bare å hjelpe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Hva er PUK koden til Line?",
+          "entities" : [
+            {
+              "entity" : "question",
+              "value" : "\"Hva \"",
+              "start" : 0,
+              "end" : 3
+            },
+            {
+              "entity" : "puk",
+              "value" : "\"PUK\"",
+              "start" : 7,
+              "end" : 10
+            },
+            {
+              "entity" : "name",
+              "value" : "\"Line\"",
+              "start" : 21,
+              "end" : 25
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "function-getPukPhoneNumber"
+            }
+          ]
+        },
+        {
+          "branches" : [
+            [
+              {
+                "user" : "12345678",
+                "entities" : [
+                  {
+                    "entity" : "number",
+                    "value" : "12345678",
+                    "start" : 0,
+                    "end" : 8
+                  }
+                ],
+                "operations" : [
+                  {
+                    "action" : "function-getPuk"
+                  },
+                  {
+                    "branches" : [
+                      {
+                        "predicates" : [
+                          {
+                            "name" : "number puk name",
+                            "negative" : false
+                          }
+                        ],
+                        "operations" : [
+                          {
+                            "action" : "template-{name} sin PUK med nummer {number} er:         {puk}"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "user" : "Nei, det er ingen av de nummerene",
+                "entities" : [
+                  {
+                    "entity" : "rejection",
+                    "value" : "\"Nei, det er ingen av de nummerene\"",
+                    "start" : 0,
+                    "end" : 33
+                  }
+                ],
+                "operations" : [
+                  {
+                    "action" : "template-Beklager, jeg finner ingen andre nummere for {name}"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "name" : "Update data",
       "turns" : [
         {
-          "user" : "Hei",
+          "user" : "datausage",
           "entities" : [
             {
-              "entity" : "greeting",
-              "value" : "\"Hei\"",
+              "entity" : "datausage",
+              "value" : "\"datausage\"",
               "start" : 0,
-              "end" : 3
+              "end" : 9
             }
           ],
           "operations" : [
@@ -46,17 +230,11 @@
                     "value" : "\"1GB\"",
                     "start" : 10,
                     "end" : 13
-                  },
-                  {
-                    "entity" : "number",
-                    "value" : "79",
-                    "start" : 15,
-                    "end" : 17
                   }
                 ],
                 "operations" : [
                   {
-                    "bookmark" : "orderAccept"
+                    "bookmark" : "orderAccept2"
                   },
                   {
                     "action" : "template-Strålende!"
@@ -69,38 +247,12 @@
             ],
             [
               {
-                "user" : "Gi henne 3GB (119,-)",
-                "entities" : [
-                  {
-                    "entity" : "acceptance",
-                    "value" : "\"Gi henne\"",
-                    "start" : 0,
-                    "end" : 8
-                  },
-                  {
-                    "entity" : "data",
-                    "value" : "\"3GB\"",
-                    "start" : 9,
-                    "end" : 12
-                  },
-                  {
-                    "entity" : "number",
-                    "value" : "119",
-                    "start" : 14,
-                    "end" : 17
-                  }
-                ],
-                "operations" : [
-                  {
-                    "jump" : "orderAccept"
-                  }
-                ]
-              }
-            ],
-            [
-              {
                 "user" : "Kjør på med 5GB (149,-)",
                 "entities" : [
+                  {
+                    "entity" : "sentiment",
+                    "value" : "\"positive\""
+                  },
                   {
                     "entity" : "acceptance",
                     "value" : "\"Kjør på\"",
@@ -112,17 +264,11 @@
                     "value" : "\"5GB\"",
                     "start" : 12,
                     "end" : 15
-                  },
-                  {
-                    "entity" : "number",
-                    "value" : "149",
-                    "start" : 17,
-                    "end" : 20
                   }
                 ],
                 "operations" : [
                   {
-                    "jump" : "orderAccept"
+                    "jump" : "orderAccept2"
                   }
                 ]
               }
@@ -147,6 +293,34 @@
                   }
                 ]
               }
+            ],
+            [
+              {
+                "user" : "Gi henne 3GB (119,-)",
+                "entities" : [
+                  {
+                    "entity" : "sentiment",
+                    "value" : "\"positive\""
+                  },
+                  {
+                    "entity" : "acceptance",
+                    "value" : "\"Gi henne\"",
+                    "start" : 0,
+                    "end" : 8
+                  },
+                  {
+                    "entity" : "data",
+                    "value" : "\"3GB \"",
+                    "start" : 9,
+                    "end" : 13
+                  }
+                ],
+                "operations" : [
+                  {
+                    "jump" : "orderAccept2"
+                  }
+                ]
+              }
             ]
           ]
         }
@@ -156,30 +330,54 @@
       "name" : "",
       "turns" : [
         {
-          "user" : "Hva er vårt forbruk denne måneden?",
+          "user" : "Kan jeg få fakturakopi for mars?",
           "entities" : [
             {
-              "entity" : "question",
-              "value" : "\"Hva \"",
-              "start" : 0,
-              "end" : 4
-            },
-            {
               "entity" : "intent",
-              "value" : "\"forbruk \"",
-              "start" : 12,
-              "end" : 20
+              "value" : "\"faktura\""
             },
             {
-              "entity" : "time",
-              "value" : "\"denne måneden\"",
-              "start" : 20,
-              "end" : 33
+              "entity" : "user",
+              "value" : "\"jeg\"",
+              "start" : 4,
+              "end" : 7
+            },
+            {
+              "entity" : "faktura",
+              "value" : "\"fakturakopi\"",
+              "start" : 11,
+              "end" : 22
+            },
+            {
+              "entity" : "datetime",
+              "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+              "start" : 27,
+              "end" : 31
             }
           ],
           "operations" : [
             {
-              "action" : "template-Dere har brukt 1000,- {time}"
+              "action" : "function-getInvoice"
+            },
+            {
+              "branches" : [
+                {
+                  "predicates" : [
+                    {
+                      "name" : "total link time",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer"
+                    },
+                    {
+                      "action" : "template-link   {link}  "
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -189,16 +387,66 @@
       "name" : "",
       "turns" : [
         {
-          "user" : "jzshdzdlkj3",
+          "user" : "du er flink",
           "entities" : [
             {
               "entity" : "intent",
-              "value" : "\"\""
+              "value" : "\"compliment\""
+            },
+            {
+              "entity" : "compliment",
+              "value" : "\"flink\"",
+              "start" : 6,
+              "end" : 11
             }
           ],
           "operations" : [
             {
-              "action" : "template-Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! "
+              "bookmark" : "thanks"
+            },
+            {
+              "action" : "template-Takk, hyggelig å høre!"
+            }
+          ]
+        },
+        {
+          "user" : "du er kul",
+          "entities" : [
+            {
+              "entity" : "sentiment",
+              "value" : "\"positive\""
+            },
+            {
+              "entity" : "compliment",
+              "value" : "\"kul\"",
+              "start" : 6,
+              "end" : 9
+            }
+          ],
+          "operations" : [
+            {
+              "jump" : "thanks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Hei",
+          "entities" : [
+            {
+              "entity" : "greeting",
+              "value" : "\"hei\"",
+              "start" : 0,
+              "end" : 3
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "template-Hei!"
             }
           ]
         }

@@ -2,30 +2,23 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "keywords",
-      "trait"
+      "keywords"
     ],
-    "name" : "question",
+    "name" : "period",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "question",
+    "id" : "period",
     "values" : [
       {
-        "value" : "Hva ",
+        "value" : "denne uke",
         "expressions" : [
-          "Hva "
+          "denne uke"
         ]
       },
       {
-        "value" : "Hvor",
+        "value" : "i fjør",
         "expressions" : [
-          "Hvor"
-        ]
-      },
-      {
-        "value" : "Hvor mye",
-        "expressions" : [
-          "Hvor mye"
+          "i fjør"
         ]
       }
     ],
