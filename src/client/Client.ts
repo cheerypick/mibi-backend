@@ -35,7 +35,9 @@ export class Client {
             },
             disconnect: function(socket, data) {
                 if(socket && socket._userInfo && socket._userInfo.username){
+                    console.log(socket._userInfo);
                     console.log(socket._userInfo.username + ' has disconnected');
+
                 }else{
                     console.log('An unidentified user has disconnected');
                 }

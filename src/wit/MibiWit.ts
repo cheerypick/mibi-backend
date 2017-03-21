@@ -8,7 +8,7 @@ export class MibiWit {
     public static sendMessage(io, msg, propertyReader, socket, mibiFirebase) {
 
         let context = {};
-        let sessionId = 'xep';
+        let sessionId = socket.id;
 
         MibiWit.getClient(io, propertyReader, socket, mibiFirebase).runActions(
             sessionId, // the client's current session
@@ -17,8 +17,6 @@ export class MibiWit {
         ).then((newContext) => {
             // Our bot did everything it has to do.
             // Now it's waiting for further messages to proceed.
-            console.log('Waiting for next client messages');
-
             // Based on the session state, you might want to reset the session.
             // This depends heavily on the business logic of your bot.
             // Example:
@@ -52,10 +50,17 @@ export class MibiWit {
                 MibiWitFunctions.getPukPhoneNumber(context, entities, io, socket, mibiFirebase);
             },
             getPuk({context, entities}) {
+                console.log(context);
                 return MibiWitFunctions.getPuk(context, entities, socket, mibiFirebase);
             },
             getInvoice({context, entities}) {
                 return MibiWitFunctions.getInvoice(context, entities, io, socket, mibiFirebase);
+            },
+            getUpdate({context, entities}) {
+                return MibiWitFunctions.getUpdate(context, entities, io, socket, mibiFirebase);
+            },
+            orderData({context}) {
+                return MibiWitFunctions.orderData(context, io, socket, mibiFirebase);
             }
         };
         return new Wit({accessToken, actions});

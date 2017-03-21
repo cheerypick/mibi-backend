@@ -75,4 +75,23 @@ export class MibiWitFunctions{
             });
         }
     }
+
+    public static getUpdate(context, entities, io, socket, mibiFirebase) {
+        return mibiFirebase.getUpdates(entities.number[0].value).then((data) => {
+            return mibiFirebase.getSubscription(data.company, data.number).then((data) => {
+                context.subscription = data.name;
+                context.used = data.dataUsed;
+                context.total = data.dataTotal;
+                context.days = 13;
+                context.admin = socket._userInfo.username;
+
+                return context;
+            });
+        });
+    }
+
+    public static orderData(context, io, socket, mibiFirebase){
+        context.newdata = 60000;
+        return context;
+    }
 }

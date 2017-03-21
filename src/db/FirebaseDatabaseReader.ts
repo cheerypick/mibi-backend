@@ -159,6 +159,8 @@ export class FirebaseDatabaseReader {
                 let response = DataService.isDataUsageUpdate(oldData, newData);
                 if(response.isDataUpdate){
                     console.log('A user has used more data');
+                    let number = response.path.replace(/\/$/, '');
+                    number = number.substring(number.lastIndexOf('/') + 1);
                     this.getSpecificPath(response.path).then((subscription) => {
                         console.log(subscription.name + ' has now used ' + subscription.dataUsed + 'MB of ' + subscription.dataTotal +'MB');
                         let prosent = DataService.dataUsed(subscription.dataUsed, subscription.dataTotal);
@@ -166,9 +168,10 @@ export class FirebaseDatabaseReader {
                             console.log('This is above ' + this.propertyReader.getDataBeforeNotification() + '%');
                             this.getAdmins().then((a) => {
                                 let admins = DataService.filterAdmins(a, subscription.companyName);
+                                this.persistUpdate(subscription.companyName, number);
                                 for(let admin in admins){
                                     console.log('Sending a notification to ' + admins[admin]);
-                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage"));
+                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage "+number));
                                 }
                             })
                         }
@@ -177,5 +180,15 @@ export class FirebaseDatabaseReader {
             }
             oldData = snapshot.val();
         });
+    }
+
+    public persistUpdate(company, number){
+        this.db.ref('/updates/' + number).update({company: company, number: number});
+    }
+
+    public getUpdates(number){
+        return this.db.ref('/updates/'+number).once('value').then((snapshot) => {
+            return snapshot.val();
+        })
     }
 }
