@@ -36,10 +36,8 @@ export class PushNotificationService{
 
     public sendNotificationToUserDevices(username:string, notification:Notification){
         this.fbDatabaseReader.getDeviceTokens(username).then((tokens) => {
-            let tokenMap = tokens.val();
-
-            for (let key in tokenMap) {
-                let currentToken = tokenMap[key];
+            for (let key in tokens) {
+                let currentToken = tokens[key];
                 this.fbRestClient.postNotification(currentToken, notification);
             }
         });
