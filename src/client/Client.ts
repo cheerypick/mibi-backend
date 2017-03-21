@@ -32,6 +32,9 @@ export class Client {
                 }
                 socket._userInfo = new User(companyAuth, data.username);
 
+            },
+            disconnect: function(socket, data) {
+                console.log(socket._userInfo.username + ' has disconnected');
             }
         });
     }
