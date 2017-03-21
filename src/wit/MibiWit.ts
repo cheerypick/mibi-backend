@@ -59,8 +59,8 @@ export class MibiWit {
             getUpdate({context, entities}) {
                 return MibiWitFunctions.getUpdate(context, entities, io, socket, mibiFirebase);
             },
-            orderData({context}) {
-                return MibiWitFunctions.orderData(context, io, socket, mibiFirebase);
+            orderData({context, entities}) {
+                return MibiWitFunctions.orderData(context, entities, io, socket, mibiFirebase);
             }
         };
         return new Wit({accessToken, actions});

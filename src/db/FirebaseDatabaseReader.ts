@@ -168,7 +168,7 @@ export class FirebaseDatabaseReader {
                             console.log('This is above ' + this.propertyReader.getDataBeforeNotification() + '%');
                             this.getAdmins().then((a) => {
                                 let admins = DataService.filterAdmins(a, subscription.companyName);
-                                this.persistUpdate(subscription.companyName, number);
+                                this.persistUpdate(subscription.companyName, number, response.path);
                                 for(let admin in admins){
                                     console.log('Sending a notification to ' + admins[admin]);
                                     let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage "+number));
@@ -182,13 +182,17 @@ export class FirebaseDatabaseReader {
         });
     }
 
-    public persistUpdate(company, number){
-        this.db.ref('/updates/' + number).update({company: company, number: number});
+    public persistUpdate(company, number, path){
+        this.db.ref('/updates/' + number).update({companyName: company, number: number, path: path});
     }
 
     public getUpdates(number){
         return this.db.ref('/updates/'+number).once('value').then((snapshot) => {
             return snapshot.val();
         })
+    }
+
+    public deleteUpdate(number) {
+        this.db.ref('/updates/'+number).remove();
     }
 }
