@@ -2,30 +2,23 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "keywords",
-      "trait"
+      "keywords"
     ],
-    "name" : "question",
+    "name" : "bot",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "question",
+    "id" : "bot",
     "values" : [
       {
-        "value" : "Hva ",
+        "value" : "Miiibiii",
         "expressions" : [
-          "Hva "
+          "Miiibiii"
         ]
       },
       {
-        "value" : "Hvor",
+        "value" : "mibi",
         "expressions" : [
-          "Hvor"
-        ]
-      },
-      {
-        "value" : "Hvor mye",
-        "expressions" : [
-          "Hvor mye"
+          "mibi"
         ]
       }
     ],

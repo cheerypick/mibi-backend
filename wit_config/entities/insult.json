@@ -4,51 +4,51 @@
       "free-text",
       "keywords"
     ],
-    "name" : "rejection",
+    "name" : "insult",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "rejection",
+    "id" : "insult",
     "values" : [
       {
-        "value" : "Hun overlever uten",
+        "value" : "Dumme ",
         "expressions" : [
-          "Hun overlever uten"
+          "Dumme "
         ]
       },
       {
-        "value" : "Nei",
+        "value" : "dum",
         "expressions" : [
-          "Nei"
+          "dum"
         ]
       },
       {
-        "value" : "Nei, det er feil",
+        "value" : "dusi ",
         "expressions" : [
-          "Nei, det er feil"
+          "dusi "
         ]
       },
       {
-        "value" : "Nei, det er ingen av de nummerene",
+        "value" : "dust",
         "expressions" : [
-          "Nei, det er ingen av de nummerene"
+          "dust"
         ]
       },
       {
-        "value" : "feil",
+        "value" : "idiot",
         "expressions" : [
-          "feil"
+          "idiot"
         ]
       },
       {
-        "value" : "slutt med dette",
+        "value" : "idiotisk ",
         "expressions" : [
-          "slutt med dette"
+          "idiotisk "
         ]
       },
       {
-        "value" : "stop",
+        "value" : "smart",
         "expressions" : [
-          "stop"
+          "smart"
         ]
       }
     ],

@@ -2,13 +2,17 @@ import * as http from 'http';
 import * as debug from 'debug';
 import * as IO from 'socket.io';
 import App from './App';
-import * as client from './client/Client';
+import {Client} from "./client/Client";
 import {PropertyReader} from "./config/PropertyReader";
+import {FirebaseDatabaseReader} from "./db/FirebaseDatabaseReader";
+import {User} from "./entities/User";
 
 debug('ts-express:server');
 
 let io = IO();
 let propertyReader = new PropertyReader();
+
+export let fbDbReader = new FirebaseDatabaseReader();
 
 const port = normalizePort(propertyReader.getServerPort() || process.env.PORT || 3000);
 
@@ -57,10 +61,9 @@ function onListening(): void {
     debug(`Listening on ${bind}`);
 }
 
-let user:client.Client = new client.Client();
-
-user.authenticate(io);
-user.getMessage(io, propertyReader);
+let client = new Client();
 
 
-
+client.authenticate(io, fbDbReader);
+client.getMessage(io, propertyReader, fbDbReader);
+fbDbReader.getDataUpdates();

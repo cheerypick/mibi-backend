@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "usage",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "usage",
+    "values" : [
+      {
+        "value" : "brukt",
+        "expressions" : [
+          "brukt"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

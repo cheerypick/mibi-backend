@@ -16,6 +16,12 @@
         ]
       },
       {
+        "value" : "15gb",
+        "expressions" : [
+          "15gb"
+        ]
+      },
+      {
         "value" : "1GB",
         "expressions" : [
           "1GB"
@@ -37,6 +43,18 @@
         "value" : "4GB",
         "expressions" : [
           "4GB"
+        ]
+      },
+      {
+        "value" : "B",
+        "expressions" : [
+          "B"
+        ]
+      },
+      {
+        "value" : "data",
+        "expressions" : [
+          "data"
         ]
       }
     ],

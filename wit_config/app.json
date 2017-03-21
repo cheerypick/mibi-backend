@@ -1,8 +1,9 @@
 {
   "version" : 20160513,
-  "zip-command" : "zip MyFirstApp.zip MyFirstApp/app.json MyFirstApp/entities/*.json MyFirstApp/actions.json MyFirstApp/stories.json MyFirstApp/expressions.json",
+  "zip-command" : "zip MiBi_v2.zip MiBi_v2/app.json MiBi_v2/entities/*.json MiBi_v2/actions.json MiBi_v2/stories.json MiBi_v2/expressions.json",
   "data" : {
-    "name" : "MyFirstApp",
+    "name" : "MiBi_v2",
+    "description" : "",
     "lang" : "nb"
   }
 }

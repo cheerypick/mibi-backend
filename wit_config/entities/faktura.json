@@ -2,30 +2,23 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "keywords",
-      "trait"
+      "keywords"
     ],
-    "name" : "question",
+    "name" : "faktura",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "question",
+    "id" : "faktura",
     "values" : [
       {
-        "value" : "Hva ",
+        "value" : "faktura",
         "expressions" : [
-          "Hva "
+          "faktura"
         ]
       },
       {
-        "value" : "Hvor",
+        "value" : "fakturakopi",
         "expressions" : [
-          "Hvor"
-        ]
-      },
-      {
-        "value" : "Hvor mye",
-        "expressions" : [
-          "Hvor mye"
+          "fakturakopi"
         ]
       }
     ],

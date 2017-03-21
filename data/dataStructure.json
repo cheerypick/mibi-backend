@@ -1,0 +1,45 @@
+{
+  "admins": {
+    "username": {
+      "companyName": "",
+      "password": "",
+      "token": []
+    }
+  },
+  "companies": {
+    "companyX": {
+      "orgNr": 0,
+      "admins": {
+        "username": {
+          "companyName": "",
+          "password": "",
+          "uuid": ""
+        }
+      },
+      "subscriptions": {
+        "phoneNumber": {
+          "tlfnr": {
+            "companyName": "",
+            "name": "",
+            "puk": 0,
+            "dataDefault": 0,
+            "dataTotal": 0,
+            "dataUsed": 0,
+            "dataNotified": false,
+            "priceDefault": 0,
+            "priceTotal": 0,
+            "additionalProducts": [
+              {
+                "productName": "",
+                "endDate": "2017-03-14T15:52:18.178Z"
+              }
+            ]
+          }
+        },
+        "names": {
+          "nameX": []
+        }
+      }
+    }
+  }
+}
