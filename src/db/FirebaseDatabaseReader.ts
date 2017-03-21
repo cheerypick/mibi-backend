@@ -155,14 +155,19 @@ export class FirebaseDatabaseReader {
             if(_.isEmpty(oldData)){
                 oldData = snapshot.val();
             }else{
+                console.log('Database has been updated. Checking values');
                 let response = DataService.isDataUsageUpdate(oldData, newData);
                 if(response.isDataUpdate){
+                    console.log('A user has used more data');
                     this.getSpecificPath(response.path).then((subscription) => {
+                        console.log(subscription.name + ' has now used ' + subscription.dataUsed + 'MB of ' + subscription.dataTotal +'MB');
                         let prosent = DataService.dataUsed(subscription.dataUsed, subscription.dataTotal);
                         if(prosent > this.propertyReader.getDataBeforeNotification()){
+                            console.log('This is above ' + this.propertyReader.getDataBeforeNotification() + '%');
                             this.getAdmins().then((a) => {
                                 let admins = DataService.filterAdmins(a, subscription.companyName);
                                 for(let admin in admins){
+                                    console.log('Sending a notification to ' + admins[admin]);
                                     let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage"));
                                 }
                             })
