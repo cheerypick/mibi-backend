@@ -21,7 +21,8 @@ export class FirebaseRestClient{
         body: JSON.stringify({
             to: reciever,
             priority: 'high',
-            notification: notification
+            notification: notification,
+            data: notification
         })
         }).then(function (response) {
             console.log("Sending notification to: " + reciever);
