@@ -52,9 +52,9 @@ export class Client {
                 console.log(msg);
                 io.to(socket.id).emit('message', msg);
 
-                if(MessageValidator.initiationMessage(msg)){
-                    msg.text = 'Hei';
-                }
+                // if(MessageValidator.initiationMessage(msg)){
+                //     msg.text = 'Hei';
+                // }
 
                 MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase);
                 // console.log(msg);

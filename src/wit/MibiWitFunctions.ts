@@ -78,7 +78,7 @@ export class MibiWitFunctions{
     }
 
     public static getUpdate(context, entities, io, socket, mibiFirebase) {
-        return mibiFirebase.getUpdates(entities.number[0].value).then((data) => {
+        return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
             console.log(data);
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
                 let date = new Date();
@@ -99,7 +99,7 @@ export class MibiWitFunctions{
 
     public static orderData(context, entities, io, socket, mibiFirebase){
         let phone = socket._updateData;
-        return mibiFirebase.getUpdates(phone).then((data) => {
+        return mibiFirebase.getUpdate(phone).then((data) => {
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
                 let info = DataService.mapData(entities.data[0].value);
                 console.log(info);
@@ -115,6 +115,29 @@ export class MibiWitFunctions{
                 mibiFirebase.deleteUpdate(phone);
                 return context;
             });
+        });
+    }
+
+    public static checkForUpdates(context, entities, io, socket, mibiFirebase){
+        return mibiFirebase.getUpdates().then((updates) => {
+            context.doesntHaveUpdates=true;
+            for(let update in updates){
+                console.log('checking for updates');
+                if(updates[update].companyName === socket._userInfo.company){
+                    console.log('Updates!!!');
+                    let mycustommessage = {
+                        text: 'datausage '+updates[update].number,
+                        reinit: true,
+                        mine: true,
+                        hidden: true
+                    };
+                    io.to(socket.id).emit('message', mycustommessage);
+                    context.hasUpdate = true;
+                    delete context.doesntHaveUpdates;
+                    break;
+                }
+            }
+            return context;
         });
     }
 }
