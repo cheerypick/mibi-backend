@@ -99,17 +99,18 @@ export class MibiWitFunctions{
         let phone = socket._updateData;
         return mibiFirebase.getUpdate(phone).then((data) => {
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
-                let info = DataService.mapData(entities.data[0].value);
-                console.log(info);
-                let newData = subscription.dataTotal + info.data;
-                let newPrice = subscription.priceTotal + info.price;
+                if(entities.data){
+                    let info = DataService.mapData(entities.data[0].value);
+                    let newData = subscription.dataTotal + info.data;
+                    let newPrice = subscription.priceTotal + info.price;
 
-                let date = new Date();
-                date.setUTCMonth(date.getMonth()+1,1);
-                date.setUTCHours(0,0,0,0)
-
-                mibiFirebase.addProduct(subscription.companyName, phone, entities.data[0].value, newData, newPrice, date);
-                context.newdata = entities.data[0].value;
+                    let date = new Date();
+                    date.setUTCMonth(date.getMonth()+1,1);
+                    date.setUTCHours(0,0,0,0)
+                    mibiFirebase.addProduct(subscription.companyName, phone, entities.data[0].value, newData, newPrice, date);
+                    context.newdata = entities.data[0].value;
+                }
+                
                 mibiFirebase.deleteUpdate(phone);
                 return context;
             });
