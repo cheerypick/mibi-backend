@@ -186,8 +186,14 @@ export class FirebaseDatabaseReader {
         this.db.ref('/updates/' + number).update({companyName: company, number: number, path: path});
     }
 
-    public getUpdates(number){
+    public getUpdate(number){
         return this.db.ref('/updates/'+number).once('value').then((snapshot) => {
+            return snapshot.val();
+        })
+    }
+
+    public getUpdates(){
+        return this.db.ref('/updates/').once('value').then((snapshot) => {
             return snapshot.val();
         })
     }
