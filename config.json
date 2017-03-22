@@ -10,8 +10,9 @@
   },
   "wit": {
     "authentication": {
-      "accessToken": "NX3J6JKJBAG2LVYT2D22IOS5VBQ3WYDF",
-      "_accessToken": "JZJ3W6JJB7KGSLTM4NRZVCQZTW3M7A3F"
+      "accessToken": "O7DTW433P2USMT53BRMIY75TG3PDAICO",
+      "v2_accessToken": "NX3J6JKJBAG2LVYT2D22IOS5VBQ3WYDF",
+      "v1_accessToken": "JZJ3W6JJB7KGSLTM4NRZVCQZTW3M7A3F"
     }
   },
   "firebaseAdriano":{

@@ -166,6 +166,24 @@
         ]
       },
       {
+        "value" : "lena",
+        "expressions" : [
+          "lena"
+        ]
+      },
+      {
+        "value" : "margrethe",
+        "expressions" : [
+          "margrethe"
+        ]
+      },
+      {
+        "value" : "maxim",
+        "expressions" : [
+          "maxim"
+        ]
+      },
+      {
         "value" : "tone",
         "expressions" : [
           "tone"

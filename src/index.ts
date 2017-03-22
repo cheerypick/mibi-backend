@@ -63,6 +63,7 @@ function onListening(): void {
 
 let client = new Client();
 
+
 client.authenticate(io, fbDbReader);
 client.getMessage(io, propertyReader, fbDbReader);
 fbDbReader.getDataUpdates();

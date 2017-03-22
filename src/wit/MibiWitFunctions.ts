@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import * as dateformat from 'dateformat';
+import {DataService} from "../service/DataService";
 
 export class MibiWitFunctions{
 
@@ -74,5 +75,67 @@ export class MibiWitFunctions{
                 return context;
             });
         }
+    }
+
+    public static getUpdate(context, entities, io, socket, mibiFirebase) {
+        return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
+            return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
+                let date = new Date();
+                let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
+                context.subscription = _.startCase(data.name);
+                context.used = data.dataUsed;
+                context.total = data.dataTotal;
+                context.days = daysLeft;
+                context.admin = socket._userInfo.username;
+
+                socket._updateData = entities.number[0].value;
+
+                return context;
+            });
+        });
+    }
+
+    public static orderData(context, entities, io, socket, mibiFirebase){
+        let phone = socket._updateData;
+        return mibiFirebase.getUpdate(phone).then((data) => {
+            return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
+                let info = DataService.mapData(entities.data[0].value);
+                console.log(info);
+                let newData = subscription.dataTotal + info.data;
+                let newPrice = subscription.priceTotal + info.price;
+
+                let date = new Date();
+                date.setUTCMonth(date.getMonth()+1,1);
+                date.setUTCHours(0,0,0,0)
+
+                mibiFirebase.addProduct(subscription.companyName, phone, entities.data[0].value, newData, newPrice, date);
+                context.newdata = entities.data[0].value;
+                mibiFirebase.deleteUpdate(phone);
+                return context;
+            });
+        });
+    }
+
+    public static checkForUpdates(context, entities, io, socket, mibiFirebase){
+        return mibiFirebase.getUpdates().then((updates) => {
+            context.doesntHaveUpdates=true;
+            for(let update in updates){
+                console.log('checking for updates');
+                if(updates[update].companyName === socket._userInfo.company){
+                    console.log('Updates!!!');
+                    let msg = {
+                        text: 'datausage '+updates[update].number,
+                        reinit: true,
+                        mine: true,
+                        hidden: true
+                    };
+                    io.to(socket.id).emit('message', msg);
+                    context.hasUpdate = true;
+                    delete context.doesntHaveUpdates;
+                    break;
+                }
+            }
+            return context;
+        });
     }
 }

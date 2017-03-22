@@ -762,6 +762,50 @@
       ]
     },
     {
+      "text" : "Hjjjjj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Hjjjjj\"",
+          "start" : 0,
+          "end" : 6
+        }
+      ]
+    },
+    {
+      "text" : "Hjkkjvuj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Hjkkjvuj\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "Hjkkk",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Hjkkk\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "HjukkJj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"HjukkJj\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
       "text" : "Hnas",
       "entities" : [
         {
@@ -1733,6 +1777,29 @@
       ]
     },
     {
+      "text" : "Kan jeg få faktura for september i fjor?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-09-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 39
+        }
+      ]
+    },
+    {
       "text" : "Kan jeg få fakturakopi for mars?",
       "entities" : [
         {
@@ -1959,6 +2026,23 @@
       ]
     },
     {
+      "text" : "Mibi er flink",
+      "entities" : [
+        {
+          "entity" : "bot",
+          "value" : "\"mibi\"",
+          "start" : 0,
+          "end" : 4
+        },
+        {
+          "entity" : "compliment",
+          "value" : "\"flink\"",
+          "start" : 8,
+          "end" : 13
+        }
+      ]
+    },
+    {
       "text" : "Mibi, kan jeg få PUK for min kolega Ove?",
       "entities" : [
         {
@@ -1995,6 +2079,17 @@
           "value" : "\"Mibi?\"",
           "start" : 0,
           "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "Miiibiii",
+      "entities" : [
+        {
+          "entity" : "bot",
+          "value" : "\"Miiibiii\"",
+          "start" : 0,
+          "end" : 8
         }
       ]
     },
@@ -2544,6 +2639,40 @@
       ]
     },
     {
+      "text" : "faktura for mars",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 12,
+          "end" : 16
+        }
+      ]
+    },
+    {
+      "text" : "faktura mars",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 8,
+          "end" : 12
+        }
+      ]
+    },
+    {
       "text" : "fakturakopi",
       "entities" : [
         {
@@ -2625,12 +2754,6 @@
           "value" : "\"forbruk \"",
           "start" : 0,
           "end" : 8
-        },
-        {
-          "entity" : "time",
-          "value" : "\"i fjor\"",
-          "start" : 8,
-          "end" : 14
         }
       ]
     },
@@ -2658,6 +2781,23 @@
           "entity" : "nonsense",
           "value" : "\"fssdsdfsdfsfdsd\"",
           "start" : 0,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "få faktura mars",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 3,
+          "end" : 10
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 11,
           "end" : 15
         }
       ]
@@ -3176,15 +3316,7 @@
       ]
     },
     {
-      "text" : "i fjor",
-      "entities" : [
-        {
-          "entity" : "time",
-          "value" : "\"i fjor\"",
-          "start" : 0,
-          "end" : 6
-        }
-      ]
+      "text" : "i fjor"
     },
     {
       "text" : "idiot",
@@ -3388,6 +3520,277 @@
       ]
     },
     {
+      "text" : "kan jeg få faktura for Mars?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for februar?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2018-02-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 30
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for januar i 2016?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-01-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 36
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for januar i fjord?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-01-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 36
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for januar?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2018-01-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 29
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for marS?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for mars",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for mars?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for september 2016?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-09-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 37
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for september i fjor?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-09-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 39
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for september?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-09-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 32
+        }
+      ]
+    },
+    {
       "text" : "kan jeg få faktura?",
       "entities" : [
         {
@@ -3401,6 +3804,33 @@
           "value" : "\"faktura\"",
           "start" : 11,
           "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få fakturakopi for mars?",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"faktura\""
+        },
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"fakturakopi\"",
+          "start" : 11,
+          "end" : 22
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 27,
+          "end" : 31
         }
       ]
     },
@@ -3447,6 +3877,52 @@
           "value" : "\"Marius\"",
           "start" : 25,
           "end" : 31
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få puk til lena?",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"Kan jeg få\"",
+          "start" : 0,
+          "end" : 10
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"lena\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få puk til margrethe",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"Kan jeg få\"",
+          "start" : 0,
+          "end" : 10
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"margrethe\"",
+          "start" : 19,
+          "end" : 28
         }
       ]
     },
@@ -3985,6 +4461,23 @@
       ]
     },
     {
+      "text" : "puk til line jo",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line \"",
+          "start" : 8,
+          "end" : 13
+        }
+      ]
+    },
+    {
       "text" : "puk til line johnsen",
       "entities" : [
         {
@@ -3998,6 +4491,23 @@
           "value" : "\"Line Johnsen\"",
           "start" : 8,
           "end" : 20
+        }
+      ]
+    },
+    {
+      "text" : "puk til maxim",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "name",
+          "value" : "\"maxim\"",
+          "start" : 8,
+          "end" : 13
         }
       ]
     },
@@ -4156,6 +4666,17 @@
           "value" : "\"sdsdfsdf\"",
           "start" : 0,
           "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "september i fjor",
+      "entities" : [
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-09-01T00:00:00.000-07:00\"",
+          "start" : 0,
+          "end" : 16
         }
       ]
     },

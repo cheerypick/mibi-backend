@@ -27,16 +27,17 @@ export class DataService{
         }
         return filteredAdmins;
     }
-}
 
-                //
-                // this.getSpecificPath(path).then((subscription) => {
-                //     let dataTotal = subscription.dataTotal;
-                //     let dataUsed = subscription.dataUsed;
-                //     console.log('Data prosent: ' + (dataUsed/dataTotal*100));
-                //     if((dataUsed/dataTotal*100) > 80){
-                //         this.getAdmins().then((admins) => {
-                //
-                //         })
-                //     }
-                // });
+    public static mapData(data):any{
+        data = _.replace(data, ' ', '');
+        console.log('Mapping data "'+data+'" to price');
+        if(data === '1GB'){
+            return {data: 1000, price: 79};
+        }else if(data === '3GB'){
+            return {data: 3000, price: 129};
+        }else if(data === '5GB'){
+            return {data: 5000, price: 169};
+        }
+        return {data: 0, price: 0};
+    }
+}

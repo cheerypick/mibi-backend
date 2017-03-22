@@ -1,10 +1,10 @@
 import * as mocha from 'mocha';
 import chaiHttp = require('chai-http');
 let chai = require('chai');
-import {MiBiFirebase} from '../../src/db/MiBiFirebase';
+import {FirebaseDatabaseReader} from '../../src/db/FirebaseDatabaseReader';
 
 
-let db = new MiBiFirebase();
+let db = new FirebaseDatabaseReader();
 let chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 let expect = chai.expect;
