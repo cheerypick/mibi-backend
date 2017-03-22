@@ -82,7 +82,6 @@ export class MibiWitFunctions{
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
                 let date = new Date();
                 let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
-
                 context.subscription = _.startCase(data.name);
                 context.used = data.dataUsed;
                 context.total = data.dataTotal;
