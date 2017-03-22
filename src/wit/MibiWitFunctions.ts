@@ -79,12 +79,10 @@ export class MibiWitFunctions{
 
     public static getUpdate(context, entities, io, socket, mibiFirebase) {
         return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
-            console.log(data);
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
                 let date = new Date();
                 let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
-
-                context.subscription = data.name;
+                context.subscription = _.startCase(data.name);
                 context.used = data.dataUsed;
                 context.total = data.dataTotal;
                 context.days = daysLeft;
@@ -125,13 +123,13 @@ export class MibiWitFunctions{
                 console.log('checking for updates');
                 if(updates[update].companyName === socket._userInfo.company){
                     console.log('Updates!!!');
-                    let mycustommessage = {
+                    let msg = {
                         text: 'datausage '+updates[update].number,
                         reinit: true,
                         mine: true,
                         hidden: true
                     };
-                    io.to(socket.id).emit('message', mycustommessage);
+                    io.to(socket.id).emit('message', msg);
                     context.hasUpdate = true;
                     delete context.doesntHaveUpdates;
                     break;
