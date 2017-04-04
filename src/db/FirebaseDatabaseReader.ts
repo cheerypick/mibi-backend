@@ -171,7 +171,7 @@ export class FirebaseDatabaseReader {
                                 this.persistUpdate(subscription.companyName, number, response.path);
                                 for(let admin in admins){
                                     console.log('Sending a notification to ' + admins[admin]);
-                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage "+number));
+                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Varsel om høyt dataforbruk", _.startCase(subscription.name) + " har brukt: "+prosent+"% av datapakken sin.", "datausage "+number));
                                 }
                             })
                         }
