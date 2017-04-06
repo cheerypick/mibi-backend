@@ -213,4 +213,10 @@ export class FirebaseDatabaseReader {
     public deleteUpdate(number) {
         this.db.ref('/updates/'+number).remove();
     }
+
+    public getEmail(username) {
+        return this.getAdmin(username).then((admin) => {
+            return admin.email;
+        })
+    }
 }

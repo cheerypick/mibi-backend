@@ -159,4 +159,12 @@ export class MibiWitFunctions{
         context.joke = jokes[jokeNumber];
         return context;
     }
+
+    public static sendEmail(context, entities, io, socket, mibiFirebase) {
+        return mibiFirebase.getEmail(socket._userInfo.username).then((email) => {
+            context.email = email;
+            return context;
+        })
+
+    }
 }
