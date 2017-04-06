@@ -46,7 +46,10 @@ export class MibiWitFunctions{
     public static getInvoice(context, entities, io, socket, mibiFirebase){
         let date = new Date(entities.datetime[0].value);
 
-        if(date > new Date()){
+        if(date > new Date()) {
+            date.setFullYear(date.getFullYear() - 1);
+        }
+        if(date > new Date()) {
             let response = {
                 text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
             };
