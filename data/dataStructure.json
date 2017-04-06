@@ -3,6 +3,7 @@
     "username": {
       "companyName": "",
       "password": "",
+	  "email": "",
       "token": []
     }
   },

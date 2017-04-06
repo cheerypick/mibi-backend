@@ -188,140 +188,222 @@
       "name" : "Update data",
       "turns" : [
         {
-          "user" : "datausage",
+          "user" : "datausage 12345",
           "entities" : [
             {
               "entity" : "datausage",
               "value" : "\"datausage\"",
               "start" : 0,
               "end" : 9
+            },
+            {
+              "entity" : "number",
+              "value" : "12345",
+              "start" : 10,
+              "end" : 15
             }
           ],
           "operations" : [
             {
-              "action" : "template-Hei Ole!"
+              "action" : "function-getUpdate"
             },
             {
-              "action" : "template-Line har brukt 4,8GB av sin datapakke på 5GB og det er 13 dager til at hun får mer data. "
-            },
-            {
-              "action" : "template- Vil du at jeg skal bestille en ny datapakke til henne? "
+              "branches" : [
+                {
+                  "predicates" : [
+                    {
+                      "name" : "admin subscription used total days",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template-Hei {admin}!"
+                    },
+                    {
+                      "action" : "template-{subscription} har brukt {used}MB av sin datapakke på {total}MB og det er {days} dager til data fylles på."
+                    },
+                    {
+                      "action" : "template- Vil du at jeg skal bestille en ny datapakke? "
+                    }
+                  ],
+                  "turns" : [
+                    {
+                      "branches" : [
+                        [
+                          {
+                            "user" : "Ja, takk, 1GB (79,-)",
+                            "entities" : [
+                              {
+                                "entity" : "sentiment",
+                                "value" : "\"positive\""
+                              },
+                              {
+                                "entity" : "acceptance",
+                                "value" : "\"Ja, takk\"",
+                                "start" : 0,
+                                "end" : 8
+                              },
+                              {
+                                "entity" : "data",
+                                "value" : "\"1GB\"",
+                                "start" : 10,
+                                "end" : 13
+                              }
+                            ],
+                            "operations" : [
+                              {
+                                "action" : "function-orderData"
+                              },
+                              {
+                                "branches" : [
+                                  {
+                                    "predicates" : [
+                                      {
+                                        "name" : "newdata",
+                                        "negative" : false
+                                      }
+                                    ],
+                                    "operations" : [
+                                      {
+                                        "action" : "template-Strålende!"
+                                      },
+                                      {
+                                        "action" : "template-Da har jeg bestilt {newdata}"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "user" : "Gi henne 3GB (129,-)",
+                            "entities" : [
+                              {
+                                "entity" : "sentiment",
+                                "value" : "\"positive\""
+                              },
+                              {
+                                "entity" : "acceptance",
+                                "value" : "\"Gi henne\"",
+                                "start" : 0,
+                                "end" : 8
+                              },
+                              {
+                                "entity" : "data",
+                                "value" : "\"3GB\"",
+                                "start" : 9,
+                                "end" : 12
+                              }
+                            ],
+                            "operations" : [
+                              {
+                                "action" : "function-orderData"
+                              },
+                              {
+                                "branches" : [
+                                  {
+                                    "predicates" : [
+                                      {
+                                        "name" : "newdata",
+                                        "negative" : false
+                                      }
+                                    ],
+                                    "operations" : [
+                                      {
+                                        "action" : "template-Så bra!"
+                                      },
+                                      {
+                                        "action" : "template-Da har jeg bestilt {newdata}"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "user" : "Det er ikke nødvendig med mer data",
+                            "entities" : [
+                              {
+                                "entity" : "rejection",
+                                "value" : "\"Det er ikke nødvendig med mer data\"",
+                                "start" : 0,
+                                "end" : 34
+                              }
+                            ],
+                            "operations" : [
+                              {
+                                "action" : "function-orderData"
+                              },
+                              {
+                                "action" : "template-Den er grei!"
+                              },
+                              {
+                                "action" : "template-Da sier jeg ifra neste gang det skjer noe"
+                              }
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "user" : "Kjør på med 5GB (169,-)",
+                            "entities" : [
+                              {
+                                "entity" : "sentiment",
+                                "value" : "\"positive\""
+                              },
+                              {
+                                "entity" : "acceptance",
+                                "value" : "\"Kjør på\"",
+                                "start" : 0,
+                                "end" : 7
+                              },
+                              {
+                                "entity" : "data",
+                                "value" : "\"5GB\"",
+                                "start" : 12,
+                                "end" : 15
+                              }
+                            ],
+                            "operations" : [
+                              {
+                                "action" : "function-orderData"
+                              },
+                              {
+                                "branches" : [
+                                  {
+                                    "predicates" : [
+                                      {
+                                        "name" : "newdata",
+                                        "negative" : false
+                                      }
+                                    ],
+                                    "operations" : [
+                                      {
+                                        "action" : "template-Det skal jeg selvfølgelig gjøre!"
+                                      },
+                                      {
+                                        "action" : "template-Da har jeg bestilt {newdata}"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
-          ]
-        },
-        {
-          "branches" : [
-            [
-              {
-                "user" : "Ja, takk, 1GB (79,-)",
-                "entities" : [
-                  {
-                    "entity" : "sentiment",
-                    "value" : "\"positive\""
-                  },
-                  {
-                    "entity" : "acceptance",
-                    "value" : "\"Ja, takk\"",
-                    "start" : 0,
-                    "end" : 8
-                  },
-                  {
-                    "entity" : "data",
-                    "value" : "\"1GB\"",
-                    "start" : 10,
-                    "end" : 13
-                  }
-                ],
-                "operations" : [
-                  {
-                    "bookmark" : "orderAccept2"
-                  },
-                  {
-                    "action" : "template-Strålende!"
-                  },
-                  {
-                    "action" : "template-Da har jeg bestilt {data} til henne."
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "user" : "Kjør på med 5GB (149,-)",
-                "entities" : [
-                  {
-                    "entity" : "sentiment",
-                    "value" : "\"positive\""
-                  },
-                  {
-                    "entity" : "acceptance",
-                    "value" : "\"Kjør på\"",
-                    "start" : 0,
-                    "end" : 7
-                  },
-                  {
-                    "entity" : "data",
-                    "value" : "\"5GB\"",
-                    "start" : 12,
-                    "end" : 15
-                  }
-                ],
-                "operations" : [
-                  {
-                    "jump" : "orderAccept2"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "user" : "Hun overlever uten",
-                "entities" : [
-                  {
-                    "entity" : "rejection",
-                    "value" : "\"Hun overlever uten\"",
-                    "start" : 0,
-                    "end" : 18
-                  }
-                ],
-                "operations" : [
-                  {
-                    "action" : "template-Okay!"
-                  },
-                  {
-                    "action" : "template-Jeg sier ifra neste gang det skjer noe."
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "user" : "Gi henne 3GB (119,-)",
-                "entities" : [
-                  {
-                    "entity" : "sentiment",
-                    "value" : "\"positive\""
-                  },
-                  {
-                    "entity" : "acceptance",
-                    "value" : "\"Gi henne\"",
-                    "start" : 0,
-                    "end" : 8
-                  },
-                  {
-                    "entity" : "data",
-                    "value" : "\"3GB \"",
-                    "start" : 9,
-                    "end" : 13
-                  }
-                ],
-                "operations" : [
-                  {
-                    "jump" : "orderAccept2"
-                  }
-                ]
-              }
-            ]
           ]
         }
       ]
@@ -370,10 +452,7 @@
                   ],
                   "operations" : [
                     {
-                      "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer"
-                    },
-                    {
-                      "action" : "template-link   {link}  "
+                      "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer:  {link}"
                     }
                   ]
                 }
@@ -447,6 +526,53 @@
           "operations" : [
             {
               "action" : "template-Hei!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Har du noen oppdateringer for meg?",
+          "entities" : [
+            {
+              "entity" : "updates",
+              "value" : "\"oppdateringer \"",
+              "start" : 12,
+              "end" : 25
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "function-checkForUpdates"
+            },
+            {
+              "branches" : [
+                {
+                  "predicates" : [
+                    {
+                      "name" : "doesntHaveUpdates",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template-Jeg har ingen oppdateringer for deg"
+                    }
+                  ]
+                },
+                {
+                  "predicates" : [
+                    {
+                      "name" : "hasUpdate",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [ ]
+                }
+              ]
             }
           ]
         }

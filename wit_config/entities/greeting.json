@@ -28,6 +28,18 @@
         ]
       },
       {
+        "value" : "Yo bitch",
+        "expressions" : [
+          "Yo bitch"
+        ]
+      },
+      {
+        "value" : "Yo dude",
+        "expressions" : [
+          "Yo dude"
+        ]
+      },
+      {
         "value" : "halla",
         "expressions" : [
           "halla"

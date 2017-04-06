@@ -134,6 +134,18 @@ export class FirebaseDatabaseReader {
 
             if (tokenFound == false) {
                 this.db.ref('/admins/' + username + '/tokens/').push(token);
+
+                this.getAdmins().then((admins) => {
+                    for(let admin in admins){
+                        for(let otherToken in admins[admin].tokens){
+                            if((token === admins[admin].tokens[otherToken ]) && admin != username){
+                                console.log('Found duplicate token for ' + admin + ' during login');
+                                console.log('Removing the duplicate token as this is a new user');
+                                this.db.ref('/admins/'+ admin + '/tokens/' + otherToken).remove();
+                            }
+                        }
+                    }
+                });
             }
         });
     }
@@ -200,5 +212,11 @@ export class FirebaseDatabaseReader {
 
     public deleteUpdate(number) {
         this.db.ref('/updates/'+number).remove();
+    }
+
+    public getEmail(username) {
+        return this.getAdmin(username).then((admin) => {
+            return admin.email;
+        })
     }
 }

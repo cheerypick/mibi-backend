@@ -1,124 +1,258 @@
 {
-  "admins":{
-    "mibi": {
-      "name": "line johnsen",
-      "companyName": "Din Begravelse",
-      "password": "mibi",
-      "tokens": []
+  "admins" : {
+    "mibi" : {
+      "companyName" : "Lekebutikken",
+      "name" : "line johnsen",
+      "password" : "mibi",
+	  "email": "line.johnsen@lekebutikken.no",
+      "tokens" : {
+        "-KfkEsLRJv2fjCmWy935" : "dPWKMpgTt3g:APA91bFy7simGjR0ZZVSI6RPTzcwrHNzwcz5poO5QxlvUCgjBRgbtZ_cgvfkgM5ziSUHsuAdvB_QXYIdXmgjkswwDThvaknrg36qFwxJWbCoUU3NlM58wdMQbkKi-mtnS7c2iMmDlC5w",
+        "-KflBHw8z_KHZT-VciXC" : "cuRj4Gj7TDQ:APA91bGhm8VEA-WGYwHHds_ZsJ1k7GN6JrMiNSCfzz2-z6K9FtMjl1EUpofz6tVwl_b7ClzIB1uo1rezQagKzDa3Acr9ZqDrEU93LDJ0xKwwq6_9jGgZbmaeT4GuqMLFPfjl4fX1kP3D"
+      }
     },
-    "mobo": {
-      "name": "john abrahamsen",
-      "companyName": "Din Begravelse",
-      "password": "mobo",
-      "tokens": []
+    "mobo" : {
+      "companyName" : "Lekebutikken",
+      "name" : "john abrahamsen",
+      "password" : "mobo",
+	  "email": "john.abrahamsen@lekebutikken.no"
     },
-    "smulteringen": {
-      "companyName": "Smultekjappa",
-      "name": "ole nordmann",
-      "password": "smulteringErBest",
-      "tokens": []
+    "smulteringen" : {
+      "companyName" : "Smultekjappa",
+      "name" : "ole nordmann",
+      "password" : "hei",
+	  "email": "ole.nordmann@smultekjappa.no",
+      "tokens" : {
+        "-Kgrr4WjQZPfM6VnIz9R" : "diSd0i07xSQ:APA91bH2ODD2xcY5ty8Nfk1IaKIs0CF4MYrz8sHUcfgIAiyG96FmWEAE_6XCqcQp4x4eUseEh9MHY8lgwXemueB2g7lzfbIKNGvH-8ng1t4_mkS1xbXweqEiL9Iqls9YemEQIFujxu5a"
+      }
     }
   },
-  "companies": {
-    "Din Begravelse": {
-      "orgNr": 1234567890,
-      "admins": {
-        "mibi": {
-          "name": "line johnsen",
-          "companyName": "Din Begravelse",
-          "password": "mibi",
-          "tokens": []
+  "companies" : {
+    "Lekebutikken" : {
+      "admins" : {
+        "mibi" : {
+          "companyName" : "Lekebutikken",
+          "name" : "line johnsen",
+          "password" : "mibi"
         },
-        "mobo": {
-          "name": "john abrahamsen",
-          "companyName": "Din Begravelse",
-          "password": "mobo",
-          "tokens": []
+        "mobo" : {
+          "companyName" : "Lekebutikken",
+          "name" : "john abrahamsen",
+          "password" : "mobo"
         }
       },
-      "subscriptions": {
-        "phoneNumbers": {
-          "94685512": {
-            "companyName": "Din Begravelse",
-            "name": "line johnsen",
-            "puk": 689461,
-            "dataDefault": 5000,
-            "dataTotal": 5000,
-            "dataUsed": 2312,
-            "dataNotified": false,
-            "priceDefault": 349,
-            "priceTotal": 349,
-            "additionalProducts": []
-          },
-          "41639898": {
-            "companyName": "Din Begravelse",
-            "name": "john abrahamsen",
-            "puk": 456812,
-            "dataDefault": 3000,
-            "dataTotal": 5000,
-            "dataUsed": 4384,
-            "dataNotified": false,
-            "priceDefault": 299,
-            "priceTotal": 499,
-            "additionalProducts": [
-              {
-                "productName": "DataPakke 2GB",
-                "endDate": "2017-04-01T00:00:00.000Z"
-              }
-            ]
-          },
-          "91454568": {
-            "companyName": "Din Begravelse",
-            "name": "tone fjellheim",
-            "puk": 124979,
-            "dataDefault": 5000,
-            "dataTotal": 10000,
-            "dataUsed": 7460,
-            "dataNotified": false,
-            "priceDefault": 349,
-            "priceTotal": 599,
-            "additionalProducts": [
-              {
-                "productName": "DataPakke 5GB",
-                "endDate": "2017-04-01T00:00:00.000Z"
-              }
-            ]
-          }
+      "orgNr" : 1234567890,
+      "subscriptions" : {
+        "names" : {
+          "john abrahamsen" : [ "41639898" ],
+          "line johnsen" : [ "94685512" ],
+          "tone fjellheim" : [ "91454568" ]
         },
-        "names": {
-          "tone fjellheim": ["91454568"],
-          "john abrahamsen":["41639898"],
-          "line johnsen": ["94685512"]
+        "phoneNumbers" : {
+          "41639898" : {
+            "additionalProducts" : {
+              "0" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "DataPakke 2GB"
+              },
+              "-KflWWz6URy4D_z7hyuU" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KflkoaUPwhqN2zDDXR5" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-Kfp3Gm8lRTpVsrdAtt8" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-Kfp4Apz1Vu9WrkVCCpq" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kgss8CY_e8aCw8jwCyH" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KgxCyaLXD50n8SHmmkf" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kh1Qlib-wzXho5TEb1p" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-Kh1tw43PPVh2fL85zbz" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              }
+            },
+            "companyName" : "Lekebutikken",
+            "dataDefault" : 3000,
+            "dataNotified" : false,
+            "dataTotal" : 29000,
+            "dataUsed" : 27411,
+            "name" : "john abrahamsen",
+            "priceDefault" : 299,
+            "priceTotal" : 1511,
+            "puk" : 456812
+          },
+          "91454568" : {
+            "additionalProducts" : {
+              "0" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "DataPakke 5GB"
+              },
+              "-KflXI0DtWEC-wmsCnKp" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KflZ-uRS9gD7gu8FY9F" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KflZtF_rJtwecQy-JuG" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KflZwkFbE5fblgaPai7" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfl_1HPMOZuaKBnjR0O" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Kfl_41IA6APawmcXr0M" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-Kfl_6_fG8LFVYYxpWvI" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfl_Kp6mpWJVwg22K24" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfl_a70AxhU52J0zA_L" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfl_gH5GPwfNorRP3j_" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-Kfl_iBg3_3jl8qUAyBm" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfla6fMVvVoajyNxg9f" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KflaEZUmN2N77ogbsQw" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfld9hceo7gIIWn9pOc" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kfp6lEuTidBUSr2vI1F" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Kfp8UN219VAp9oOrQqv" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KgyEJvnDzGL34KFdcDx" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              }
+            },
+            "companyName" : "Lekebutikken",
+            "dataDefault" : 5000,
+            "dataNotified" : false,
+            "dataTotal" : 45000,
+            "dataUsed" : 39660,
+            "name" : "tone fjellheim",
+            "priceDefault" : 349,
+            "priceTotal" : 2028,
+            "puk" : 124979
+          },
+          "94685512" : {
+            "additionalProducts" : {
+              "-KflT5G_kQPgpPWfNHux" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KflTBlcGVhZ5LffRqNQ" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KflUpNnJMujG8ClKVWG" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KflVdUxdSitNS69NrSE" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KflXqIPzIyB5C9YUzUd" : {
+                "endDate" : "2017-04-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              }
+            },
+            "companyName" : "Lekebutikken",
+            "dataDefault" : 5000,
+            "dataNotified" : false,
+            "dataTotal" : 10000,
+            "dataUsed" : 9912,
+            "name" : "line johnsen",
+            "priceDefault" : 349,
+            "priceTotal" : 744,
+            "puk" : 689461
+          }
         }
       }
     },
-    "Smultekjappa": {
-      "orgNr": 7438294511,
-      "admins": {
-        "smulteringen": {
-          "companyName": "Smultekjappa",
-          "name": "ole nordmann",
-          "password": "smulteringErBest",
-          "tokens": []
+    "Smultekjappa" : {
+      "admins" : {
+        "smulteringen" : {
+          "companyName" : "Smultekjappa",
+          "name" : "ole nordmann",
+          "password" : "smulteringErBest"
         }
       },
-      "subscriptions": {
-        "phoneNumbers": {
-          "45696989": {
-            "companyName": "Smultekjappa",
-            "name": "ole nordmann",
-            "puk": 126543,
-            "dataDefault": 2000,
-            "dataTotal": 2000,
-            "dataUsed": 437,
-            "dataNotified": false,
-            "priceDefault": 299,
-            "priceTotal": 299,
-            "additionalProducts": []
-          }
+      "orgNr" : 7438294511,
+      "subscriptions" : {
+        "names" : {
+          "ole nordmann" : [ "45696989" ]
         },
-        "names": {
-          "ole nordmann": ["45696989"]
+        "phoneNumbers" : {
+          "45696989" : {
+            "additionalProducts" : {
+              "-KgsbsMXSC4pu7Q54e3C" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Kh0za6jay-QfTd7w7hY" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              }
+            },
+            "companyName" : "Smultekjappa",
+            "dataDefault" : 2000,
+            "dataNotified" : false,
+            "dataTotal" : 12000,
+            "dataUsed" : 6837,
+            "name" : "ole nordmann",
+            "priceDefault" : 299,
+            "priceTotal" : 637,
+            "puk" : 126543
+          }
         }
       }
     }
