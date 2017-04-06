@@ -139,4 +139,21 @@ export class MibiWitFunctions{
             return context;
         });
     }
+
+    public static getJoke(context, entities) {
+        let jokes = [
+            'vits 1',
+            'vits 2',
+            'vits 3',
+            'vits 4'
+        ];
+        
+        let max = jokes.length;
+        let jokeNumber = Math.floor(Math.random() * (max));
+
+        console.log('Telling joke number ' + jokeNumber);
+
+        context.joke = jokes[jokeNumber];
+        return context;
+    }
 }
