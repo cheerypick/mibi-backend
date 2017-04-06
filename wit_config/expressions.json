@@ -360,6 +360,17 @@
       ]
     },
     {
+      "text" : "Det er ikke nødvendig med mer data",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"Det er ikke nødvendig med mer data\"",
+          "start" : 0,
+          "end" : 34
+        }
+      ]
+    },
+    {
       "text" : "Det er rett og slett dårlig",
       "entities" : [
         {
@@ -394,6 +405,36 @@
           "value" : "\"dum\"",
           "start" : 6,
           "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "Du er flink",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"compliment\""
+        },
+        {
+          "entity" : "compliment",
+          "value" : "\"flink\"",
+          "start" : 6,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "Du er flink!",
+      "entities" : [
+        {
+          "entity" : "intent",
+          "value" : "\"compliment\""
+        },
+        {
+          "entity" : "compliment",
+          "value" : "\"flink\"",
+          "start" : 6,
+          "end" : 11
         }
       ]
     },
@@ -446,11 +487,73 @@
       "text" : "Erik Story"
     },
     {
+      "text" : "Faktura for april i fjor",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-04-01T00:00:00.000-07:00\"",
+          "start" : 12,
+          "end" : 24
+        }
+      ]
+    },
+    {
+      "text" : "Faktura for januar 2016",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-01-01T00:00:00.000-08:00\"",
+          "start" : 12,
+          "end" : 23
+        }
+      ]
+    },
+    {
+      "text" : "Fakturakopi februar 2015",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"fakturakopi\"",
+          "start" : 0,
+          "end" : 11
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2015-02-01T00:00:00.000-08:00\"",
+          "start" : 12,
+          "end" : 24
+        }
+      ]
+    },
+    {
       "text" : "Fantastisk!",
       "entities" : [
         {
           "entity" : "sentiment",
           "value" : "\"positive\"",
+          "start" : 0,
+          "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "Fjkølcthjnn",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Fjkølcthjnn\"",
           "start" : 0,
           "end" : 11
         }
@@ -503,6 +606,27 @@
           "value" : "\"3GB \"",
           "start" : 9,
           "end" : 13
+        }
+      ]
+    },
+    {
+      "text" : "Gi henne 3GB (129,-)",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "acceptance",
+          "value" : "\"Gi henne\"",
+          "start" : 0,
+          "end" : 8
+        },
+        {
+          "entity" : "data",
+          "value" : "\"3GB\"",
+          "start" : 9,
+          "end" : 12
         }
       ]
     },
@@ -649,7 +773,7 @@
           "entity" : "updates",
           "value" : "\"oppdateringer \"",
           "start" : 12,
-          "end" : 26
+          "end" : 25
         }
       ]
     },
@@ -1497,12 +1621,6 @@
           "value" : "\"1GB\"",
           "start" : 10,
           "end" : 13
-        },
-        {
-          "entity" : "number",
-          "value" : "79",
-          "start" : 15,
-          "end" : 17
         }
       ]
     },
@@ -1731,6 +1849,23 @@
       ]
     },
     {
+      "text" : "Kan jeg få PUK til Line?",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
       "text" : "Kan jeg få en PUK kode for Marius",
       "entities" : [
         {
@@ -1827,6 +1962,23 @@
       ]
     },
     {
+      "text" : "Kan jeg få puk til line",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"line\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
       "text" : "Katten døde :(",
       "entities" : [
         {
@@ -1856,6 +2008,27 @@
     },
     {
       "text" : "Kjør på med 5GB (149,-)",
+      "entities" : [
+        {
+          "entity" : "sentiment",
+          "value" : "\"positive\""
+        },
+        {
+          "entity" : "acceptance",
+          "value" : "\"Kjør på\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "data",
+          "value" : "\"5GB\"",
+          "start" : 12,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "Kjør på med 5GB (169,-)",
       "entities" : [
         {
           "entity" : "sentiment",
@@ -2265,6 +2438,28 @@
       ]
     },
     {
+      "text" : "Yo bitch",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Yo bitch\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "Yo dude",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Yo dude\"",
+          "start" : 0,
+          "end" : 7
+        }
+      ]
+    },
+    {
       "text" : "Zup?",
       "entities" : [
         {
@@ -2371,6 +2566,91 @@
           "value" : "\"datausage\"",
           "start" : 0,
           "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "datausage 12345",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        },
+        {
+          "entity" : "number",
+          "value" : "12345",
+          "start" : 10,
+          "end" : 15
+        }
+      ]
+    },
+    {
+      "text" : "datausage 41639898",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        },
+        {
+          "entity" : "number",
+          "value" : "41639898",
+          "start" : 10,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "datausage 91454568",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        },
+        {
+          "entity" : "number",
+          "value" : "91454568",
+          "start" : 10,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "datausage 94685512",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        },
+        {
+          "entity" : "number",
+          "value" : "94685512",
+          "start" : 10,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "datausage Ole",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Ole\"",
+          "start" : 10,
+          "end" : 13
         }
       ]
     },
@@ -2635,6 +2915,57 @@
           "value" : "\"faktura\"",
           "start" : 0,
           "end" : 7
+        }
+      ]
+    },
+    {
+      "text" : "faktura for april",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-04-01T00:00:00.000-07:00\"",
+          "start" : 12,
+          "end" : 17
+        }
+      ]
+    },
+    {
+      "text" : "faktura for april 2015",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2015-04-01T00:00:00.000-07:00\"",
+          "start" : 12,
+          "end" : 22
+        }
+      ]
+    },
+    {
+      "text" : "faktura for februar",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2018-02-01T00:00:00.000-08:00\"",
+          "start" : 12,
+          "end" : 19
         }
       ]
     },
@@ -3716,6 +4047,35 @@
         {
           "entity" : "datetime",
           "value" : "\"2017-03-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "kan jeg få faktura for mars`",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2018-03-01T00:00:00.000-08:00\"",
           "start" : 23,
           "end" : 27
         }
