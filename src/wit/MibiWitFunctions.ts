@@ -139,4 +139,21 @@ export class MibiWitFunctions{
             return context;
         });
     }
+
+    public static getJoke(context, entities) {
+        let jokes = [
+            'Har du hørt om hønene som hadde så høy feber at det bare kom kokte egg?',
+            'Hva får du om du krysser et virus med en klovn? - Syk humor',
+            'Jeg synes sauen din løper fort, spesielt med tanke på at den var født lam!',
+            'Vet du et ord på tre bokstaver som starter med bensin? - Bil.'
+        ];
+
+        let max = jokes.length;
+        let jokeNumber = Math.floor(Math.random() * (max));
+
+        console.log('Telling joke number ' + jokeNumber);
+
+        context.joke = jokes[jokeNumber];
+        return context;
+    }
 }
