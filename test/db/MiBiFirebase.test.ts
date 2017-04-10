@@ -2,9 +2,9 @@ import * as mocha from 'mocha';
 import chaiHttp = require('chai-http');
 let chai = require('chai');
 import {FirebaseDatabaseReader} from '../../src/db/FirebaseDatabaseReader';
+import {fbDbReader} from "../../src/index";
 
-
-let db = new FirebaseDatabaseReader();
+let db = fbDbReader;
 let chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 let expect = chai.expect;

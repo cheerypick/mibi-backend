@@ -30,6 +30,13 @@
     "storageBucket": "mibi-f0d90.appspot.com",
     "messagingSenderId": "703686049206"
   },
+  "firebaseHF": {
+    "apiKey": "AIzaSyD6wGiW6y3gx_l_hlvyg0fyBwVAkRbdi5c",
+    "authDomain": "pj6100-9896c.firebaseapp.com",
+    "databaseURL": "https://pj6100-9896c.firebaseio.com",
+    "storageBucket": "pj6100-9896c.appspot.com",
+    "messagingSenderId": "1029522960722"
+  },
   "pushNotificationSetup": {
     "serverKey" : "key=AAAAo9b0_bY:APA91bE0jIqBiNLEnPy12NT9seGvVpv5pKe4afjlqfUyZbZU1vsjfB8VL6yFAQyYge00sWmhY9ZqS1GDO8dpvcRHlY7tA2Y217H6mC9q-VsQgfbKqWFzcbVcJUDuv4xu5Pj6ONWGAOf5"
   }

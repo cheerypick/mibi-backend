@@ -21,6 +21,10 @@ export class PropertyReader {
         return this.readFireBaseConfiguration(this.config.firebaseAdriano);
     }
 
+    public getHFFireBaseConfiguration():FireBaseConfig{
+        return this.readFireBaseConfiguration(this.config.firebaseHF);
+    }
+
     public getAccessToken(){
         return this.config.wit.authentication.accessToken;
     }

@@ -3,9 +3,6 @@ import {PropertyReader} from "../config/PropertyReader";
 import * as firebase from "firebase";
 import * as Diff from 'deep-diff';
 import * as _ from 'lodash';
-import {PushNotificationService} from "../service/PushNotificationService";
-import {Notification} from "../entities/Notification";
-import {DataService} from "../service/DataService";
 
 
 /*
@@ -22,6 +19,7 @@ export class FirebaseDatabaseReader {
 
     constructor() {
         // let config = this.propertyReader.getAdrianoFireBaseConfiguration();
+        //let config = this.propertyReader.getHFFireBaseConfiguration();
         let config = this.propertyReader.getProductionFireBaseConfiguration();
 
         firebase.initializeApp(config);
@@ -156,42 +154,9 @@ export class FirebaseDatabaseReader {
         })
     }
 
-    public getDataUpdates() {
-        let oldData = {};
-        let newData = {};
-        let pushNotificationService = new PushNotificationService();
-
+    public getDataUpdates(){
         let observer = this.db.ref('/companies');
-        observer.on('value', (snapshot) => {
-            newData = snapshot.val();
-            if(_.isEmpty(oldData)){
-                oldData = snapshot.val();
-            }else{
-                console.log('Database has been updated. Checking values');
-                let response = DataService.isDataUsageUpdate(oldData, newData);
-                if(response.isDataUpdate){
-                    console.log('A user has used more data');
-                    let number = response.path.replace(/\/$/, '');
-                    number = number.substring(number.lastIndexOf('/') + 1);
-                    this.getSpecificPath(response.path).then((subscription) => {
-                        console.log(subscription.name + ' has now used ' + subscription.dataUsed + 'MB of ' + subscription.dataTotal +'MB');
-                        let prosent = DataService.dataUsed(subscription.dataUsed, subscription.dataTotal);
-                        if(prosent > this.propertyReader.getDataBeforeNotification()){
-                            console.log('This is above ' + this.propertyReader.getDataBeforeNotification() + '%');
-                            this.getAdmins().then((a) => {
-                                let admins = DataService.filterAdmins(a, subscription.companyName);
-                                this.persistUpdate(subscription.companyName, number, response.path);
-                                for(let admin in admins){
-                                    console.log('Sending a notification to ' + admins[admin]);
-                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Varsel om høyt dataforbruk", _.startCase(subscription.name) + " har brukt "+prosent+"% av datapakken sin.", "datausage "+number));
-                                }
-                            })
-                        }
-                    });
-                }
-            }
-            oldData = snapshot.val();
-        });
+        return observer;
     }
 
     public persistUpdate(company, number, path){

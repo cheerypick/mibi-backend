@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as dateformat from 'dateformat';
-import {DataService} from "../service/DataService";
+import {DataUtil} from "../util/DataUtil";
 
 export class MibiWitFunctions{
 
@@ -86,7 +86,7 @@ export class MibiWitFunctions{
                 let date = new Date();
                 let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
                 context.subscription = _.startCase(data.name);
-                context.used = data.dataUsed;
+                context.used = data.calculateDataPercentage;
                 context.total = data.dataTotal;
                 context.days = daysLeft;
                 context.admin = socket._userInfo.username;
@@ -103,7 +103,7 @@ export class MibiWitFunctions{
         return mibiFirebase.getUpdate(phone).then((data) => {
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
                 if(entities.data){
-                    let info = DataService.mapData(entities.data[0].value);
+                    let info = DataUtil.mapData(entities.data[0].value);
                     let newData = subscription.dataTotal + info.data;
                     let newPrice = subscription.priceTotal + info.price;
 
