@@ -35,9 +35,6 @@ describe('Getting puk', () => {
             expect(puk).to.equal(puk);
         });
     });
-    it('Should return the promise',(done) => {
-        expect(fbDbReader.getPuk(company, phone)).to.eventually.be.fulfilled.and.notify(done);
-    });
 });
 
 describe('Getting numbers for person', () => {
@@ -50,9 +47,6 @@ describe('Getting numbers for person', () => {
         fbDbReader.getNumbers(company, name.substring(0,6)).then((numbers) => {
             expect(numbers).length.to.equal(1);
         });
-    });
-    it('Should return the promise',(done) => {
-        expect(fbDbReader.getNumbers(company, name)).to.eventually.be.fulfilled.and.notify(done);
     });
 });
 
@@ -102,10 +96,3 @@ describe('Getting updates', () => {
         });
     });
 });
-
-describe('Getting device tokens', () => {
-    it('Should return all tokens for an admin', () => {
-
-    });
-});
-

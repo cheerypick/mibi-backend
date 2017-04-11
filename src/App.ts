@@ -34,18 +34,16 @@ class App {
          * API endpoints */
         let router = express.Router();
         // placeholder route handler
-        router.get('/', (req, res, next) => {
-            res.json({
-                message: 'Hello World!'
-            });
-        });
+        // router.get('/', (req, res, next) => {
+        //     res.json({
+        //         message: 'Hello World!'
+        //     });
+        // });
 
         const notificationRoutes = new NotificationRouter();
         const userRouter = new UserRouter();
 
         this.express.use('/', router);
-        this.express.use('/api/v1/users', userRouter.router);
-        this.express.use('/api/v1/push', notificationRoutes.router);
     }
 
 }
