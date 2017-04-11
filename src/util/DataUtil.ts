@@ -1,5 +1,6 @@
 import * as Diff from 'deep-diff';
 import * as _ from 'lodash';
+import {stringify} from "querystring";
 
 export class DataUtil{
 
@@ -7,7 +8,6 @@ export class DataUtil{
         if(_.isEmpty(oldData)){
             return {path: null, isDataUpdated: null}
         }
-
         let json = Diff.diff(oldData,newData);
         if(json[0].path) {
             let path = "/companies";

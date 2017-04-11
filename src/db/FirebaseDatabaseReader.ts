@@ -19,8 +19,8 @@ export class FirebaseDatabaseReader {
 
     constructor() {
         // let config = this.propertyReader.getAdrianoFireBaseConfiguration();
-        //let config = this.propertyReader.getHFFireBaseConfiguration();
-        let config = this.propertyReader.getProductionFireBaseConfiguration();
+        let config = this.propertyReader.getHFFireBaseConfiguration();
+        //let config = this.propertyReader.getProductionFireBaseConfiguration();
 
         firebase.initializeApp(config);
         this.db = firebase.database();
