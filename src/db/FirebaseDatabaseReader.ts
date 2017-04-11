@@ -18,9 +18,16 @@ export class FirebaseDatabaseReader {
     private propertyReader = new PropertyReader();
 
     constructor() {
-        // let config = this.propertyReader.getAdrianoFireBaseConfiguration();
-        let config = this.propertyReader.getHFFireBaseConfiguration();
-        //let config = this.propertyReader.getProductionFireBaseConfiguration();
+        let config;
+        let dbSelect = this.propertyReader.getDatabaseSelection();
+
+        if(_.lowerCase(dbSelect) == 'adriano'){
+            config = this.propertyReader.getAdrianoFireBaseConfiguration();
+        }else if(_.lowerCase(dbSelect) === 'hf'){
+            config = this.propertyReader.getHFFireBaseConfiguration();
+        }else{
+            config = this.propertyReader.getProductionFireBaseConfiguration();
+        }
 
         firebase.initializeApp(config);
         this.db = firebase.database();
