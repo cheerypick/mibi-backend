@@ -41,7 +41,7 @@ class App {
         // });
 
         const notificationRoutes = new NotificationRouter();
-        const userRouter = new UserRouter();
+        // const userRouter = new UserRouter();
 
         this.express.use('/', router);
     }

@@ -9,26 +9,28 @@ export class MibiWitFunctions{
             let numberNotFound = numbers == null;
 
             if(numberNotFound){
-                let response = {
-                    text: 'Beklager, jeg finner ikke det navnet for din bedrift.'
-                };
+                let response = this.createNumberNotFoundResponse();
+                // let response = {
+                //     text: 'Beklager, jeg finner ikke det navnet for din bedrift.'
+                // };
                 io.to(socket.id).emit('message', response);
             }else {
-                let quickreplies = [];
-
-                // let array = numbers.val();
-
-                for (let number in numbers) {
-                    for (let num in numbers[number]) {
-                        quickreplies.push(numbers[number][num]);
-                    }
-                }
-                quickreplies.push("Nei, det er ingen av de nummerene");
-
-                let response = {
-                    text: 'Hvilke av disse nummerene vil du ha PUK for?',
-                    quickreplies: quickreplies
-                };
+                let response = this.createNumbersFound(numbers);
+                // let quickreplies = [];
+                //
+                // // let array = numbers.val();
+                //
+                // for (let number in numbers) {
+                //     for (let num in numbers[number]) {
+                //         quickreplies.push(numbers[number][num]);
+                //     }
+                // }
+                // quickreplies.push("Nei, det er ingen av de nummerene");
+                //
+                // let response = {
+                //     text: 'Hvilke av disse nummerene vil du ha PUK for?',
+                //     quickreplies: quickreplies
+                // };
                 io.to(socket.id).emit('message', response);
             }
         });
@@ -36,12 +38,15 @@ export class MibiWitFunctions{
 
     public static getPuk(context, entities, socket, mibiFirebase) {
         return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-            context.name = _.startCase(subscription.name);
-            context.puk = subscription.puk;
-            context.number = entities.number[0].value;
-            return context;
+            return this.giveContextPuk(context, subscription, entities);
+            // context.name = _.startCase(subscription.name);
+            // context.puk = subscription.puk;
+            // context.number = entities.number[0].value;
+            // return context;
         });
     }
+
+
 
     public static getInvoice(context, entities, io, socket, mibiFirebase){
         let date = new Date(entities.datetime[0].value);
@@ -83,17 +88,18 @@ export class MibiWitFunctions{
     public static getUpdate(context, entities, io, socket, mibiFirebase) {
         return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
-                let date = new Date();
-                let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
-                context.subscription = _.startCase(data.name);
-                context.used = data.calculateDataPercentage;
-                context.total = data.dataTotal;
-                context.days = daysLeft;
-                context.admin = socket._userInfo.username;
-
-                socket._updateData = entities.number[0].value;
-
-                return context;
+                return this.getUpdates(context, socket, data, entities);
+                // let date = new Date();
+                // let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
+                // context.subscription = _.startCase(data.name);
+                // context.used = data.calculateDataPercentage;
+                // context.total = data.dataTotal;
+                // context.days = daysLeft;
+                // context.admin = socket._userInfo.username;
+                //
+                // socket._updateData = entities.number[0].value;
+                //
+                // return context;
             });
         });
     }
@@ -113,7 +119,7 @@ export class MibiWitFunctions{
                     mibiFirebase.addProduct(subscription.companyName, phone, entities.data[0].value, newData, newPrice, date);
                     context.newdata = entities.data[0].value;
                 }
-                
+
                 mibiFirebase.deleteUpdate(phone);
                 return context;
             });
@@ -166,5 +172,48 @@ export class MibiWitFunctions{
             return context;
         })
 
+    }
+
+    public static createNumberNotFoundResponse() {
+        return {text: 'Beklager, jeg finner ikke det navnet for din bedrift.'};
+    }
+
+    public static createNumbersFound(numbers) {
+        let quickreplies = [];
+
+        // let array = numbers.val();
+
+        for (let number in numbers) {
+            for (let num in numbers[number]) {
+                quickreplies.push(numbers[number][num]);
+            }
+        }
+        quickreplies.push("Nei, det er ingen av de nummerene");
+
+        return {
+            text: 'Hvilke av disse nummerene vil du ha PUK for?',
+            quickreplies: quickreplies
+        };
+    }
+
+    public static giveContextPuk(context, subscription, entities) {
+        context.name = _.startCase(subscription.name);
+        context.puk = subscription.puk;
+        context.number = entities.number[0].value;
+        return context;
+    }
+
+    public static getUpdates(context, socket, data, entities) {
+        let date = new Date();
+        let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
+        context.subscription = _.startCase(data.name);
+        context.used = data.calculateDataPercentage;
+        context.total = data.dataTotal;
+        context.days = daysLeft;
+        context.admin = socket._userInfo.username;
+
+        socket._updateData = entities.number[0].value;
+
+        return context;
     }
 }
