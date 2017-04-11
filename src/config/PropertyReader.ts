@@ -45,6 +45,10 @@ export class PropertyReader {
         return this.config.server.rules.dataBeforeNotification;
     }
 
+    public getDatabaseSelection(){
+        return this.config.server.database.name;
+    }
+
     private readFireBaseConfiguration(config):FireBaseConfig{
         let fireBaseConfig:FireBaseConfig = {
             apiKey: config.apiKey,

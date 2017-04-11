@@ -6,6 +6,9 @@
     },
     "rules": {
       "dataBeforeNotification": 80
+    },
+    "database": {
+      "name": "adriano"
     }
   },
   "wit": {
