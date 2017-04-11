@@ -16,13 +16,13 @@ let path = '/admins/mibi/name';
 let adminEmail = 'line.johnsen@lekebutikken.no';
 
 describe('Getting subscriptions', () => {
-    it('Should return subscription for company and be equal to expected values', () => {
+    it('Should return subscription for companyName and be equal to expected values', () => {
         fbDbReader.getSubscription(company, phone).then((subscription) => {
             expect(subscription).length.to.equal(1);
         });
 
     });
-    it('Should return all subscriptions for a company and be equal to expected values', () => {
+    it('Should return all subscriptions for a companyName and be equal to expected values', () => {
         fbDbReader.getSubscriptions(company).then((subscriptions) => {
             expect(subscriptions).length.to.equal(3);
         });
@@ -57,7 +57,7 @@ describe('Getting numbers for person', () => {
 });
 
 describe('Getting admins', () => {
-    it('Should return all admins for a company', () => {
+    it('Should return all admins for a companyName', () => {
         fbDbReader.getAdminsForCompany(company).then((admins) => {
             expect(admins).length.to.equal(2);
         });

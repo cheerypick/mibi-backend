@@ -6,22 +6,13 @@ const expect = chai.expect;
 
 
 describe('Testing isDataUsageUpdated', () => {
-    it('Empty data input should return null', () => {
-        const oldData = {};
-        const newData = {};
-
-        let result = DataUtil.isDataUsageUpdated(oldData, newData);
-        expect(result.path).to.equal(null);
-        expect(result.isDataUpdated).to.equal(null);
-    });
-
     it('Testing with different dataUsed, isUpdated should be true', () => {
         const oldData = {dataUsed: 400};
         const newData = {dataUsed: 5000};
 
         let result = DataUtil.isDataUsageUpdated(oldData, newData);
         expect(result.path).to.equal("/companies/");
-        expect(result.isDataUpdated).to.equal(true);
+        expect(result.isDataUpdate).to.equal(true);
     });
 
     it('Testing with same dataUsed, isUpdated should be false', () => {
@@ -29,7 +20,7 @@ describe('Testing isDataUsageUpdated', () => {
         const newData = {someValue2: "test2", dataUsed: 400};
 
         let result = DataUtil.isDataUsageUpdated(oldData, newData);
-        expect(result.isDataUpdated).to.equal(false);
+        expect(result.isDataUpdate).to.equal(false);
     });
 });
 
@@ -85,7 +76,7 @@ describe('Testing mapData', () => {
         expect(result.data).to.equal(5000);
     });
 
-    it('Invalid input should return in data: 0 and price: 0', () => {
+    it('Invalid input should result in data: 0 and price: 0', () => {
         const data = "3000GB";
 
         const result = DataUtil.mapData(data);
