@@ -1,10 +1,10 @@
 export class User{
 
-    company: string;
+    companyName: string;
     username: string;
 
     constructor(company: string, username: string){
-        this.company = company;
+        this.companyName = company;
         this.username = username;
     }
 }

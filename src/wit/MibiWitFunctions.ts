@@ -131,7 +131,7 @@ export class MibiWitFunctions{
             context.doesntHaveUpdates=true;
             for(let update in updates){
                 console.log('checking for updates');
-                if(updates[update].companyName === socket._userInfo.company){
+                if(updates[update].companyName === socket._userInfo.companyName){
                     console.log('Updates!!!');
                     let msg = {
                         text: 'datausage '+updates[update].number,
@@ -207,7 +207,7 @@ export class MibiWitFunctions{
         let date = new Date();
         let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
         context.subscription = _.startCase(data.name);
-        context.used = data.calculateDataPercentage;
+        context.used = data.dataUsed;
         context.total = data.dataTotal;
         context.days = daysLeft;
         context.admin = socket._userInfo.username;
