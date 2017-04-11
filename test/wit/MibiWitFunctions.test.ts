@@ -16,9 +16,8 @@ describe('Creating responses', () => {
         expect(response).to.not.have.key('quickreplies');
     });
     it('Should return numbers found response', () => {
-        let response = MibiWitFunctions.createNumbersFound(['90605040', '40605090']);
-        expect(response).to.have.key('text');
-        expect(response).to.have.key('quickreplies');
-        expect(response).key('quickreplies').to.equal(['90605040', '40605090']);
+        let response = MibiWitFunctions.createNumbersFound([90605040, 40605090]);
+        expect(response).to.contain.key('text');
+        expect(response).to.contain.key('quickreplies');
     });
 });
