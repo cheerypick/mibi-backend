@@ -11,7 +11,6 @@ export class Client {
         let companyAuth = null;
         require('socketio-auth')(io, {
             authenticate: function(socket, data, callback) {
-                //get credentials sent by the client
                 username = data.username;
                 password = data.password;
 
@@ -52,12 +51,7 @@ export class Client {
                 console.log(msg);
                 io.to(socket.id).emit('message', msg);
 
-                // if(MessageValidator.initiationMessage(msg)){
-                //     msg.text = 'Hei';
-                // }
-
                 MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase);
-                // console.log(msg);
             });
         });
     }
