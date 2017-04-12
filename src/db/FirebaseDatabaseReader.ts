@@ -25,6 +25,8 @@ export class FirebaseDatabaseReader {
             config = this.propertyReader.getAdrianoFireBaseConfiguration();
         }else if(_.lowerCase(dbSelect) === 'hf'){
             config = this.propertyReader.getHFFireBaseConfiguration();
+        }else if(_.lowerCase(dbSelect) === 'ok'){
+            config = this.propertyReader.getOKFireBaseConfiguration();
         }else{
             config = this.propertyReader.getProductionFireBaseConfiguration();
         }
@@ -47,6 +49,19 @@ export class FirebaseDatabaseReader {
         return this.db.ref('/companies/' + companyToGet + '/subscriptions/phoneNumbers').once('value').then((snapshot) => {
             return snapshot.val();
         });
+    }
+    public getMessages(user: string) {
+        return this.db.ref('/messages/' + user).once('value').then((snapshot) => {
+            return snapshot.val();
+        });
+    }
+
+    public postMessage(user: string, message: any) {
+        console.log('persist message', message, "user", user);
+        if(message.quickreplies == undefined){
+            message.quickreplies = '';
+        }
+        return this.db.ref('/messages/' + user).push(message);
     }
 
     public getSubscription(companyToGet: string, phoneNumber: number) {

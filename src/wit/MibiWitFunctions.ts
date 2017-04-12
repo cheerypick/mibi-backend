@@ -4,19 +4,18 @@ import {DataUtil} from "../util/DataUtil";
 
 export class MibiWitFunctions{
 
-    public static getPukPhoneNumber(context, entities, io, socket, mibiFirebase) {
+    public static getPukPhoneNumber(context, entities, io, socket, mibiFirebase, username) {
         mibiFirebase.getNumbers(socket._userInfo.company,entities.name[0].value).then((numbers) => {
             let numberNotFound = numbers == null;
-
             if(numberNotFound){
                 let response = {
                     text: 'Beklager, jeg finner ikke det navnet for din bedrift.'
                 };
-                io.to(socket.id).emit('message', response);
-            }else {
-                let quickreplies = [];
+                mibiFirebase.postMessage(username, response);
 
-                // let array = numbers.val();
+            }else {
+
+                let quickreplies = [];
 
                 for (let number in numbers) {
                     for (let num in numbers[number]) {
@@ -29,12 +28,13 @@ export class MibiWitFunctions{
                     text: 'Hvilke av disse nummerene vil du ha PUK for?',
                     quickreplies: quickreplies
                 };
-                io.to(socket.id).emit('message', response);
+                mibiFirebase.postMessage(username, response);
             }
         });
     }
 
-    public static getPuk(context, entities, socket, mibiFirebase) {
+    public static getPuk(context, entities, socket, mibiFirebase, username) {
+        console.log('socket._userInfo', socket._userInfo);
         return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
             context.name = _.startCase(subscription.name);
             context.puk = subscription.puk;
@@ -43,35 +43,27 @@ export class MibiWitFunctions{
         });
     }
 
-    public static getInvoice(context, entities, io, socket, mibiFirebase){
+    public static getInvoice(context, entities, io, socket, mibiFirebase, username){
         let date = new Date(entities.datetime[0].value);
 
         if(date > new Date()) {
             date.setFullYear(date.getFullYear() - 1);
-        }
-        if(date > new Date()) {
             let response = {
                 text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
             };
-            io.to(socket.id).emit('message', response);
+            mibiFirebase.postMessage(username, response);
+
         }else {
             return mibiFirebase.getSubscriptions(socket._userInfo.company).then((subscriptions) => {
                 let total = 0;
-                // let date = new Date(entities.datetime[0].value);
-
-                console.log(entities.datetime[0].value);
-
                 let link = 'https://fakturahotel.no/' + socket._userInfo.company + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
                 link = _.replace(link, ' ', '_');
-
-                // let array = subscriptions.val();
 
                 for (let subscription in subscriptions) {
                     total += subscriptions[subscription].priceTotal;
                 }
 
                 context.time = dateformat(date, 'mm/yyyy');
-                // context.time = date.getDay()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
                 context.total = total;
                 context.link = link;
 
@@ -80,7 +72,7 @@ export class MibiWitFunctions{
         }
     }
 
-    public static getUpdate(context, entities, io, socket, mibiFirebase) {
+    public static getUpdate(context, entities, io, socket, mibiFirebase, username) {
         return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
                 let date = new Date();
@@ -98,7 +90,7 @@ export class MibiWitFunctions{
         });
     }
 
-    public static orderData(context, entities, io, socket, mibiFirebase){
+    public static orderData(context, entities, io, socket, mibiFirebase, username){
         let phone = socket._updateData;
         return mibiFirebase.getUpdate(phone).then((data) => {
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
@@ -120,7 +112,7 @@ export class MibiWitFunctions{
         });
     }
 
-    public static checkForUpdates(context, entities, io, socket, mibiFirebase){
+    public static checkForUpdates(context, entities, io, socket, mibiFirebase, username){
         return mibiFirebase.getUpdates().then((updates) => {
             context.doesntHaveUpdates=true;
             for(let update in updates){
@@ -133,7 +125,9 @@ export class MibiWitFunctions{
                         mine: true,
                         hidden: true
                     };
-                    io.to(socket.id).emit('message', msg);
+
+                    mibiFirebase.postMessage(username, msg);
+
                     context.hasUpdate = true;
                     delete context.doesntHaveUpdates;
                     break;
@@ -160,7 +154,7 @@ export class MibiWitFunctions{
         return context;
     }
 
-    public static sendEmail(context, entities, io, socket, mibiFirebase) {
+    public static sendEmail(context, entities, io, socket, mibiFirebase, username) {
         return mibiFirebase.getEmail(socket._userInfo.username).then((email) => {
             context.email = email;
             return context;
