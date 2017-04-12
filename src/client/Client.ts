@@ -11,8 +11,8 @@ export class Client {
         let companyAuth = null;
         require('socketio-auth')(io, {
             authenticate: function(socket, data, callback) {
-                username = data.username;
-                password = data.password;
+                this.username = data.username;
+                this.password = data.password;
 
                 mibiFirebase.getAdmin(this.username).then(snapshot => {
                     let userNotFound = snapshot == null;
