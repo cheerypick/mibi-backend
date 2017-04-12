@@ -49,16 +49,17 @@ export class MibiWitFunctions{
 
 
     public static getInvoice(context, entities, io, socket, mibiFirebase){
-        let date = new Date(entities.datetime[0].value);
-
-        if(date > new Date()) {
-            date.setFullYear(date.getFullYear() - 1);
-        }
-        if(date > new Date()) {
-            let response = {
-                text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
-            };
-            io.to(socket.id).emit('message', response);
+        // let date = new Date(entities.datetime[0].value);
+        //
+        // if(date > new Date()) {
+        //     date.setFullYear(date.getFullYear() - 1);
+        // }
+        let date = entities.datetime[0].value
+        if(this.checkDate(date)) {
+            // let response = {
+            //     text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
+            // };
+            io.to(socket.id).emit('message', this.createFutureDateResponse(date));
         }else {
             return mibiFirebase.getSubscriptions(socket._userInfo.company).then((subscriptions) => {
                 let total = 0;
@@ -196,6 +197,10 @@ export class MibiWitFunctions{
         };
     }
 
+    public static createFutureDateResponse(date) {
+        return {text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'};
+    }
+
     public static createPukContext(context, subscription, entities) {
         context.name = _.startCase(subscription.name);
         context.puk = subscription.puk;
@@ -215,5 +220,15 @@ export class MibiWitFunctions{
         socket._updateData = entities.number[0].value;
 
         return context;
+    }
+
+    public static checkDate(date){
+        if(date > new Date()) {
+            date.setFullYear(date.getFullYear() - 1);
+        }
+        if(date > new Date()){
+            return true;
+        }
+        return false;
     }
 }
