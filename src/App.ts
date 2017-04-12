@@ -3,7 +3,7 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import {NotificationRouter} from "./routes/NotificationRouter";
-import {UserRouter} from "./routes/UserRouter";
+// import {UserRouter} from "./routes/UserRouter";
 
 
 // Creates and configures an ExpressJS web server.
@@ -41,7 +41,7 @@ class App {
         // });
 
         const notificationRoutes = new NotificationRouter();
-        const userRouter = new UserRouter();
+        // const userRouter = new UserRouter();
 
         this.express.use('/', router);
     }

@@ -10,11 +10,9 @@ export class Client {
     public authenticate(io, mibiFirebase:FirebaseDatabaseReader){
         let companyAuth = null;
         require('socketio-auth')(io, {
-            authenticate: (socket, data, callback) => {
-
-                //get credentials sent by the client
-                this.username = data.username;
-                this.password = data.password;
+            authenticate: function(socket, data, callback) {
+                username = data.username;
+                password = data.password;
 
                 mibiFirebase.getAdmin(this.username).then(snapshot => {
                     let userNotFound = snapshot == null;
@@ -49,7 +47,6 @@ export class Client {
         io.on('connection', (socket) => {
             socket.on('message', (msg) => {
 
-                    console.log("socket['_userInfo'].username", socket['_userInfo'].username);
                 mibiFirebase.postMessage(socket['_userInfo'].username, msg);
                 MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase, socket['_userInfo'].username);
             });

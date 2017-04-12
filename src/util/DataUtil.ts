@@ -8,15 +8,16 @@ export class DataUtil{
         if(_.isEmpty(oldData)){
             return {path: null, isDataUpdated: null}
         }
+
         let json = Diff.diff(oldData,newData);
         if(json[0].path) {
             let path = "/companies";
             for (let key in json[0].path) {
                 path += "/" + json[0].path[key];
             }
-            let isDataUpdated = (_.includes(path, 'dataUsed'));
+            let isDataUpdate = (_.includes(path, 'dataUsed'));
             path = _.replace(path, 'dataUsed','');
-            return {path: path, isDataUpdated: isDataUpdated}
+            return {path: path, isDataUpdate: isDataUpdate}
         }
     }
 

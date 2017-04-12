@@ -34,6 +34,13 @@ export class PushNotificationService{
         this.fbRestClient.postNotification(this.ANDROID, notification);
     }
 
+    public sendNotificationToAdmins(admins, notification): void {
+        for(let admin in admins){
+            console.log('Sending a notification to ' + admins[admin]);
+            this.sendNotificationToUserDevices(admins[admin],notification);
+        }
+    }
+
     public sendNotificationToUserDevices(username:string, notification:Notification){
         this.fbDatabaseReader.getDeviceTokens(username).then((tokens) => {
             for (let key in tokens) {
@@ -42,5 +49,4 @@ export class PushNotificationService{
             }
         });
     }
-
 }

@@ -30,7 +30,7 @@ export class MibiWit {
     }
 
 
-    private static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader, username) {
+    public static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader, username) {
 
         const accessToken = propertyReader.getAccessToken();
 
@@ -64,8 +64,8 @@ export class MibiWit {
             checkForUpdates({context, entities}) {
                 return MibiWitFunctions.checkForUpdates(context, entities, io, socket, mibiFirebase, username);
             },
-            getJoke({context, entities}) {
-                return MibiWitFunctions.getJoke(context, entities);
+            getJoke({context, entities}){
+                return MibiWitFunctions.createJokeContext(context);
             },
             sendEmail({context, entities}) {
                 return MibiWitFunctions.sendEmail(context, entities, io, socket, mibiFirebase, username);
