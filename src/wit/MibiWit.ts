@@ -66,7 +66,7 @@ export class MibiWit {
                 return MibiWitFunctions.checkForUpdates(context, entities, io, socket, mibiFirebase);
             },
             getJoke({context, entities}){
-                return MibiWitFunctions.getJoke(context,entities);
+                return MibiWitFunctions.createJokeContext(context);
             },
             sendEmail({context, entities}){
                 return MibiWitFunctions.sendEmail(context, entities, io, socket, mibiFirebase);

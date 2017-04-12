@@ -15,7 +15,7 @@ export class MibiWitFunctions{
                 // };
                 io.to(socket.id).emit('message', response);
             }else {
-                let response = this.createNumbersFound(numbers);
+                let response = this.createNumbersFoundResponse(numbers);
                 // let quickreplies = [];
                 //
                 // // let array = numbers.val();
@@ -38,7 +38,7 @@ export class MibiWitFunctions{
 
     public static getPuk(context, entities, socket, mibiFirebase) {
         return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-            return this.giveContextPuk(context, subscription, entities);
+            return this.createPukContext(context, subscription, entities);
             // context.name = _.startCase(subscription.name);
             // context.puk = subscription.puk;
             // context.number = entities.number[0].value;
@@ -88,7 +88,7 @@ export class MibiWitFunctions{
     public static getUpdate(context, entities, io, socket, mibiFirebase) {
         return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
-                return this.getUpdates(context, socket, data, entities);
+                return this.createUpdatesContext(context, socket, data, entities);
                 // let date = new Date();
                 // let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
                 // context.subscription = _.startCase(data.name);
@@ -149,7 +149,7 @@ export class MibiWitFunctions{
         });
     }
 
-    public static getJoke(context, entities) {
+    public static createJokeContext(context) {
         let jokes = [
             'Har du hørt om hønene som hadde så høy feber at det bare kom kokte egg?',
             'Hva får du om du krysser et virus med en klovn? - Syk humor',
@@ -178,7 +178,7 @@ export class MibiWitFunctions{
         return {text: 'Beklager, jeg finner ikke det navnet for din bedrift.'};
     }
 
-    public static createNumbersFound(numbers) {
+    public static createNumbersFoundResponse(numbers) {
         let quickreplies = [];
 
         // let array = numbers.val();
@@ -196,14 +196,14 @@ export class MibiWitFunctions{
         };
     }
 
-    public static giveContextPuk(context, subscription, entities) {
+    public static createPukContext(context, subscription, entities) {
         context.name = _.startCase(subscription.name);
         context.puk = subscription.puk;
         context.number = entities.number[0].value;
         return context;
     }
 
-    public static getUpdates(context, socket, data, entities) {
+    public static createUpdatesContext(context, socket, data, entities) {
         let date = new Date();
         let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
         context.subscription = _.startCase(data.name);
