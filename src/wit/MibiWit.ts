@@ -1,75 +1,74 @@
 import {Wit} from "node-wit";
 import {FirebaseDatabaseReader} from "../db/FirebaseDatabaseReader";
 import {MibiWitFunctions} from "./MibiWitFunctions";
-// var _ = require('lodash');
 
 export class MibiWit {
 
-    public static sendMessage(io, msg, propertyReader, socket, mibiFirebase) {
+    public static sendMessage(io, msg, propertyReader, socket, mibiFirebase, username) {
 
         let context = {};
         let sessionId = socket.id;
 
-        MibiWit.getClient(io, propertyReader, socket, mibiFirebase).runActions(
+        MibiWit.getClient(io, propertyReader, socket, mibiFirebase, username).runActions(
             sessionId, // the client's current session
             msg.text, // the client's message
             context // the client's current session state
         ).then((newContext) => {
-            // Our bot did everything it has to do.
-            // Now it's waiting for further messages to proceed.
-            // Based on the session state, you might want to reset the session.
-            // This depends heavily on the business logic of your bot.
-            // Example:
-            // if (context['done']) {
-            //   delete sessions[sessionId];
-            // }
-
-            // Updating the client's current session state
-            context = newContext;
-        })
+                context = newContext;
+            })
             .catch((err) => {
                 console.error('Oops! Got an error from MibiWit: ', err.stack || err);
             })
     }
 
-    public static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader){
+    private static linkify(text) {
+        let urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+        return text.replace(urlRegex, function (url) {
+            console.log(text);
+            return '<a href="' + url + '">' + url + '</a>';
+        });
+    }
+
+
+    public static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader, username) {
+
         const accessToken = propertyReader.getAccessToken();
 
         const actions = {
             send(request, response) {
                 const {sessionId, context, entities} = request;
                 const {text, quickreplies} = response;
-                 console.log(request);
-                // console.log('client said...', request.text);
-
-                io.to(socket.id).emit('message', response);
-                // console.log('Yay, got MibiWit.ai response: ' +  JSON.stringify(response.text) );
-                 console.log('wit said...', response);
+                console.log(request);
+                console.log('response', response);
+                if (response.text) {
+                    response.text = MibiWit.linkify(response.text);
+                    console.log(response.text);
+                    mibiFirebase.postMessage(username, response);
+                }
             },
             getPukPhoneNumber({context, entities}) {
-                MibiWitFunctions.getPukPhoneNumber(context, entities, io, socket, mibiFirebase);
+                MibiWitFunctions.getPukPhoneNumber(context, entities, io, socket, mibiFirebase, username);
             },
             getPuk({context, entities}) {
-                console.log(context);
-                return MibiWitFunctions.getPuk(context, entities, socket, mibiFirebase);
+                return MibiWitFunctions.getPuk(context, entities, socket, mibiFirebase, username);
             },
             getInvoice({context, entities}) {
-                return MibiWitFunctions.getInvoice(context, entities, io, socket, mibiFirebase);
+                return MibiWitFunctions.getInvoice(context, entities, io, socket, mibiFirebase, username);
             },
             getUpdate({context, entities}) {
-                return MibiWitFunctions.getUpdate(context, entities, io, socket, mibiFirebase);
+                return MibiWitFunctions.getUpdate(context, entities, io, socket, mibiFirebase, username);
             },
             orderData({context, entities}) {
-                return MibiWitFunctions.orderData(context, entities, io, socket, mibiFirebase);
+                return MibiWitFunctions.orderData(context, entities, io, socket, mibiFirebase, username);
             },
-            checkForUpdates({context, entities}){
-                return MibiWitFunctions.checkForUpdates(context, entities, io, socket, mibiFirebase);
+            checkForUpdates({context, entities}) {
+                return MibiWitFunctions.checkForUpdates(context, entities, io, socket, mibiFirebase, username);
             },
             getJoke({context, entities}){
                 return MibiWitFunctions.createJokeContext(context);
             },
-            sendEmail({context, entities}){
-                return MibiWitFunctions.sendEmail(context, entities, io, socket, mibiFirebase);
+            sendEmail({context, entities}) {
+                return MibiWitFunctions.sendEmail(context, entities, io, socket, mibiFirebase, username);
             }
         };
         return new Wit({accessToken, actions});

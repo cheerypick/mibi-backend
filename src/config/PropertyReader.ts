@@ -20,6 +20,9 @@ export class PropertyReader {
     public getAdrianoFireBaseConfiguration():FireBaseConfig{
         return this.readFireBaseConfiguration(this.config.firebaseAdriano);
     }
+    public getOKFireBaseConfiguration():FireBaseConfig{
+        return this.readFireBaseConfiguration(this.config.firebaseOK);
+    }
 
     public getHFFireBaseConfiguration():FireBaseConfig{
         return this.readFireBaseConfiguration(this.config.firebaseHF);
