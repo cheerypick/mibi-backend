@@ -9,7 +9,7 @@ chai.use(chaiAsPromised);
 let expect = chai.expect;
 
 let subscription = {
-    name: "Some Name",
+    name: 'Some Name',
     puk: 123456,
     dataUsed: 1000,
     dataTotal: 2000
@@ -21,6 +21,12 @@ let entities = {
         }
     }
 }
+let socket = {
+    _userInfo: {
+        username: 'username',
+        companyName: 'company'
+    }
+};
 
 describe('Creating responses', () => {
     it('Should return number not found response', () => {
@@ -51,11 +57,7 @@ describe('Creating contexts', () => {
     });
     it('Should return an update context', () => {
         let context = {};
-        let socket = {
-            _userInfo: {
-                username: "username"
-            }
-        };
+
         let date = new Date();
         let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
 
@@ -75,26 +77,49 @@ describe('Creating contexts', () => {
         let response = MibiWitFunctions.createJokeContext(context);
         expect(response).to.have.key('joke');
     });
+    it('Should return an invoice context', () => {
+        let context = {}
+        let date = new Date();
+
+        let response = MibiWitFunctions.createInvoiceContext(context, subscription, socket, date);
+        expect(response).to.have.keys(['time','total','link']);
+    });
 });
 
+
+// let total = 0;
+// // let date = new Date(entities.datetime[0].value);
+//
+// let link = 'https://fakturahotel.no/' + socket._userInfo.company + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
+// link = _.replace(link, ' ', '_');
+//
+// // let array = subscriptions.val();
+//
+// for (let subscription in subscriptions) {
+//     total += subscriptions[subscription].priceTotal;
+// }
+//
+// context.time = dateformat(date, 'mm/yyyy');
+// // context.time = date.getDay()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+// context.total = total;
+// context.link = link;
+//
+// return context;
+
 describe('Data validation', () => {
-    it('Should return true as the date is in the future after rule processing', () => {
+    it('Should return a date one year back according to rule processing', () => {
         let date = new Date();
         date.setFullYear(date.getFullYear()+2);
 
-        expect(MibiWitFunctions.checkDate(date)).to.be.true;
-    });
-    it('Should return false as the date is in the past after rule processing', () => {
-        let date = new Date();
-        date.setFullYear(date.getFullYear()+1);
-        date.setMonth(date.getMonth()-1);
+        let valDate = MibiWitFunctions.validateDate(date);
+        date.setFullYear(date.getFullYear()-1);
 
-        expect(MibiWitFunctions.checkDate(date)).to.be.false;
-    })
-    it('Should return false as the date is in the past', () => {
+        expect(valDate).to.equal(date);
+    });
+    it('Should return the same date', () => {
         let date = new Date();
         date.setFullYear(date.getFullYear()-1);
 
-        expect(MibiWitFunctions.checkDate(date)).to.be.false;
+        expect(MibiWitFunctions.validateDate(date)).to.equal(date);
     })
 });
