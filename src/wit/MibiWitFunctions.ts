@@ -57,12 +57,14 @@ export class MibiWitFunctions{
         let date = entities.datetime[0].value
         let valDate = this.validateDate(date)
         if(valDate > new Date()) {
+            return this.createFutureDateContext(context, valDate);
             // let response = {
             //     text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
             // };
-            io.to(socket.id).emit('message', this.createFutureDateResponse(date));
+            // io.to(socket.id).emit('message', this.createFutureDateResponse(date));
         }else {
-            return mibiFirebase.getSubscriptions(socket._userInfo.company).then((subscriptions) => {
+            return mibiFirebase.getSubscriptions(socket._userInfo.companyName).then((subscriptions) => {
+                console.log(subscriptions);
                 return this.createInvoiceContext(context, subscriptions, socket, valDate);
                 // let total = 0;
                 // // let date = new Date(entities.datetime[0].value);
@@ -171,8 +173,9 @@ export class MibiWitFunctions{
 
     public static sendEmail(context, entities, io, socket, mibiFirebase) {
         return mibiFirebase.getEmail(socket._userInfo.username).then((email) => {
-            context.email = email;
-            return context;
+            return this.createEmailContext(context, email);
+            // context.email = email;
+            // return context;
         })
 
     }
@@ -199,8 +202,9 @@ export class MibiWitFunctions{
         };
     }
 
-    public static createFutureDateResponse(date) {
-        return {text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'};
+    public static createFutureDateContext(context, date) {
+        context.future = dateformat(date, 'mm/yyyy');
+        return context;
     }
 
     public static createPukContext(context, subscription, entities) {
@@ -224,11 +228,12 @@ export class MibiWitFunctions{
         return context;
     }
 
-    public static createInvoiceContext(context, subscriptions, socket, date){
+    public static createInvoiceContext(context, subscriptions, socket, date: Date){
         let total = 0;
         // let date = new Date(entities.datetime[0].value);
 
-        let link = 'https://fakturahotel.no/' + socket._userInfo.companyName + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
+        let ndate = new Date(date);
+        let link = 'https://fakturahotel.no/' + socket._userInfo.companyName + '/' + ndate.getFullYear() + '/' + (ndate.getMonth() + 1);
         link = _.replace(link, ' ', '_');
 
         // let array = subscriptions.val();
@@ -245,11 +250,17 @@ export class MibiWitFunctions{
         return context;
     }
 
+    public static createEmailContext(context, email){
+        context.email = email;
+        return context;
+    }
+
     public static validateDate(date){
-        if(date > new Date()) {
-            date.setFullYear(date.getFullYear() - 1);
+        let valDate = new Date(date);
+        if(valDate > new Date()) {
+            valDate.setFullYear(valDate.getFullYear() - 1);
         }
 
-        return date;
+        return valDate;
     }
 }

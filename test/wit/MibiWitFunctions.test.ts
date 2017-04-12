@@ -1,4 +1,5 @@
 import * as mocha from 'mocha';
+import * as dateformat from 'dateformat';
 import chaiHttp = require('chai-http');
 let chai = require('chai');
 import {fbDbReader} from "../../src/index";
@@ -39,10 +40,6 @@ describe('Creating responses', () => {
         expect(response).to.contain.key('text');
         expect(response).to.contain.key('quickreplies');
     });
-    it('Should return a future date response', () => {
-        let response = MibiWitFunctions.createFutureDateResponse(new Date());
-        expect(response).to.have.key('text');
-    })
 });
 
 describe('Creating contexts', () => {
@@ -72,54 +69,50 @@ describe('Creating contexts', () => {
         expect(socket).to.have.keys(['_userInfo', '_updateData']);
     });
     it('Should return a joke context', () => {
-        let context = {}
+        let context = {};
 
         let response = MibiWitFunctions.createJokeContext(context);
         expect(response).to.have.key('joke');
     });
     it('Should return an invoice context', () => {
-        let context = {}
+        let context = {};
         let date = new Date();
 
         let response = MibiWitFunctions.createInvoiceContext(context, subscription, socket, date);
         expect(response).to.have.keys(['time','total','link']);
     });
+    it('Should return an email context', () => {
+        let context = {};
+        let email = 'someemail';
+
+        let response = MibiWitFunctions.createEmailContext(context, email)
+        console.log(response);
+        expect(response).to.have.key('email');
+        expect(response.email).to.equal(email);
+    });
+    it('Should return a future date context', () => {
+        let context = {};
+        let date = new Date();
+        let fdate = dateformat(date, 'mm/yyyy');
+        let response = MibiWitFunctions.createFutureDateContext(context, date);
+        expect(response).to.have.key('future');
+        expect(response.future).to.equal(fdate);
+    })
 });
-
-
-// let total = 0;
-// // let date = new Date(entities.datetime[0].value);
-//
-// let link = 'https://fakturahotel.no/' + socket._userInfo.company + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
-// link = _.replace(link, ' ', '_');
-//
-// // let array = subscriptions.val();
-//
-// for (let subscription in subscriptions) {
-//     total += subscriptions[subscription].priceTotal;
-// }
-//
-// context.time = dateformat(date, 'mm/yyyy');
-// // context.time = date.getDay()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
-// context.total = total;
-// context.link = link;
-//
-// return context;
 
 describe('Data validation', () => {
     it('Should return a date one year back according to rule processing', () => {
-        let date = new Date();
-        date.setFullYear(date.getFullYear()+2);
+        let sdate = '2018-03-01T00:00:00.000-08:00';
+        let valDate = MibiWitFunctions.validateDate(sdate);
+        let date = new Date('2017-03-01T00:00:00.000-08:00');
 
-        let valDate = MibiWitFunctions.validateDate(date);
-        date.setFullYear(date.getFullYear()-1);
-
-        expect(valDate).to.equal(date);
+        expect(valDate.toString()).to.equal(date.toString());
     });
     it('Should return the same date', () => {
-        let date = new Date();
-        date.setFullYear(date.getFullYear()-1);
+        let sdate = '2016-03-01T00:00:00.000-08:00';
+        let date = new Date(sdate);
+        let valDate = MibiWitFunctions.validateDate(sdate);
 
-        expect(MibiWitFunctions.validateDate(date)).to.equal(date);
+        expect(valDate.toString()).to.equal(date.toString());
     })
 });
