@@ -32,7 +32,7 @@ export class MibiWit {
             })
     }
 
-    private static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader){
+    public static getClient(io, propertyReader, socket, mibiFirebase:FirebaseDatabaseReader){
         const accessToken = propertyReader.getAccessToken();
 
         const actions = {
