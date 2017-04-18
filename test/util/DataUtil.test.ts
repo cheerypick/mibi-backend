@@ -22,6 +22,14 @@ describe('Testing isDataUsageUpdated', () => {
         let result = DataUtil.isDataUsageUpdated(oldData, newData);
         expect(result.isDataUpdate).to.equal(false);
     });
+
+    it('Testing with empty oldData to simulate server start', () => {
+        const oldData = {};
+        const newData = {someValue2: "test2", dataUsed: 400};
+
+        let result = DataUtil.isDataUsageUpdated(oldData, newData);
+        expect(result.path).to.equal(null);
+    });
 });
 
 describe('Testing calculateDataPercentage', () => {
