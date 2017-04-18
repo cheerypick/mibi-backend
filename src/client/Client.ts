@@ -45,8 +45,10 @@ export class Client {
     public getMessage(io, propertyReader, mibiFirebase:FirebaseDatabaseReader){
         io.on('connection', (socket) => {
             socket.on('message', (msg) => {
+                if(!msg.hidden){
+                    mibiFirebase.postMessage(socket['_userInfo'].username, msg);
+                }
 
-                mibiFirebase.postMessage(socket['_userInfo'].username, msg);
                 MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase, socket['_userInfo'].username);
             });
         });
