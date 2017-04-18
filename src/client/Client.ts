@@ -1,5 +1,4 @@
 import {MibiWit} from "../wit/MibiWit";
-import {MessageValidator} from "./MessageValidator";
 import {FirebaseDatabaseReader} from "../db/FirebaseDatabaseReader";
 import {User} from "../entities/User";
 
