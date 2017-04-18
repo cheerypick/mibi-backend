@@ -4,56 +4,68 @@ import {DataUtil} from "../util/DataUtil";
 
 export class MibiWitFunctions{
 
-    public static getPukPhoneNumber(context, entities, io, socket, mibiFirebase) {
-        mibiFirebase.getNumbers(socket._userInfo.company,entities.name[0].value).then((numbers) => {
+    public static getPukPhoneNumber(context, entities, io, socket, mibiFirebase, username) {
+        mibiFirebase.getNumbers(socket._userInfo.companyName,entities.name[0].value).then((numbers) => {
             let numberNotFound = numbers == null;
-
             if(numberNotFound){
+
                 let response = this.createNumberNotFoundResponse();
-                // let response = {
-                //     text: 'Beklager, jeg finner ikke det navnet for din bedrift.'
-                // };
-                io.to(socket.id).emit('message', response);
-            }else {
+
+                mibiFirebase.postMessage(username, response);
+
+             }else {
                 let response = this.createNumbersFoundResponse(numbers);
-                // let quickreplies = [];
-                //
-                // // let array = numbers.val();
-                //
-                // for (let number in numbers) {
-                //     for (let num in numbers[number]) {
-                //         quickreplies.push(numbers[number][num]);
-                //     }
-                // }
-                // quickreplies.push("Nei, det er ingen av de nummerene");
-                //
-                // let response = {
-                //     text: 'Hvilke av disse nummerene vil du ha PUK for?',
-                //     quickreplies: quickreplies
-                // };
-                io.to(socket.id).emit('message', response);
+                mibiFirebase.postMessage(username, response);
             }
         });
     }
 
-    public static getPuk(context, entities, socket, mibiFirebase) {
-        return mibiFirebase.getSubscription(socket._userInfo.company, entities.number[0].value).then((subscription) => {
-            return this.createPukContext(context, subscription, entities);
-            // context.name = _.startCase(subscription.name);
-            // context.puk = subscription.puk;
-            // context.number = entities.number[0].value;
-            // return context;
+    public static getPuk(context, entities, socket, mibiFirebase, username) {
+        console.log('socket._userInfo', socket._userInfo);
+        return mibiFirebase.getSubscription(socket._userInfo.companyName, entities.number[0].value).then((subscription) => {
+            context.name = _.startCase(subscription.name);
+            context.puk = subscription.puk;
+            context.number = entities.number[0].value;
+            return context;
         });
     }
 
+/*
+    public static getPuk(context, entities, socket, mibiFirebase, username) {
 
+        console.log('getPuk');
+        return mibiFirebase.getSubscription(socket._userInfo.companyName, entities.number[0].value).then((subscription) => {
+            return this.createPukContext(context, subscription, entities);
+        });
+    }*/
 
-    public static getInvoice(context, entities, io, socket, mibiFirebase){
-        // let date = new Date(entities.datetime[0].value);
-        //
-        // if(date > new Date()) {
-        //     date.setFullYear(date.getFullYear() - 1);
-        // }
+    public static getInvoice(context, entities, io, socket, mibiFirebase, username){
+        let date = new Date(entities.datetime[0].value);
+        if(date > new Date()) {
+            date.setFullYear(date.getFullYear() - 1);
+            let response = {
+                text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
+            };
+            mibiFirebase.postMessage(username, response);
+        }else {
+            return mibiFirebase.getSubscriptions(socket._userInfo.companyName).then((subscriptions) => {
+                let total = 0;
+                let link = 'https://fakturahotel.no/' + socket._userInfo.companyName + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
+                link = _.replace(link, ' ', '_');
+                for (let subscription in subscriptions) {
+                    total += subscriptions[subscription].priceTotal;
+                }
+                context.time = dateformat(date, 'mm/yyyy');
+                context.total = total;
+                context.link = link;
+                return context;
+            });
+        }
+    }
+
+/*
+
+    public static getInvoice(context, entities, io, socket, mibiFirebase, username){
         let date = entities.datetime[0].value
         let valDate = DataUtil.validateDate(date)
         if(valDate > new Date()) {
@@ -89,26 +101,16 @@ export class MibiWitFunctions{
         }
     }
 
-    public static getUpdate(context, entities, io, socket, mibiFirebase) {
+*/
+    public static getUpdate(context, entities, io, socket, mibiFirebase, username) {
         return mibiFirebase.getUpdate(entities.number[0].value).then((data) => {
             return mibiFirebase.getSubscription(data.companyName, data.number).then((data) => {
                 return this.createUpdatesContext(context, socket, data, entities);
-                // let date = new Date();
-                // let daysLeft = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate() - date.getDate();
-                // context.subscription = _.startCase(data.name);
-                // context.used = data.calculateDataPercentage;
-                // context.total = data.dataTotal;
-                // context.days = daysLeft;
-                // context.admin = socket._userInfo.username;
-                //
-                // socket._updateData = entities.number[0].value;
-                //
-                // return context;
             });
         });
     }
 
-    public static orderData(context, entities, io, socket, mibiFirebase){
+    public static orderData(context, entities, io, socket, mibiFirebase, username){
         let phone = socket._updateData;
         return mibiFirebase.getUpdate(phone).then((data) => {
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
@@ -130,7 +132,7 @@ export class MibiWitFunctions{
         });
     }
 
-    public static checkForUpdates(context, entities, io, socket, mibiFirebase){
+    public static checkForUpdates(context, entities, io, socket, mibiFirebase, username){
         return mibiFirebase.getUpdates().then((updates) => {
             context.doesntHaveUpdates=true;
             for(let update in updates){
@@ -143,7 +145,9 @@ export class MibiWitFunctions{
                         mine: true,
                         hidden: true
                     };
-                    io.to(socket.id).emit('message', msg);
+
+                    mibiFirebase.postMessage(username, msg);
+
                     context.hasUpdate = true;
                     delete context.doesntHaveUpdates;
                     break;
@@ -170,11 +174,9 @@ export class MibiWitFunctions{
         return context;
     }
 
-    public static sendEmail(context, entities, io, socket, mibiFirebase) {
+    public static sendEmail(context, entities, io, socket, mibiFirebase, username) {
         return mibiFirebase.getEmail(socket._userInfo.username).then((email) => {
             return this.createEmailContext(context, email);
-            // context.email = email;
-            // return context;
         })
 
     }
@@ -207,9 +209,11 @@ export class MibiWitFunctions{
     }
 
     public static createPukContext(context, subscription, entities) {
+
         context.name = _.startCase(subscription.name);
         context.puk = subscription.puk;
         context.number = entities.number[0].value;
+        console.log(context);
         return context;
     }
 
@@ -229,13 +233,10 @@ export class MibiWitFunctions{
 
     public static createInvoiceContext(context, subscriptions, socket, date: Date){
         let total = 0;
-        // let date = new Date(entities.datetime[0].value);
 
         let ndate = new Date(date);
         let link = 'https://fakturahotel.no/' + socket._userInfo.companyName + '/' + ndate.getFullYear() + '/' + (ndate.getMonth() + 1);
         link = _.replace(link, ' ', '_');
-
-        // let array = subscriptions.val();
 
         for (let subscription in subscriptions) {
             total += subscriptions[subscription].priceTotal;
