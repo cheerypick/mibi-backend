@@ -8,7 +8,7 @@
       "dataBeforeNotification": 80
     },
     "database": {
-      "name": "hf"
+      "name": "prod"
     }
   },
   "wit": {
