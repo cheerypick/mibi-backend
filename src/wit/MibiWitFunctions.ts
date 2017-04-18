@@ -55,7 +55,7 @@ export class MibiWitFunctions{
         //     date.setFullYear(date.getFullYear() - 1);
         // }
         let date = entities.datetime[0].value
-        let valDate = this.validateDate(date)
+        let valDate = DataUtil.validateDate(date)
         if(valDate > new Date()) {
             return this.createFutureDateContext(context, valDate);
             // let response = {
@@ -64,7 +64,6 @@ export class MibiWitFunctions{
             // io.to(socket.id).emit('message', this.createFutureDateResponse(date));
         }else {
             return mibiFirebase.getSubscriptions(socket._userInfo.companyName).then((subscriptions) => {
-                console.log(subscriptions);
                 return this.createInvoiceContext(context, subscriptions, socket, valDate);
                 // let total = 0;
                 // // let date = new Date(entities.datetime[0].value);
@@ -253,14 +252,5 @@ export class MibiWitFunctions{
     public static createEmailContext(context, email){
         context.email = email;
         return context;
-    }
-
-    public static validateDate(date){
-        let valDate = new Date(date);
-        if(valDate > new Date()) {
-            valDate.setFullYear(valDate.getFullYear() - 1);
-        }
-
-        return valDate;
     }
 }

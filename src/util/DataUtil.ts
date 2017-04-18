@@ -38,4 +38,12 @@ export class DataUtil{
         return {data: 0, price: 0};
     }
 
+    public static validateDate(date){
+        let valDate = new Date(date);
+        if(valDate > new Date()) {
+            valDate.setFullYear(valDate.getFullYear() - 1);
+        }
+
+        return valDate;
+    }
 }
