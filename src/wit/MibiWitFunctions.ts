@@ -33,33 +33,9 @@ export class MibiWitFunctions{
         let valDate = DataUtil.validateDate(date)
         if(valDate > new Date()) {
             return this.createFutureDateContext(context, valDate);
-            // let response = {
-            //     text: 'Beklager, det ser ut som om jeg har fått en dato i framtiden ('+dateformat(date, 'mm/yyyy')+'). Prøv å være mer spesifikk!'
-            // };
-            // io.to(socket.id).emit('message', this.createFutureDateResponse(date));
         }else {
             return mibiFirebase.getSubscriptions(socket._userInfo.companyName).then((subscriptions) => {
                 return this.createInvoiceContext(context, subscriptions, socket, valDate);
-                // let total = 0;
-                // // let date = new Date(entities.datetime[0].value);
-                //
-                // console.log(entities.datetime[0].value);
-                //
-                // let link = 'https://fakturahotel.no/' + socket._userInfo.company + '/' + date.getFullYear() + '/' + (date.getMonth() + 1);
-                // link = _.replace(link, ' ', '_');
-                //
-                // // let array = subscriptions.val();
-                //
-                // for (let subscription in subscriptions) {
-                //     total += subscriptions[subscription].priceTotal;
-                // }
-                //
-                // context.time = dateformat(date, 'mm/yyyy');
-                // // context.time = date.getDay()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
-                // context.total = total;
-                // context.link = link;
-                //
-                // return context;
             });
         }
     }
@@ -80,15 +56,8 @@ export class MibiWitFunctions{
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
                 if(entities.data){
                     let {info, newData, newPrice, date} = this.processOrder(context, subscription, entities);
-                    // let info = DataUtil.mapData(entities.data[0].value);
-                    // let newData = subscription.dataTotal + info.data;
-                    // let newPrice = subscription.priceTotal + info.price;
-                    //
-                    // let date = new Date();
-                    // date.setUTCMonth(date.getMonth()+1,1);
-                    // date.setUTCHours(0,0,0,0)
+
                     mibiFirebase.addProduct(subscription.companyName, phone, entities.data[0].value, newData, newPrice, date);
-                    // context.newdata = entities.data[0].value;
                 }
 
                 mibiFirebase.deleteUpdate(phone);
@@ -114,29 +83,9 @@ export class MibiWitFunctions{
         return mibiFirebase.getUpdates().then((updates) => {
             let msg = this.checkUpdates(context, updates, socket._userInfo.companyName);
             if(msg){
-                mibiFirebase.postMessage(username, msg);
+                io.to(socket.id).emit('message', msg);
             }
             return context;
-            // context.doesntHaveUpdates=true;
-            // for(let update in updates){
-            //     console.log('checking for updates');
-            //     if(updates[update].companyName === socket._userInfo.companyName){
-            //         console.log('Updates!!!');
-            //         let msg = {
-            //             text: 'datausage '+updates[update].number,
-            //             reinit: true,
-            //             mine: true,
-            //             hidden: true
-            //         };
-            //
-            //         mibiFirebase.postMessage(username, msg);
-            //
-            //         context.hasUpdate = true;
-            //         delete context.doesntHaveUpdates;
-            //         break;
-            //     }
-            // }
-            // return context;
         });
     }
 
