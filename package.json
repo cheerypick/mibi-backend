@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "cp -rf ./config.json ./resources/ dist/ & node dist/index.js",
+    "start": "cp -rf ./config.json ./resources/ dist/ & node dist/src/index.js",
     "test": "mocha --reporter spec --compilers ts:ts-node/register test/**/*.test.ts",
     "test:coverage": "cp -rf ./config.json ./resources/ dist/ & ts-node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --compilers ts:ts-node/register -R spec dist/test/**/*js"
   },
