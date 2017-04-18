@@ -32,6 +32,13 @@ let firebaseHF = {
     "storageBucket": "pj6100-9896c.appspot.com",
     "messagingSenderId": "1029522960722"
 }
+let firebaseOK = {
+    "apiKey": "AIzaSyAzSCBVJNBrUkcEpSCZF5ovIOpfnyYJs1E",
+    "authDomain": "mibi-67b41.firebaseapp.com",
+    "databaseURL": "https://mibi-67b41.firebaseio.com",
+    "storageBucket": "mibi-67b41.appspot.com",
+    "messagingSenderId": "19328858148"
+}
 let pushKey = 'key=AAAAo9b0_bY:APA91bE0jIqBiNLEnPy12NT9seGvVpv5pKe4afjlqfUyZbZU1vsjfB8VL6yFAQyYge00sWmhY9ZqS1GDO8dpvcRHlY7tA2Y217H6mC9q-VsQgfbKqWFzcbVcJUDuv4xu5Pj6ONWGAOf5';
 let dataBeforePush = 80;
 let databases = ['adriano','hf','ok','prod'];
@@ -67,6 +74,9 @@ describe('Getting firebase config', () => {
     it('Should return the HF configuration', () => {
         return expect(propertyReader.getHFFireBaseConfiguration()).to.deep.equal(firebaseHF);
     });
+    it('Should return the OK configuration', () => {
+        return expect(propertyReader.getOKFireBaseConfiguration()).to.deep.equal(firebaseOK);
+    })
 });
 
 describe('Getting push configuration', () => {
