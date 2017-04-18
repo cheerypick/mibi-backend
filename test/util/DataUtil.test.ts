@@ -85,3 +85,20 @@ describe('Testing mapData', () => {
         expect(result.data).to.equal(0);
     });
 });
+
+describe('Date validation', () => {
+    it('Should return a date one year back according to rule processing', () => {
+        let sdate = '2018-03-01T00:00:00.000-08:00';
+        let valDate = DataUtil.validateDate(sdate);
+        let date = new Date('2017-03-01T00:00:00.000-08:00');
+
+        expect(valDate.toString()).to.equal(date.toString());
+    });
+    it('Should return the same date', () => {
+        let sdate = '2016-03-01T00:00:00.000-08:00';
+        let date = new Date(sdate);
+        let valDate = DataUtil.validateDate(sdate);
+
+        expect(valDate.toString()).to.equal(date.toString());
+    })
+});
