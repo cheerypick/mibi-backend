@@ -13,12 +13,18 @@ let subscription = {
     name: 'Some Name',
     puk: 123456,
     dataUsed: 1000,
-    dataTotal: 2000
+    dataTotal: 2000,
+    priceTotal: 200
 }
 let entities = {
     number: {
         0: {
             value: 90605040
+        }
+    },
+    data: {
+        0: {
+            value: ' 1GB'
         }
     }
 }
@@ -99,4 +105,64 @@ describe('Creating contexts', () => {
         expect(response.future).to.equal(fdate);
     })
 });
+
+describe('Checking updates', () => {
+    it('Should return a message if an update is for the correct company', () => {
+        let context = {}
+        let updates = {
+            '41639898':
+                {
+                    companyName: 'Lekebutikken',
+                    number: '41639898',
+                    path: '/companies/Lekebutikken/subscriptions/phoneNumbers/41639898/'
+                }
+        };
+        let number = '41639898';
+        let response = MibiWitFunctions.checkUpdates(context, updates, 'Lekebutikken');
+
+        expect(response).to.have.keys(['text','reinit','mine','hidden']);
+        expect(response.reinit).to.be.true;
+        expect(response.hidden).to.be.true;
+        expect(response.mine).to.be.true;
+        expect(response.text).to.equal('datausage '+number);
+    });
+    it('Should trigger the hasUpdate path in WIT', () => {
+        let context = {}
+        let updates = {
+            '41639898':
+                {
+                    companyName: 'Lekebutikken',
+                    number: '41639898',
+                    path: '/companies/Lekebutikken/subscriptions/phoneNumbers/41639898/'
+                }
+        };
+        let response = MibiWitFunctions.checkUpdates(context, updates, 'Lekebutikken');
+
+        expect(context).to.have.key('hasUpdate');
+    });
+    it('Should not return any updates and trigger the doesntHaveUpdate path in WIT', () => {
+        let context = {};
+        let updates = {};
+        let response = MibiWitFunctions.checkUpdates(context, updates, 'Lekebutikken');
+
+        expect(response).to.be.empty;
+        expect(context).to.have.key('doesntHaveUpdates');
+    })
+});
+
+describe('Processing order', () => {
+    it('Should return necessary info to order datapackage', () => {
+        let context = {};
+        let valDate = new Date();
+        valDate.setUTCMonth(valDate.getMonth()+1,1);
+        valDate.setUTCHours(0,0,0,0)
+        let {info, newData, newPrice, date} = MibiWitFunctions.processOrder(context, subscription, entities);
+
+        expect(info).to.have.keys('data','price');
+        expect(newData).to.equal(info.data+subscription.dataTotal);
+        expect(newPrice).to.equal(info.price+subscription.priceTotal);
+        expect(date.toString()).to.equal(valDate.toString());
+    });
+});
+
 
