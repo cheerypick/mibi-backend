@@ -12,7 +12,7 @@ describe('Getting client', () => {
     it('Should return a wit client', () => {
         let io, socket, mfb;
         let propertyReader = new PropertyReader();
-        let response = MibiWit.getClient(io, propertyReader, socket, mfb);
+        let response = MibiWit.getClient(io, propertyReader, socket, mfb, 'mibi');
 
         expect(response).to.have.keys('_sessions','config','converse','message','runActions')
         expect(response['config']).to.have.keys('accessToken','actions','witURL','apiVersion','headers','logger');
