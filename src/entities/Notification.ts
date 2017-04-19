@@ -5,15 +5,15 @@ export class Notification{
     sound:string = "default";
     witAction:string;
 
-    message:string;
-    icon:string = "icon";
+    // message:string;
+    // icon:string = "icon";
 
     constructor(title:string, body:string, witAction:string){
         this.title = title;
         this.body = body;
         this.witAction = witAction;
 
-        this.message = body;
+        // this.message = body;
     }
 
 }
