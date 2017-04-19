@@ -28,13 +28,13 @@ export class Client {
                 if(data.token && data.token.length > 0){
                     mibiFirebase.updateDeviceTokens(data.username, data.token);
                 }
-                socket._userInfo = new User(companyAuth, data.username);
+                socket._userInfo = new User(companyAuth, data.username, data.token);
 
             },
             disconnect: (socket, data) => {
                 if (socket && socket._userInfo && socket._userInfo.username){
                     console.log(socket._userInfo.username + ' has disconnected');
-
+                    mibiFirebase.removeDeviceToken(socket._userInfo.username, socket._userInfo.token);
                 } else {
                     console.log('An unidentified user has disconnected');
                 }

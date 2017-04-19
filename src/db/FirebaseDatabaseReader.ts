@@ -170,6 +170,10 @@ export class FirebaseDatabaseReader {
         });
     }
 
+    public removeDeviceToken(username: string, token: string){
+        this.db.ref('/admins/'+ username + '/tokens/' + token).remove();
+    }
+
     public getSpecificPath(path: String){
         return this.db.ref(path).once('value').then((snapshot) => {
             return snapshot.val();
