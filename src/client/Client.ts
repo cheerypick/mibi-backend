@@ -45,11 +45,18 @@ export class Client {
     public getMessage(io, propertyReader, mibiFirebase:FirebaseDatabaseReader){
         io.on('connection', (socket) => {
             socket.on('message', (msg) => {
-                if(!msg.hidden){
+
+                if(!msg.hidden && socket._userInfo){
                     mibiFirebase.postMessage(socket['_userInfo'].username, msg);
+                }else if(!socket._userInfo){
+                    console.log('Corrupted socket, forcing user to reconnect!');
+                    io.to(socket.id).emit('message', {text: 'reauthenticate', hidde: true});
+                    socket.disconnect();
                 }
 
-                MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase, socket['_userInfo'].username);
+                if(socket._userInfo) {
+                    MibiWit.sendMessage(io, msg, propertyReader, socket, mibiFirebase, socket['_userInfo'].username);
+                }
             });
         });
     }
