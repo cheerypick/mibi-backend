@@ -26,7 +26,12 @@ export class FirebaseRestClient{
                 title: "title",
                 body: "body",
                 notId: 10,
-                surveyId: "ewtawgreg-gragrag-rgarhthgbad"
+                surveyId: "ewtawgreg-gragrag-rgarhthgbad",
+                message: "messaggio bello",
+                priority: "high",
+                'force-start': 1,
+                sound: "default",
+                icon: "icon",
             },
         })
         }).then(function (response) {
