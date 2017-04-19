@@ -75,9 +75,9 @@ describe('Testing filterAdminsByCompany', () => {
         const companySuperTester = "supertesters";
 
         let admins:User[] = [];
-        admins.push(new User("Random", "molo"));
-        admins.push(new User(companySuperTester, "moba"));
-        admins.push(new User(companySuperTester, "mobo"));
+        admins.push(new User("Random", "molo", 'token'));
+        admins.push(new User(companySuperTester, "moba", 'token'));
+        admins.push(new User(companySuperTester, "mobo", 'token'));
 
         let adminsFiltered = DataUsageHelper.filterAdminsByCompany(admins, companySuperTester);
 

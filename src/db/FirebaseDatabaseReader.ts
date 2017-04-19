@@ -170,6 +170,17 @@ export class FirebaseDatabaseReader {
         });
     }
 
+    public removeDeviceToken(username: string, token: string){
+        this.getDeviceTokens(username).then((tokens) => {
+            for(let t in tokens){
+                if(tokens[t] === token){
+                    console.log('Removing token due to logout: ' + tokens[t]);
+                    this.db.ref('/admins/' + username + '/tokens/' + t).remove();
+                }
+            }
+        });
+    }
+
     public getSpecificPath(path: String){
         return this.db.ref(path).once('value').then((snapshot) => {
             return snapshot.val();
