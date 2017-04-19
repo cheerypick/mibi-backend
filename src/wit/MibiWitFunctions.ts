@@ -172,7 +172,6 @@ export class MibiWitFunctions{
         context.name = _.startCase(subscription.name);
         context.puk = subscription.puk;
         context.number = entities.number[0].value;
-        console.log(context);
         return context;
     }
 
