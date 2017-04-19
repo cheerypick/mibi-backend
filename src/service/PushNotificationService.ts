@@ -38,6 +38,7 @@ export class PushNotificationService{
         for(let admin in admins){
             console.log('Sending a notification to ' + admins[admin]);
             this.sendNotificationToUserDevices(admins[admin],notification);
+            this.fbDatabaseReader.persistUpdateForAdmin(admins[admin]);
         }
     }
 

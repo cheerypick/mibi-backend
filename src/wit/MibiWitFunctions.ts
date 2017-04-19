@@ -68,6 +68,7 @@ export class MibiWitFunctions{
                 }
 
                 mibiFirebase.deleteUpdate(phone);
+                mibiFirebase.removeUpdateForCompany(subscription.companyName);
                 return context;
             });
         });

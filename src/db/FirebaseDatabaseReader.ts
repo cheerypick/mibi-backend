@@ -185,6 +185,22 @@ export class FirebaseDatabaseReader {
         this.db.ref('/updates/' + number).update({companyName: company, number: number, path: path});
     }
 
+    public persistUpdateForAdmin(admin){
+        this.db.ref('/updates/admins/'+admin).update({hasUpdate: true});
+    }
+
+    public removeUpdateForAdmin(admin){
+        this.db.ref('/updates/admins/'+admin).update({hasUpdate: false});
+    }
+
+    public removeUpdateForCompany(company){
+        this.getAdminsForCompany(company).then((admins) => {
+            for(let admin in admins){
+                this.removeUpdateForAdmin(admin);
+            }
+        });
+    }
+
     public getUpdate(number){
         return this.db.ref('/updates/'+number).once('value').then((snapshot) => {
             return snapshot.val();
