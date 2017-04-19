@@ -171,7 +171,16 @@ export class FirebaseDatabaseReader {
     }
 
     public removeDeviceToken(username: string, token: string){
-        this.db.ref('/admins/'+ username + '/tokens/' + token).remove();
+        console.log('Checking tokens to remove caused by logout');
+        this.getDeviceTokens(username).then((tokens) => {
+            for(let t in tokens){
+                console.log('Checking token: ' + tokens[t]);
+                if(tokens[t] === token){
+                    console.log('Removing token: ' + tokens[t]);
+                    this.db.ref('/admins/' + username + '/tokens/' + t).remove();
+                }
+            }
+        });
     }
 
     public getSpecificPath(path: String){
