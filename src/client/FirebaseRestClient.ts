@@ -23,7 +23,9 @@ export class FirebaseRestClient{
             priority: 'high',
             notification: notification,
             data: notification,
-            click_action:"FCM_PLUGIN_ACTIVITY"
+            click_action:"FCM_PLUGIN_ACTIVITY",
+            message: notification,
+            title: notification
         })
         }).then(function (response) {
             console.log("Sending notification to: " + reciever);
