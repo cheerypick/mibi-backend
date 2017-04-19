@@ -21,24 +21,8 @@ export class FirebaseRestClient{
         body: JSON.stringify({
             to: reciever,
             priority: 'high',
-            notification: {
-                "title":"Notification title",
-                "body":"Notification body",
-                "sound":"default",
-                "click_action":"FCM_PLUGIN_ACTIVITY",
-                "icon":"fcm_push_icon"
-            },
-            data: {
-                title: "title",
-                body: "body",
-                notId: 10,
-                surveyId: "ewtawgreg-gragrag-rgarhthgbad",
-                message: "messaggio bello",
-                priority: "high",
-                'force-start': 1,
-                sound: "default",
-                icon: "icon",
-            },
+            notification: notification,
+            data: notification,
         })
         }).then(function (response) {
             console.log("Sending notification to: " + reciever);
