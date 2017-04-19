@@ -21,7 +21,13 @@ export class FirebaseRestClient{
         body: JSON.stringify({
             to: reciever,
             priority: 'high',
-            notification: notification,
+            notification: {
+                "title":"Notification title",
+                "body":"Notification body",
+                "sound":"default",
+                "click_action":"FCM_PLUGIN_ACTIVITY",
+                "icon":"fcm_push_icon"
+            },
             data: {
                 title: "title",
                 body: "body",
