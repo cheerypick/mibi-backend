@@ -47,7 +47,7 @@ export class MibiWit {
                 }
             },
             getPukPhoneNumber({context, entities}) {
-                MibiWitFunctions.getPukPhoneNumber(context, entities, io, socket, mibiFirebase, username);
+                return MibiWitFunctions.getPukPhoneNumber(context, entities, io, socket, mibiFirebase, username);
             },
             getPuk({context, entities}) {
                 return MibiWitFunctions.getPuk(context, entities, socket, mibiFirebase, username);

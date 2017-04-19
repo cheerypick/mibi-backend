@@ -13,7 +13,8 @@
   },
   "wit": {
     "authentication": {
-      "accessToken": "ZOWAQ3GXGU7DOTC6M2NIIXZXBQX6ZOM2",
+      "accessToken": "DXX5QA2NHXXOEYBGROJDPKLXUZ7XIMYM",
+      "v4_accessToken": "ZOWAQ3GXGU7DOTC6M2NIIXZXBQX6ZOM2",
       "v3_accessToken": "O7DTW433P2USMT53BRMIY75TG3PDAICO",
       "v2_accessToken": "NX3J6JKJBAG2LVYT2D22IOS5VBQ3WYDF",
       "v1_accessToken": "JZJ3W6JJB7KGSLTM4NRZVCQZTW3M7A3F"

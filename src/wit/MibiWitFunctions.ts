@@ -5,17 +5,24 @@ import {DataUtil} from "../util/DataUtil";
 export class MibiWitFunctions{
 
     public static getPukPhoneNumber(context, entities, io, socket, mibiFirebase, username) {
-        mibiFirebase.getNumbers(socket._userInfo.companyName,entities.name[0].value).then((numbers) => {
+        return mibiFirebase.getNumbers(socket._userInfo.companyName,entities.name[0].value).then((numbers) => {
             let numberNotFound = numbers == null;
             if(numberNotFound){
 
                 let response = this.createNumberNotFoundResponse();
+                context.noNumber = true;
+                return context;
 
-                mibiFirebase.postMessage(username, response);
+                // mibiFirebase.postMessage(username, response);
 
              }else {
                 let response = this.createNumbersFoundResponse(numbers);
-                mibiFirebase.postMessage(username, response);
+                entities.number = [
+                    {value: response.quickreplies[0]}
+                ]
+                delete context.noNumber;
+                return this.getPuk(context, entities, socket, mibiFirebase, username);
+                // mibiFirebase.postMessage(username, response);
             }
         });
     }
@@ -161,7 +168,6 @@ export class MibiWitFunctions{
     }
 
     public static createPukContext(context, subscription, entities) {
-
         context.name = _.startCase(subscription.name);
         context.puk = subscription.puk;
         context.number = entities.number[0].value;
