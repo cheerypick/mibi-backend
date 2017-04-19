@@ -23,7 +23,6 @@ export class FirebaseRestClient{
             priority: 'high',
             notification: notification,
             data: notification,
-            icon: 'myicon'
         })
         }).then(function (response) {
             console.log("Sending notification to: " + reciever);
