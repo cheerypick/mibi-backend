@@ -19,7 +19,7 @@ export class MibiWitFunctions{
                 let response = this.createNumbersFoundResponse(numbers);
                 entities.number = [
                     {value: response.quickreplies[0]}
-                ]
+                ];
                 delete context.noNumber;
                 return this.getPuk(context, entities, socket, mibiFirebase, username);
                 // mibiFirebase.postMessage(username, response);
@@ -36,8 +36,8 @@ export class MibiWitFunctions{
     }
 
     public static getInvoice(context, entities, io, socket, mibiFirebase, username){
-        let date = entities.datetime[0].value
-        let valDate = DataUtil.validateDate(date)
+        let date = entities.datetime[0].value;
+        let valDate = DataUtil.validateDate(date);
         if(valDate > new Date()) {
             return this.createFutureDateContext(context, valDate);
         }else {
@@ -57,14 +57,16 @@ export class MibiWitFunctions{
     }
 
     public static orderData(context, entities, io, socket, mibiFirebase, username){
-        console.log('Ordering data');
         let phone = socket._updateData;
         return mibiFirebase.getUpdate(phone).then((data) => {
             return mibiFirebase.getSpecificPath(data.path).then((subscription) => {
+
                 if(entities.data){
                     let {info, newData, newPrice, date} = this.processOrder(context, subscription, entities);
 
                     mibiFirebase.addProduct(subscription.companyName, phone, entities.data[0].value, newData, newPrice, date);
+                }else {
+                    context.noData = true;
                 }
 
                 mibiFirebase.deleteUpdate(phone);
@@ -81,14 +83,16 @@ export class MibiWitFunctions{
 
         let date = new Date();
         date.setUTCMonth(date.getMonth()+1,1);
-        date.setUTCHours(0,0,0,0)
+        date.setUTCHours(0,0,0,0);
         context.newdata = entities.data[0].value;
 
         return {info, newData, newPrice, date};
     }
 
     public static checkForUpdates(context, entities, io, socket, mibiFirebase, username){
+        console.log("Check for updates dude", context, entities);
         return mibiFirebase.getUpdates().then((updates) => {
+            console.log("Logging update: ", updates);
             let msg = this.checkUpdates(context, updates, socket._userInfo.companyName);
             if(msg){
                 io.to(socket.id).emit('message', msg);
