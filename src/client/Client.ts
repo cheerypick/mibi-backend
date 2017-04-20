@@ -34,7 +34,7 @@ export class Client {
             disconnect: (socket, data) => {
                 if (socket && socket._userInfo && socket._userInfo.username){
                     console.log(socket._userInfo.username + ' has disconnected');
-                    mibiFirebase.removeDeviceToken(socket._userInfo.username, socket._userInfo.token);
+                    // mibiFirebase.removeDeviceToken(socket._userInfo.username, socket._userInfo.token);
                 } else {
                     console.log('An unidentified user has disconnected');
                 }
