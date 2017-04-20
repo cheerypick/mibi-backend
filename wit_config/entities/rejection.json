@@ -10,6 +10,12 @@
     "id" : "rejection",
     "values" : [
       {
+        "value" : "Det er ikke nødvendig med mer data",
+        "expressions" : [
+          "Det er ikke nødvendig med mer data"
+        ]
+      },
+      {
         "value" : "Hun overlever uten",
         "expressions" : [
           "Hun overlever uten"

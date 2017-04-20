@@ -3,7 +3,7 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import {NotificationRouter} from "./routes/NotificationRouter";
-import {UserRouter} from "./routes/UserRouter";
+// import {UserRouter} from "./routes/UserRouter";
 
 
 // Creates and configures an ExpressJS web server.
@@ -34,18 +34,16 @@ class App {
          * API endpoints */
         let router = express.Router();
         // placeholder route handler
-        router.get('/', (req, res, next) => {
-            res.json({
-                message: 'Hello World!'
-            });
-        });
+        // router.get('/', (req, res, next) => {
+        //     res.json({
+        //         message: 'Hello World!'
+        //     });
+        // });
 
         const notificationRoutes = new NotificationRouter();
-        const userRouter = new UserRouter();
+        // const userRouter = new UserRouter();
 
         this.express.use('/', router);
-        this.express.use('/api/v1/users', userRouter.router);
-        this.express.use('/api/v1/push', notificationRoutes.router);
     }
 
 }

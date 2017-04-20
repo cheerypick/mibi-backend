@@ -6,6 +6,7 @@ import {Client} from "./client/Client";
 import {PropertyReader} from "./config/PropertyReader";
 import {FirebaseDatabaseReader} from "./db/FirebaseDatabaseReader";
 import {User} from "./entities/User";
+import {DataUsageService} from "./service/DataUsageService";
 
 debug('ts-express:server');
 
@@ -62,8 +63,8 @@ function onListening(): void {
 }
 
 let client = new Client();
-
-
 client.authenticate(io, fbDbReader);
 client.getMessage(io, propertyReader, fbDbReader);
-fbDbReader.getDataUpdates();
+
+let dataUsageService = new DataUsageService();
+dataUsageService.handleDataUsageUpdates();

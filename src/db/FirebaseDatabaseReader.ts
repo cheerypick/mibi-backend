@@ -3,9 +3,6 @@ import {PropertyReader} from "../config/PropertyReader";
 import * as firebase from "firebase";
 import * as Diff from 'deep-diff';
 import * as _ from 'lodash';
-import {PushNotificationService} from "../service/PushNotificationService";
-import {Notification} from "../entities/Notification";
-import {DataService} from "../service/DataService";
 
 
 /*
@@ -21,8 +18,18 @@ export class FirebaseDatabaseReader {
     private propertyReader = new PropertyReader();
 
     constructor() {
-        // let config = this.propertyReader.getAdrianoFireBaseConfiguration();
-        let config = this.propertyReader.getProductionFireBaseConfiguration();
+        let config;
+        let dbSelect = this.propertyReader.getDatabaseSelection();
+
+        if(_.lowerCase(dbSelect) == 'adriano'){
+            config = this.propertyReader.getAdrianoFireBaseConfiguration();
+        }else if(_.lowerCase(dbSelect) === 'hf'){
+            config = this.propertyReader.getHFFireBaseConfiguration();
+        }else if(_.lowerCase(dbSelect) === 'ok'){
+            config = this.propertyReader.getOKFireBaseConfiguration();
+        }else{
+            config = this.propertyReader.getProductionFireBaseConfiguration();
+        }
 
         firebase.initializeApp(config);
         this.db = firebase.database();
@@ -42,6 +49,19 @@ export class FirebaseDatabaseReader {
         return this.db.ref('/companies/' + companyToGet + '/subscriptions/phoneNumbers').once('value').then((snapshot) => {
             return snapshot.val();
         });
+    }
+    public getMessages(user: string) {
+        return this.db.ref('/messages/' + user).once('value').then((snapshot) => {
+            return snapshot.val();
+        });
+    }
+
+    public postMessage(user: string, message: any) {
+        console.log('persist message', message, "user", user);
+        if(message.quickreplies == undefined){
+            message.quickreplies = '';
+        }
+        return this.db.ref('/messages/' + user).push(message);
     }
 
     public getSubscription(companyToGet: string, phoneNumber: number) {
@@ -134,6 +154,29 @@ export class FirebaseDatabaseReader {
 
             if (tokenFound == false) {
                 this.db.ref('/admins/' + username + '/tokens/').push(token);
+
+                this.getAdmins().then((admins) => {
+                    for(let admin in admins){
+                        for(let otherToken in admins[admin].tokens){
+                            if((token === admins[admin].tokens[otherToken ]) && admin != username){
+                                console.log('Found duplicate token for ' + admin + ' during login');
+                                console.log('Removing the duplicate token as this is a new user');
+                                this.db.ref('/admins/'+ admin + '/tokens/' + otherToken).remove();
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    public removeDeviceToken(username: string, token: string){
+        this.getDeviceTokens(username).then((tokens) => {
+            for(let t in tokens){
+                if(tokens[t] === token){
+                    console.log('Removing token due to logout: ' + tokens[t]);
+                    this.db.ref('/admins/' + username + '/tokens/' + t).remove();
+                }
             }
         });
     }
@@ -144,46 +187,29 @@ export class FirebaseDatabaseReader {
         })
     }
 
-    public getDataUpdates() {
-        let oldData = {};
-        let newData = {};
-        let pushNotificationService = new PushNotificationService();
-
+    public getDataUpdates(){
         let observer = this.db.ref('/companies');
-        observer.on('value', (snapshot) => {
-            newData = snapshot.val();
-            if(_.isEmpty(oldData)){
-                oldData = snapshot.val();
-            }else{
-                console.log('Database has been updated. Checking values');
-                let response = DataService.isDataUsageUpdate(oldData, newData);
-                if(response.isDataUpdate){
-                    console.log('A user has used more data');
-                    let number = response.path.replace(/\/$/, '');
-                    number = number.substring(number.lastIndexOf('/') + 1);
-                    this.getSpecificPath(response.path).then((subscription) => {
-                        console.log(subscription.name + ' has now used ' + subscription.dataUsed + 'MB of ' + subscription.dataTotal +'MB');
-                        let prosent = DataService.dataUsed(subscription.dataUsed, subscription.dataTotal);
-                        if(prosent > this.propertyReader.getDataBeforeNotification()){
-                            console.log('This is above ' + this.propertyReader.getDataBeforeNotification() + '%');
-                            this.getAdmins().then((a) => {
-                                let admins = DataService.filterAdmins(a, subscription.companyName);
-                                this.persistUpdate(subscription.companyName, number, response.path);
-                                for(let admin in admins){
-                                    console.log('Sending a notification to ' + admins[admin]);
-                                    let result = pushNotificationService.sendNotificationToUserDevices(admins[admin],new Notification("Used to much data", "Data used: "+prosent+"%", "datausage "+number));
-                                }
-                            })
-                        }
-                    });
-                }
-            }
-            oldData = snapshot.val();
-        });
+        return observer;
     }
 
     public persistUpdate(company, number, path){
         this.db.ref('/updates/' + number).update({companyName: company, number: number, path: path});
+    }
+
+    public persistUpdateForAdmin(admin){
+        this.db.ref('/updates/admins/'+admin).update({hasUpdate: true});
+    }
+
+    public removeUpdateForAdmin(admin){
+        this.db.ref('/updates/admins/'+admin).update({hasUpdate: false});
+    }
+
+    public removeUpdateForCompany(company){
+        this.getAdminsForCompany(company).then((admins) => {
+            for(let admin in admins){
+                this.removeUpdateForAdmin(admin);
+            }
+        });
     }
 
     public getUpdate(number){
@@ -200,5 +226,11 @@ export class FirebaseDatabaseReader {
 
     public deleteUpdate(number) {
         this.db.ref('/updates/'+number).remove();
+    }
+
+    public getEmail(username) {
+        return this.getAdmin(username).then((admin) => {
+            return admin.email;
+        })
     }
 }

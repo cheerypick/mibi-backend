@@ -1,6 +1,16 @@
 {
   "data" : [
     {
+      "id" : "function-checkForUpdates",
+      "type" : "function",
+      "name" : "checkForUpdates"
+    },
+    {
+      "id" : "function-getData",
+      "type" : "function",
+      "name" : "getData"
+    },
+    {
       "id" : "function-getFa",
       "type" : "function",
       "name" : "getFa"
@@ -31,6 +41,21 @@
       "name" : "getPukPhoneNumber"
     },
     {
+      "id" : "function-getUpdate",
+      "type" : "function",
+      "name" : "getUpdate"
+    },
+    {
+      "id" : "function-order",
+      "type" : "function",
+      "name" : "order"
+    },
+    {
+      "id" : "function-orderData",
+      "type" : "function",
+      "name" : "orderData"
+    },
+    {
       "id" : "template- ",
       "type" : "template",
       "template" : " "
@@ -40,6 +65,25 @@
       "type" : "template",
       "template" : " Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer",
       "requirements" : [
+        {
+          "name" : "time",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer:  {link}",
+      "type" : "template",
+      "template" : " Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer:  {link}",
+      "requirements" : [
+        {
+          "name" : "link",
+          "negative" : false
+        },
         {
           "name" : "time",
           "negative" : false
@@ -149,6 +193,17 @@
       ]
     },
     {
+      "id" : "template- Vil du at jeg skal bestille en ny datapakke? ",
+      "type" : "template",
+      "template" : " Vil du at jeg skal bestille en ny datapakke? ",
+      "quickreplies" : [
+        "Ja, takk, 1GB (79,-)",
+        "Gi henne 3GB (129,-)",
+        "Kjør på med 5GB (169,-)",
+        "Det er ikke nødvendig med mer data"
+      ]
+    },
+    {
       "id" : "template- {link}",
       "type" : "template",
       "template" : " {link}",
@@ -219,6 +274,38 @@
       ]
     },
     {
+      "id" : "template-Da har jeg bestilt {newdata}",
+      "type" : "template",
+      "template" : "Da har jeg bestilt {newdata}",
+      "requirements" : [
+        {
+          "name" : "newdata",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Da har jeg bestilt {newdata} til henne.",
+      "type" : "template",
+      "template" : "Da har jeg bestilt {newdata} til henne.",
+      "requirements" : [
+        {
+          "name" : "newdata",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Da sier jeg ifra neste gang det skjer noe",
+      "type" : "template",
+      "template" : "Da sier jeg ifra neste gang det skjer noe"
+    },
+    {
+      "id" : "template-Den er grei!",
+      "type" : "template",
+      "template" : "Den er grei!"
+    },
+    {
       "id" : "template-Dere har brukt 1000,- {time}",
       "type" : "template",
       "template" : "Dere har brukt 1000,- {time}",
@@ -230,14 +317,46 @@
       ]
     },
     {
+      "id" : "template-Det skal jeg selvfølgelig gjøre!",
+      "type" : "template",
+      "template" : "Det skal jeg selvfølgelig gjøre!"
+    },
+    {
       "id" : "template-Det var",
       "type" : "template",
       "template" : "Det var"
     },
     {
+      "id" : "template-Flott!",
+      "type" : "template",
+      "template" : "Flott!"
+    },
+    {
       "id" : "template-Hei Ole!",
       "type" : "template",
       "template" : "Hei Ole!"
+    },
+    {
+      "id" : "template-Hei {admin}!",
+      "type" : "template",
+      "template" : "Hei {admin}!",
+      "requirements" : [
+        {
+          "name" : "admin",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-Hei {name}!",
+      "type" : "template",
+      "template" : "Hei {name}!",
+      "requirements" : [
+        {
+          "name" : "name",
+          "negative" : false
+        }
+      ]
     },
     {
       "id" : "template-Hei!",
@@ -269,6 +388,17 @@
       "id" : "template-Jeg finner ingen andre nummere å sjekke",
       "type" : "template",
       "template" : "Jeg finner ingen andre nummere å sjekke"
+    },
+    {
+      "id" : "template-Jeg har ingen oppdateringer for deg",
+      "type" : "template",
+      "template" : "Jeg har ingen oppdateringer for deg",
+      "requirements" : [
+        {
+          "name" : "datetime",
+          "negative" : true
+        }
+      ]
     },
     {
       "id" : "template-Jeg sier ifra neste gang det skjer noe.",
@@ -365,6 +495,21 @@
       "template" : "Strålende!"
     },
     {
+      "id" : "template-Superdupert",
+      "type" : "template",
+      "template" : "Superdupert"
+    },
+    {
+      "id" : "template-Supert",
+      "type" : "template",
+      "template" : "Supert"
+    },
+    {
+      "id" : "template-Så bra!",
+      "type" : "template",
+      "template" : "Så bra!"
+    },
+    {
       "id" : "template-Takk, hyggelig å høre!",
       "type" : "template",
       "template" : "Takk, hyggelig å høre!"
@@ -434,6 +579,11 @@
       ]
     },
     {
+      "id" : "template-link   ",
+      "type" : "template",
+      "template" : "link   "
+    },
+    {
       "id" : "template-link   {link}  ",
       "type" : "template",
       "template" : "link   {link}  ",
@@ -443,6 +593,11 @@
           "negative" : false
         }
       ]
+    },
+    {
+      "id" : "template-sorry, noe gikk feil. ",
+      "type" : "template",
+      "template" : "sorry, noe gikk feil. "
     },
     {
       "id" : "template-{name} har brukt 4,8 GB av sin datapakke på 5GB.",
@@ -538,6 +693,52 @@
         },
         {
           "name" : "puk",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{subscription} har brukt {used} av sin datapakke på {total} og det er {days} dager til data fylles på.",
+      "type" : "template",
+      "template" : "{subscription} har brukt {used} av sin datapakke på {total} og det er {days} dager til data fylles på.",
+      "requirements" : [
+        {
+          "name" : "days",
+          "negative" : false
+        },
+        {
+          "name" : "subscription",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        },
+        {
+          "name" : "used",
+          "negative" : false
+        }
+      ]
+    },
+    {
+      "id" : "template-{subscription} har brukt {used}MB av sin datapakke på {total}MB og det er {days} dager til data fylles på.",
+      "type" : "template",
+      "template" : "{subscription} har brukt {used}MB av sin datapakke på {total}MB og det er {days} dager til data fylles på.",
+      "requirements" : [
+        {
+          "name" : "days",
+          "negative" : false
+        },
+        {
+          "name" : "subscription",
+          "negative" : false
+        },
+        {
+          "name" : "total",
+          "negative" : false
+        },
+        {
+          "name" : "used",
           "negative" : false
         }
       ]

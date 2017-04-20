@@ -4,6 +4,8 @@ export class Notification{
     body:string;
     sound:string = "default";
     witAction:string;
+    click_action:String = "FCM_PLUGIN_ACTIVITY";
+    badge = 1;
 
     constructor(title:string, body:string, witAction:string){
         this.title = title;
