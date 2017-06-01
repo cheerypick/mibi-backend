@@ -1,0 +1,22 @@
+{
+  "data" : {
+    "lookups" : [
+      "free-text",
+      "keywords"
+    ],
+    "name" : "joke",
+    "lang" : "nb",
+    "exotic" : false,
+    "id" : "joke",
+    "values" : [
+      {
+        "value" : "vits",
+        "expressions" : [
+          "vits"
+        ]
+      }
+    ],
+    "doc" : "User-defined entity",
+    "builtin" : false
+  }
+}

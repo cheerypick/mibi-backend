@@ -16,6 +16,12 @@
         ]
       },
       {
+        "value" : "Heeeei",
+        "expressions" : [
+          "Heeeei"
+        ]
+      },
+      {
         "value" : "Hey",
         "expressions" : [
           "Hey"
@@ -25,6 +31,12 @@
         "value" : "Mibi?",
         "expressions" : [
           "Mibi?"
+        ]
+      },
+      {
+        "value" : "Yo Mibi",
+        "expressions" : [
+          "Yo Mibi"
         ]
       },
       {
@@ -49,6 +61,12 @@
         "value" : "halla mibi",
         "expressions" : [
           "halla mibi"
+        ]
+      },
+      {
+        "value" : "heeei",
+        "expressions" : [
+          "heeei"
         ]
       },
       {

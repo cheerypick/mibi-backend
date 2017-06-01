@@ -52,6 +52,12 @@
         ]
       },
       {
+        "value" : "John",
+        "expressions" : [
+          "John"
+        ]
+      },
+      {
         "value" : "Jonas",
         "expressions" : [
           "Jonas"

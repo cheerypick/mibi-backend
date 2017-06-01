@@ -4,27 +4,21 @@
       "free-text",
       "keywords"
     ],
-    "name" : "puk",
+    "name" : "email",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "puk",
+    "id" : "email",
     "values" : [
       {
-        "value" : "PUK",
+        "value" : "email",
         "expressions" : [
-          "PUK"
+          "email"
         ]
       },
       {
-        "value" : "puken ",
+        "value" : "email",
         "expressions" : [
-          "puken "
-        ]
-      },
-      {
-        "value" : "pukken",
-        "expressions" : [
-          "pukken"
+          "email"
         ]
       }
     ],

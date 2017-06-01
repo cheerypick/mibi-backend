@@ -16,9 +16,21 @@
         ]
       },
       {
+        "value" : "Det trenger jeg ikke",
+        "expressions" : [
+          "Det trenger jeg ikke"
+        ]
+      },
+      {
         "value" : "Hun overlever uten",
         "expressions" : [
           "Hun overlever uten"
+        ]
+      },
+      {
+        "value" : "Jeg trenger ikke",
+        "expressions" : [
+          "Jeg trenger ikke"
         ]
       },
       {

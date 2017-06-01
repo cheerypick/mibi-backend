@@ -1,6 +1,17 @@
 {
   "data" : [
     {
+      "text" : " Jddjdjjfjf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Jddjdjjfjf\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
+    },
+    {
       "text" : " Kan jeg få PUK koden til Line?",
       "entities" : [
         {
@@ -47,6 +58,17 @@
       ]
     },
     {
+      "text" : " kjkj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kjkj\"",
+          "start" : 0,
+          "end" : 4
+        }
+      ]
+    },
+    {
       "text" : "!jqoi24",
       "entities" : [
         {
@@ -80,6 +102,17 @@
           "value" : "149",
           "start" : 18,
           "end" : 21
+        }
+      ]
+    },
+    {
+      "text" : ",j.k,n.,mn.,mn.,mn.,mn",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\",j.k,n.,mn.,mn.,mn.,mn\"",
+          "start" : 0,
+          "end" : 22
         }
       ]
     },
@@ -310,6 +343,17 @@
       "text" : "Bestille pakke for Hans Fredrik Brastad"
     },
     {
+      "text" : "Bil",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Bil\"",
+          "start" : 0,
+          "end" : 3
+        }
+      ]
+    },
+    {
       "text" : "Bjørn Listog"
     },
     {
@@ -380,6 +424,17 @@
       ]
     },
     {
+      "text" : "Det trenger jeg ikke",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"Det trenger jeg ikke\"",
+          "start" : 0,
+          "end" : 20
+        }
+      ]
+    },
+    {
       "text" : "Det, vet du, vennen min, er kjempebra!",
       "entities" : [
         {
@@ -398,7 +453,29 @@
       ]
     },
     {
+      "text" : "Dkdk",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Dkdk\"",
+          "start" : 0,
+          "end" : 4
+        }
+      ]
+    },
+    {
       "text" : "Du er dum",
+      "entities" : [
+        {
+          "entity" : "insult",
+          "value" : "\"dum\"",
+          "start" : 6,
+          "end" : 9
+        }
+      ]
+    },
+    {
+      "text" : "Du er dum ",
       "entities" : [
         {
           "entity" : "insult",
@@ -487,6 +564,40 @@
       "text" : "Erik Story"
     },
     {
+      "text" : "Faktura Januar",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2018-01-01T00:00:00.000-08:00\"",
+          "start" : 8,
+          "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "Faktura for April",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-04-01T00:00:00.000-07:00\"",
+          "start" : 12,
+          "end" : 17
+        }
+      ]
+    },
+    {
       "text" : "Faktura for april i fjor",
       "entities" : [
         {
@@ -517,6 +628,23 @@
           "value" : "\"2016-01-01T00:00:00.000-08:00\"",
           "start" : 12,
           "end" : 23
+        }
+      ]
+    },
+    {
+      "text" : "Faktura for mars 2016",
+      "entities" : [
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 0,
+          "end" : 7
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-03-01T00:00:00.000-08:00\"",
+          "start" : 12,
+          "end" : 21
         }
       ]
     },
@@ -567,6 +695,17 @@
     },
     {
       "text" : "For Katrine Lindblom"
+    },
+    {
+      "text" : "Fortell en vits",
+      "entities" : [
+        {
+          "entity" : "joke",
+          "value" : "\"vits\"",
+          "start" : 11,
+          "end" : 15
+        }
+      ]
     },
     {
       "text" : "Få toppliste med høyest forbruk"
@@ -688,6 +827,17 @@
       ]
     },
     {
+      "text" : "Gjklcfhjjv",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Gjklcfhjjv\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
+    },
+    {
       "text" : "HEI DU",
       "entities" : [
         {
@@ -778,6 +928,28 @@
       ]
     },
     {
+      "text" : "Har du noen oppdateringer til meg?",
+      "entities" : [
+        {
+          "entity" : "updates",
+          "value" : "\"oppdateringer \"",
+          "start" : 12,
+          "end" : 25
+        }
+      ]
+    },
+    {
+      "text" : "Heeeei",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Heeeei\"",
+          "start" : 0,
+          "end" : 6
+        }
+      ]
+    },
+    {
       "text" : "Hei",
       "entities" : [
         {
@@ -790,6 +962,17 @@
     },
     {
       "text" : "Hei Mibi",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"hei mibi\"",
+          "start" : 0,
+          "end" : 8
+        }
+      ]
+    },
+    {
+      "text" : "Hei Mibi!",
       "entities" : [
         {
           "entity" : "greeting",
@@ -1562,6 +1745,9 @@
       ]
     },
     {
+      "text" : "Ja, takk"
+    },
+    {
       "text" : "Ja, takk, 10GBB",
       "entities" : [
         {
@@ -1753,6 +1939,23 @@
       "text" : "Jeg skal bestill kort for Dana Black"
     },
     {
+      "text" : "Jeg trenger ikke en email",
+      "entities" : [
+        {
+          "entity" : "rejection",
+          "value" : "\"Jeg trenger ikke\"",
+          "start" : 0,
+          "end" : 16
+        },
+        {
+          "entity" : "email",
+          "value" : "\"email\"",
+          "start" : 20,
+          "end" : 25
+        }
+      ]
+    },
+    {
       "text" : "Jeg trenger kort for Adriano Stewart"
     },
     {
@@ -1803,6 +2006,29 @@
       ]
     },
     {
+      "text" : "Kan jeg få PUK for Line?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
       "text" : "Kan jeg få PUK koden til Adriano?",
       "entities" : [
         {
@@ -1828,12 +2054,6 @@
     {
       "text" : "Kan jeg få PUK koden til Line?",
       "entities" : [
-        {
-          "entity" : "intent",
-          "value" : "\"Kan jeg få\"",
-          "start" : 0,
-          "end" : 10
-        },
         {
           "entity" : "puk",
           "value" : "\"PUK\"",
@@ -1885,6 +2105,116 @@
           "value" : "\"Marius\"",
           "start" : 27,
           "end" : 33
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få faktura for April 2016?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2016-04-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 33
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få faktura for Mars?",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"kan\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2018-03-01T00:00:00.000-08:00\"",
+          "start" : 23,
+          "end" : 27
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få faktura for mai",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-05-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 26
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få faktura for mai?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "faktura",
+          "value" : "\"faktura\"",
+          "start" : 11,
+          "end" : 18
+        },
+        {
+          "entity" : "datetime",
+          "value" : "\"2017-05-01T00:00:00.000-07:00\"",
+          "start" : 23,
+          "end" : 26
         }
       ]
     },
@@ -1962,6 +2292,52 @@
       ]
     },
     {
+      "text" : "Kan jeg få pik for Line?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "number",
+          "value" : "3",
+          "start" : 8,
+          "end" : 10
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
+      "text" : "Kan jeg få puk for John?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"John\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
       "text" : "Kan jeg få puk til line",
       "entities" : [
         {
@@ -1986,6 +2362,17 @@
           "value" : "\"negative\"",
           "start" : 11,
           "end" : 14
+        }
+      ]
+    },
+    {
+      "text" : "Kfkfjd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Kfkfjd\"",
+          "start" : 0,
+          "end" : 6
         }
       ]
     },
@@ -2331,6 +2718,9 @@
       ]
     },
     {
+      "text" : "Nei, takk"
+    },
+    {
       "text" : "Neimen, det er ikke bra",
       "entities" : [
         {
@@ -2412,6 +2802,34 @@
       ]
     },
     {
+      "text" : "Saldo",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"Saldo\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
+    },
+    {
+      "text" : "Send meg en email",
+      "entities" : [
+        {
+          "entity" : "acceptance",
+          "value" : "\"Send meg en\"",
+          "start" : 0,
+          "end" : 11
+        },
+        {
+          "entity" : "email",
+          "value" : "\"email\"",
+          "start" : 12,
+          "end" : 17
+        }
+      ]
+    },
+    {
       "text" : "Skal jeg bestille SIM kort?"
     },
     {
@@ -2434,6 +2852,17 @@
         {
           "entity" : "sentiment",
           "value" : "\"negative\""
+        }
+      ]
+    },
+    {
+      "text" : "Yo Mibi",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"Yo Mibi\"",
+          "start" : 0,
+          "end" : 7
         }
       ]
     },
@@ -2478,6 +2907,17 @@
           "value" : "\"0987tfgjhbjknkm\"",
           "start" : 21,
           "end" : 36
+        }
+      ]
+    },
+    {
+      "text" : "asdfasdf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"asdfasdf\"",
+          "start" : 0,
+          "end" : 8
         }
       ]
     },
@@ -2598,6 +3038,23 @@
         {
           "entity" : "number",
           "value" : "41639898",
+          "start" : 10,
+          "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "datausage 45696989",
+      "entities" : [
+        {
+          "entity" : "datausage",
+          "value" : "\"datausage\"",
+          "start" : 0,
+          "end" : 9
+        },
+        {
+          "entity" : "number",
+          "value" : "45696989",
           "start" : 10,
           "end" : 18
         }
@@ -3035,6 +3492,17 @@
       ]
     },
     {
+      "text" : "fly meg til line land",
+      "entities" : [
+        {
+          "entity" : "name",
+          "value" : "\"Line \"",
+          "start" : 12,
+          "end" : 16
+        }
+      ]
+    },
+    {
       "text" : "forbruk",
       "entities" : [
         {
@@ -3106,6 +3574,17 @@
       ]
     },
     {
+      "text" : "fortell meg en vits",
+      "entities" : [
+        {
+          "entity" : "joke",
+          "value" : "\"vits\"",
+          "start" : 15,
+          "end" : 19
+        }
+      ]
+    },
+    {
       "text" : "fssdsdfsdfsfdsd",
       "entities" : [
         {
@@ -3152,6 +3631,17 @@
           "value" : "\"gdasaskjasdlkadS\"",
           "start" : 0,
           "end" : 16
+        }
+      ]
+    },
+    {
+      "text" : "gdgdgdgd",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"gdgdgdgd\"",
+          "start" : 0,
+          "end" : 8
         }
       ]
     },
@@ -3252,6 +3742,20 @@
       ]
     },
     {
+      "text" : "gimme the stuff"
+    },
+    {
+      "text" : "gimme the stufff",
+      "entities" : [
+        {
+          "entity" : "gimme",
+          "value" : "\"gimme the stufff\"",
+          "start" : 0,
+          "end" : 16
+        }
+      ]
+    },
+    {
       "text" : "hEI",
       "entities" : [
         {
@@ -3318,6 +3822,17 @@
     },
     {
       "text" : "hasdei"
+    },
+    {
+      "text" : "heeei",
+      "entities" : [
+        {
+          "entity" : "greeting",
+          "value" : "\"heeei\"",
+          "start" : 0,
+          "end" : 5
+        }
+      ]
     },
     {
       "text" : "hei",
@@ -3398,6 +3913,17 @@
       "text" : "hi"
     },
     {
+      "text" : "hkjhkj",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"hkjhkj\"",
+          "start" : 0,
+          "end" : 6
+        }
+      ]
+    },
+    {
       "text" : "hru",
       "entities" : [
         {
@@ -3427,6 +3953,23 @@
           "value" : "\"Hun overlever uten\"",
           "start" : 0,
           "end" : 18
+        }
+      ]
+    },
+    {
+      "text" : "hva er puk koden til line?",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 7,
+          "end" : 10
+        },
+        {
+          "entity" : "name",
+          "value" : "\"line\"",
+          "start" : 21,
+          "end" : 25
         }
       ]
     },
@@ -3830,6 +4373,46 @@
       "text" : "jøuimikløæ'6545komk"
     },
     {
+      "text" : "kan du fly meg til line land",
+      "entities" : [
+        {
+          "entity" : "question",
+          "value" : "\"kan\"",
+          "start" : 0,
+          "end" : 3
+        },
+        {
+          "entity" : "gimme",
+          "value" : "\"fly\"",
+          "start" : 7,
+          "end" : 10
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line \"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
+      "text" : "kan du fortelle meg hva puken til line er?",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"puken \"",
+          "start" : 24,
+          "end" : 30
+        },
+        {
+          "entity" : "name",
+          "value" : "\"Line \"",
+          "start" : 34,
+          "end" : 38
+        }
+      ]
+    },
+    {
       "text" : "kan du sende meg fakturakopi for mars?",
       "entities" : [
         {
@@ -4195,6 +4778,29 @@
       ]
     },
     {
+      "text" : "kan jeg få puk for line?",
+      "entities" : [
+        {
+          "entity" : "user",
+          "value" : "\"jeg\"",
+          "start" : 4,
+          "end" : 7
+        },
+        {
+          "entity" : "puk",
+          "value" : "\"PUK\"",
+          "start" : 11,
+          "end" : 14
+        },
+        {
+          "entity" : "name",
+          "value" : "\"line\"",
+          "start" : 19,
+          "end" : 23
+        }
+      ]
+    },
+    {
       "text" : "kan jeg få puk koden til line?",
       "entities" : [
         {
@@ -4294,6 +4900,17 @@
           "value" : "\"kasyametrik\"",
           "start" : 0,
           "end" : 11
+        }
+      ]
+    },
+    {
+      "text" : "kjkdaddløkjfds",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"kjkdaddløkjfds\"",
+          "start" : 0,
+          "end" : 14
         }
       ]
     },
@@ -4431,7 +5048,29 @@
       ]
     },
     {
+      "text" : "lkdsfdølfkdø",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"lkdsfdølfkdø\"",
+          "start" : 0,
+          "end" : 12
+        }
+      ]
+    },
+    {
       "text" : "lkjhjpøuuy,mnvyu"
+    },
+    {
+      "text" : "lkjølaøksjdfølkjasdf",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"lkjølaøksjdfølkjasdf\"",
+          "start" : 0,
+          "end" : 20
+        }
+      ]
     },
     {
       "text" : "lkjølkjølkj",
@@ -4807,6 +5446,10 @@
       "text" : "puk til line",
       "entities" : [
         {
+          "entity" : "intent",
+          "value" : "\"giPuk\""
+        },
+        {
           "entity" : "puk",
           "value" : "\"PUK\"",
           "start" : 0,
@@ -4906,7 +5549,46 @@
       ]
     },
     {
+      "text" : "pukken til line",
+      "entities" : [
+        {
+          "entity" : "puk",
+          "value" : "\"pukken\"",
+          "start" : 0,
+          "end" : 6
+        },
+        {
+          "entity" : "name",
+          "value" : "\"line\"",
+          "start" : 11,
+          "end" : 15
+        }
+      ]
+    },
+    {
       "text" : "s,dkfkølkj"
+    },
+    {
+      "text" : "sa,dma.s,dama.sd,ma.s,dm",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sa,dma.s,dama.sd,ma.s,dm\"",
+          "start" : 0,
+          "end" : 24
+        }
+      ]
+    },
+    {
+      "text" : "sdfajldsfk",
+      "entities" : [
+        {
+          "entity" : "nonsense",
+          "value" : "\"sdfajldsfk\"",
+          "start" : 0,
+          "end" : 10
+        }
+      ]
     },
     {
       "text" : "sdfgkjdfg",
@@ -5081,6 +5763,23 @@
           "value" : "\"stop\"",
           "start" : 0,
           "end" : 4
+        }
+      ]
+    },
+    {
+      "text" : "troll line",
+      "entities" : [
+        {
+          "entity" : "gimme",
+          "value" : "\"troll\"",
+          "start" : 0,
+          "end" : 5
+        },
+        {
+          "entity" : "name",
+          "value" : "\"line\"",
+          "start" : 6,
+          "end" : 10
         }
       ]
     },

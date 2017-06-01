@@ -40,6 +40,18 @@
         ]
       },
       {
+        "value" : "Send meg en",
+        "expressions" : [
+          "Send meg en"
+        ]
+      },
+      {
+        "value" : "Send meg en email",
+        "expressions" : [
+          "Send meg en email"
+        ]
+      },
+      {
         "value" : "ja line",
         "expressions" : [
           "ja line"

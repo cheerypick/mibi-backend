@@ -25,58 +25,6 @@
       "name" : "",
       "turns" : [
         {
-          "user" : "Hvor mye har Line brukt?",
-          "entities" : [
-            {
-              "entity" : "question",
-              "value" : "\"Hvor mye\"",
-              "start" : 0,
-              "end" : 8
-            },
-            {
-              "entity" : "name",
-              "value" : "\"Line \"",
-              "start" : 13,
-              "end" : 18
-            },
-            {
-              "entity" : "usage",
-              "value" : "\"brukt\"",
-              "start" : 18,
-              "end" : 23
-            }
-          ],
-          "operations" : [
-            {
-              "action" : "template-La meg sjekke."
-            },
-            {
-              "action" : "template-{name} har brukt 4,8 GB av sin datapakke på 5GB."
-            }
-          ]
-        },
-        {
-          "user" : "og jeg?",
-          "entities" : [
-            {
-              "entity" : "user",
-              "value" : "\"jeg\"",
-              "start" : 3,
-              "end" : 6
-            }
-          ],
-          "operations" : [
-            {
-              "action" : "template-La meg undersøke dette for deg."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name" : "",
-      "turns" : [
-        {
           "user" : "Du er dum",
           "entities" : [
             {
@@ -90,96 +38,6 @@
             {
               "action" : "template-Beklager, jeg prøver bare å hjelpe."
             }
-          ]
-        }
-      ]
-    },
-    {
-      "name" : "",
-      "turns" : [
-        {
-          "user" : "Hva er PUK koden til Line?",
-          "entities" : [
-            {
-              "entity" : "question",
-              "value" : "\"Hva \"",
-              "start" : 0,
-              "end" : 3
-            },
-            {
-              "entity" : "puk",
-              "value" : "\"PUK\"",
-              "start" : 7,
-              "end" : 10
-            },
-            {
-              "entity" : "name",
-              "value" : "\"Line\"",
-              "start" : 21,
-              "end" : 25
-            }
-          ],
-          "operations" : [
-            {
-              "action" : "function-getPukPhoneNumber"
-            }
-          ]
-        },
-        {
-          "branches" : [
-            [
-              {
-                "user" : "12345678",
-                "entities" : [
-                  {
-                    "entity" : "number",
-                    "value" : "12345678",
-                    "start" : 0,
-                    "end" : 8
-                  }
-                ],
-                "operations" : [
-                  {
-                    "action" : "function-getPuk"
-                  },
-                  {
-                    "branches" : [
-                      {
-                        "predicates" : [
-                          {
-                            "name" : "number puk name",
-                            "negative" : false
-                          }
-                        ],
-                        "operations" : [
-                          {
-                            "action" : "template-{name} sin PUK med nummer {number} er:         {puk}"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "user" : "Nei, det er ingen av de nummerene",
-                "entities" : [
-                  {
-                    "entity" : "rejection",
-                    "value" : "\"Nei, det er ingen av de nummerene\"",
-                    "start" : 0,
-                    "end" : 33
-                  }
-                ],
-                "operations" : [
-                  {
-                    "action" : "template-Beklager, jeg finner ingen andre nummere for {name}"
-                  }
-                ]
-              }
-            ]
           ]
         }
       ]
@@ -218,9 +76,6 @@
                   ],
                   "operations" : [
                     {
-                      "action" : "template-Hei {admin}!"
-                    },
-                    {
                       "action" : "template-{subscription} har brukt {used}MB av sin datapakke på {total}MB og det er {days} dager til data fylles på."
                     },
                     {
@@ -253,6 +108,9 @@
                             ],
                             "operations" : [
                               {
+                                "bookmark" : "orderData"
+                              },
+                              {
                                 "action" : "function-orderData"
                               },
                               {
@@ -270,6 +128,9 @@
                                       },
                                       {
                                         "action" : "template-Da har jeg bestilt {newdata}"
+                                      },
+                                      {
+                                        "action" : "template-Da har datapakken blitt aktivert!"
                                       }
                                     ]
                                   }
@@ -301,27 +162,7 @@
                             ],
                             "operations" : [
                               {
-                                "action" : "function-orderData"
-                              },
-                              {
-                                "branches" : [
-                                  {
-                                    "predicates" : [
-                                      {
-                                        "name" : "newdata",
-                                        "negative" : false
-                                      }
-                                    ],
-                                    "operations" : [
-                                      {
-                                        "action" : "template-Så bra!"
-                                      },
-                                      {
-                                        "action" : "template-Da har jeg bestilt {newdata}"
-                                      }
-                                    ]
-                                  }
-                                ]
+                                "jump" : "orderData"
                               }
                             ]
                           }
@@ -342,10 +183,24 @@
                                 "action" : "function-orderData"
                               },
                               {
-                                "action" : "template-Den er grei!"
-                              },
-                              {
-                                "action" : "template-Da sier jeg ifra neste gang det skjer noe"
+                                "branches" : [
+                                  {
+                                    "predicates" : [
+                                      {
+                                        "name" : "noData",
+                                        "negative" : false
+                                      }
+                                    ],
+                                    "operations" : [
+                                      {
+                                        "action" : "template-Den er grei!"
+                                      },
+                                      {
+                                        "action" : "template-Da sier jeg ifra neste gang det skjer noe"
+                                      }
+                                    ]
+                                  }
+                                ]
                               }
                             ]
                           }
@@ -373,27 +228,7 @@
                             ],
                             "operations" : [
                               {
-                                "action" : "function-orderData"
-                              },
-                              {
-                                "branches" : [
-                                  {
-                                    "predicates" : [
-                                      {
-                                        "name" : "newdata",
-                                        "negative" : false
-                                      }
-                                    ],
-                                    "operations" : [
-                                      {
-                                        "action" : "template-Det skal jeg selvfølgelig gjøre!"
-                                      },
-                                      {
-                                        "action" : "template-Da har jeg bestilt {newdata}"
-                                      }
-                                    ]
-                                  }
-                                ]
+                                "jump" : "orderData"
                               }
                             ]
                           }
@@ -453,6 +288,93 @@
                   "operations" : [
                     {
                       "action" : "template- Selvfølgelig. Dere har totalt brukt Kr. {total} i {time}. Her er en link med flere detaljer:  {link}"
+                    },
+                    {
+                      "action" : "template-Skal jeg sende det til deg på email også?"
+                    }
+                  ],
+                  "turns" : [
+                    {
+                      "branches" : [
+                        [
+                          {
+                            "user" : "Send meg en email",
+                            "entities" : [
+                              {
+                                "entity" : "acceptance",
+                                "value" : "\"Send meg en\"",
+                                "start" : 0,
+                                "end" : 11
+                              },
+                              {
+                                "entity" : "email",
+                                "value" : "\"email\"",
+                                "start" : 12,
+                                "end" : 17
+                              }
+                            ],
+                            "operations" : [
+                              {
+                                "action" : "function-sendEmail"
+                              },
+                              {
+                                "branches" : [
+                                  {
+                                    "predicates" : [
+                                      {
+                                        "name" : "email",
+                                        "negative" : false
+                                      }
+                                    ],
+                                    "operations" : [
+                                      {
+                                        "action" : "template- Da mottar du snart faktura på {email} "
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "user" : "Jeg trenger ikke en email",
+                            "entities" : [
+                              {
+                                "entity" : "rejection",
+                                "value" : "\"Jeg trenger ikke\"",
+                                "start" : 0,
+                                "end" : 16
+                              },
+                              {
+                                "entity" : "email",
+                                "value" : "\"email\"",
+                                "start" : 20,
+                                "end" : 25
+                              }
+                            ],
+                            "operations" : [
+                              {
+                                "action" : "template- Greit, da sier jeg ifra om det skjer noe "
+                              }
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "predicates" : [
+                    {
+                      "name" : "future",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template- Beklager, det ser ut som om jeg har fått en dato i framtiden ({future}). Prøv å være mer spesifikk! "
                     }
                   ]
                 }
@@ -571,6 +493,121 @@
                     }
                   ],
                   "operations" : [ ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Fortell en vits",
+          "entities" : [
+            {
+              "entity" : "joke",
+              "value" : "\"vits\"",
+              "start" : 11,
+              "end" : 15
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "function-getJoke"
+            },
+            {
+              "branches" : [
+                {
+                  "predicates" : [
+                    {
+                      "name" : "joke",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template-{joke}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "",
+      "turns" : [
+        {
+          "user" : "Kan jeg få PUK koden til Line?",
+          "entities" : [
+            {
+              "entity" : "puk",
+              "value" : "\"PUK\"",
+              "start" : 11,
+              "end" : 14
+            },
+            {
+              "entity" : "name",
+              "value" : "\"Line\"",
+              "start" : 25,
+              "end" : 29
+            }
+          ],
+          "operations" : [
+            {
+              "action" : "function-getPukPhoneNumber"
+            },
+            {
+              "branches" : [
+                {
+                  "predicates" : [
+                    {
+                      "name" : "name",
+                      "negative" : false
+                    },
+                    {
+                      "name" : "number",
+                      "negative" : false
+                    },
+                    {
+                      "name" : "puk",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template-{name} sin PUK med nummer {number} er: {puk}"
+                    }
+                  ]
+                },
+                {
+                  "predicates" : [
+                    {
+                      "name" : "!name",
+                      "negative" : false
+                    },
+                    {
+                      "name" : "!number",
+                      "negative" : false
+                    },
+                    {
+                      "name" : "!puk",
+                      "negative" : false
+                    },
+                    {
+                      "name" : "noNumber",
+                      "negative" : false
+                    }
+                  ],
+                  "operations" : [
+                    {
+                      "action" : "template-Beklager, jeg finner ikke det navnet for din bedrift"
+                    }
+                  ]
                 }
               ]
             }

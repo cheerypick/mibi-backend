@@ -2,36 +2,29 @@
   "data" : {
     "lookups" : [
       "free-text",
-      "keywords",
-      "trait"
+      "keywords"
     ],
-    "name" : "question",
+    "name" : "gimme",
     "lang" : "nb",
     "exotic" : false,
-    "id" : "question",
+    "id" : "gimme",
     "values" : [
       {
-        "value" : "Hva ",
+        "value" : "fly",
         "expressions" : [
-          "Hva "
+          "fly"
         ]
       },
       {
-        "value" : "Hvor",
+        "value" : "gimme the stufff",
         "expressions" : [
-          "Hvor"
+          "gimme the stufff"
         ]
       },
       {
-        "value" : "Hvor mye",
+        "value" : "troll",
         "expressions" : [
-          "Hvor mye"
-        ]
-      },
-      {
-        "value" : "kan",
-        "expressions" : [
-          "kan"
+          "troll"
         ]
       }
     ],
