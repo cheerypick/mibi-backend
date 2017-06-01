@@ -2,28 +2,30 @@
   "admins" : {
     "mibi" : {
       "companyName" : "Lekebutikken",
+      "email" : "line.johnsen@lekebutikken.no",
       "name" : "line johnsen",
       "password" : "mibi",
-	  "email": "line.johnsen@lekebutikken.no",
       "tokens" : {
         "-KfkEsLRJv2fjCmWy935" : "dPWKMpgTt3g:APA91bFy7simGjR0ZZVSI6RPTzcwrHNzwcz5poO5QxlvUCgjBRgbtZ_cgvfkgM5ziSUHsuAdvB_QXYIdXmgjkswwDThvaknrg36qFwxJWbCoUU3NlM58wdMQbkKi-mtnS7c2iMmDlC5w",
-        "-KflBHw8z_KHZT-VciXC" : "cuRj4Gj7TDQ:APA91bGhm8VEA-WGYwHHds_ZsJ1k7GN6JrMiNSCfzz2-z6K9FtMjl1EUpofz6tVwl_b7ClzIB1uo1rezQagKzDa3Acr9ZqDrEU93LDJ0xKwwq6_9jGgZbmaeT4GuqMLFPfjl4fX1kP3D"
+        "-KflBHw8z_KHZT-VciXC" : "cuRj4Gj7TDQ:APA91bGhm8VEA-WGYwHHds_ZsJ1k7GN6JrMiNSCfzz2-z6K9FtMjl1EUpofz6tVwl_b7ClzIB1uo1rezQagKzDa3Acr9ZqDrEU93LDJ0xKwwq6_9jGgZbmaeT4GuqMLFPfjl4fX1kP3D",
+        "-KiA53LkBreMFAwGN5vS" : "ceAcP7wGnsU:APA91bEM3JNkxcU2AHGI_tl5MKAP83zbRSyVPuiCv_a-SE3uansQGDo0nTl8RlpcE9FjU2Z2lxx3Q7mv7w0lh4dZse7DkIWXwc91zuf8GWQdmH5XiJHPStQgLE60yL_DE1gTRa2Nm7da"
       }
     },
     "mobo" : {
       "companyName" : "Lekebutikken",
+      "email" : "john.abrahamsen@lekebutikken.no",
       "name" : "john abrahamsen",
       "password" : "mobo",
-	  "email": "john.abrahamsen@lekebutikken.no"
+      "tokens" : {
+        "-KkUrNwYBiuJqwbBsNUQ" : "c0G17Y0icGM:APA91bGExeRZuc7hnswQPt4Wn1Vs19fZSbIQkO-NLUWWGgqG5WuH5iyPqGEvrdfRNzIDCuiS6hWE3NeOVqi22UNXEU1MfJA7qbU8inpEAQokGQ7SUGzDFJfEZ7g_-31QwVebh9M73llS",
+        "-KlEqOILiTZigRyxS7nV" : "diSd0i07xSQ:APA91bH2ODD2xcY5ty8Nfk1IaKIs0CF4MYrz8sHUcfgIAiyG96FmWEAE_6XCqcQp4x4eUseEh9MHY8lgwXemueB2g7lzfbIKNGvH-8ng1t4_mkS1xbXweqEiL9Iqls9YemEQIFujxu5a"
+      }
     },
     "smulteringen" : {
       "companyName" : "Smultekjappa",
-      "name" : "ole nordmann",
-      "password" : "hei",
-	  "email": "ole.nordmann@smultekjappa.no",
-      "tokens" : {
-        "-Kgrr4WjQZPfM6VnIz9R" : "diSd0i07xSQ:APA91bH2ODD2xcY5ty8Nfk1IaKIs0CF4MYrz8sHUcfgIAiyG96FmWEAE_6XCqcQp4x4eUseEh9MHY8lgwXemueB2g7lzfbIKNGvH-8ng1t4_mkS1xbXweqEiL9Iqls9YemEQIFujxu5a"
-      }
+      "email" : "per.lauvas@smultekjappa.no",
+      "name" : "per lauvas",
+      "password" : "hei"
     }
   },
   "companies" : {
@@ -85,16 +87,100 @@
               "-Kh1tw43PPVh2fL85zbz" : {
                 "endDate" : "2017-05-01T00:00:00.000Z",
                 "productName" : "1GB"
+              },
+              "-Ki46QihQvWZ5ZSbPDRD" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki4ASE_kX8oWEv64n6m" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki4H2uqxT9NRILq6gl-" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki4ZqFO1aTVpRI_mL4J" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki4ZzhJJ367UP7mOy10" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki4twDsxqZkmZfE4YZk" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki5Nl-VxkJActVs37In" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki5O-6YBISaozH-ZWko" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki5O4f7C_WAeDpz0SFB" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki9MD9gF47COsYST_k0" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki9Ts2L2OJ1gYkttP16" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KiA4VQI_DKZTJfDv7iz" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KiA8CBll6U3Tc5GGVBK" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KiA8LaNof1GueaFmXpu" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KiA8mNNKweGaGRk-emn" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KiA9GA4XiOFo-cxsLbI" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KkUrFwoLLq60XAaa3Fw" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KkUrewTiZcUZKlmyv1K" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KkUu3GaRAz8ZwPcUItQ" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KktvH8_5S4XfdzRhsmO" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KlXjP0nBPYUiXucM3hj" : {
+                "endDate" : "2017-07-01T00:00:00.000Z",
+                "productName" : "3GB"
               }
             },
             "companyName" : "Lekebutikken",
             "dataDefault" : 3000,
             "dataNotified" : false,
-            "dataTotal" : 29000,
-            "dataUsed" : 27411,
+            "dataTotal" : 3000,
+            "dataUsed" : 1000,
             "name" : "john abrahamsen",
             "priceDefault" : 299,
-            "priceTotal" : 1511,
+            "priceTotal" : 299,
             "puk" : 456812
           },
           "91454568" : {
@@ -170,16 +256,40 @@
               "-KgyEJvnDzGL34KFdcDx" : {
                 "endDate" : "2017-05-01T00:00:00.000Z",
                 "productName" : " 5GB"
+              },
+              "-Kh2P4e9lFmiAO8Asiuk" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-Kh2TCQqHI3NfUDda5Kd" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KlO5_A5KnSXS5NMbgGw" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KlOFXOO-J8LYvblLM9A" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KlY0guYu8tILJd4d9Ei" : {
+                "endDate" : "2017-07-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KlY0wSV7eDaPnLQrmCl" : {
+                "endDate" : "2017-07-01T00:00:00.000Z",
+                "productName" : " 5GB"
               }
             },
             "companyName" : "Lekebutikken",
             "dataDefault" : 5000,
             "dataNotified" : false,
-            "dataTotal" : 45000,
-            "dataUsed" : 39660,
+            "dataTotal" : 9000,
+            "dataUsed" : 3800,
             "name" : "tone fjellheim",
             "priceDefault" : 349,
-            "priceTotal" : 2028,
+            "priceTotal" : 647,
             "puk" : 124979
           },
           "94685512" : {
@@ -203,16 +313,24 @@
               "-KflXqIPzIyB5C9YUzUd" : {
                 "endDate" : "2017-04-01T00:00:00.000Z",
                 "productName" : " 5GB"
+              },
+              "-KlEuooH2xRPJY4Rvgk5" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KlOegOUB8NZemRNrZNF" : {
+                "endDate" : "2017-06-01T00:00:00.000Z",
+                "productName" : "1GB"
               }
             },
             "companyName" : "Lekebutikken",
             "dataDefault" : 5000,
             "dataNotified" : false,
-            "dataTotal" : 10000,
-            "dataUsed" : 9912,
+            "dataTotal" : 1000,
+            "dataUsed" : 250,
             "name" : "line johnsen",
             "priceDefault" : 349,
-            "priceTotal" : 744,
+            "priceTotal" : 349,
             "puk" : 689461
           }
         }
@@ -229,7 +347,7 @@
       "orgNr" : 7438294511,
       "subscriptions" : {
         "names" : {
-          "ole nordmann" : [ "45696989" ]
+          "per lauvas" : [ "45696989" ]
         },
         "phoneNumbers" : {
           "45696989" : {
@@ -241,19 +359,284 @@
               "-Kh0za6jay-QfTd7w7hY" : {
                 "endDate" : "2017-05-01T00:00:00.000Z",
                 "productName" : " 5GB"
+              },
+              "-KhM-VnakfAaoXPCnGLR" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KhMmmjd3QNGabf9IuoH" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki08FXoTU4Qz6YRN77e" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki08KMvczPWnMBs6Ysx" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-Ki08NKPANDshUOEm6Ez" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki09PizvAfgxGBpomCQ" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki9Mk7RGmnHrHcDXeO8" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-Ki9wHmWLtjevLETA66a" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KiACz83upVXD23dD2Yj" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KiAD8uTxjXoNU1-J0cm" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KiADwEccyMr03S-k-eq" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KiAFEGjxxnclFFnTjyb" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KiAGF5nIImPbwzc9PAO" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KiAGJNV2abteH0BS48G" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "1GB"
+              },
+              "-KiUxIzNMudiKFKnAg0C" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : " 5GB"
+              },
+              "-KiV1Z6unrQHHIuTeJXm" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
+              },
+              "-KiiqGpRBjYuJV-rod9_" : {
+                "endDate" : "2017-05-01T00:00:00.000Z",
+                "productName" : "3GB"
               }
             },
             "companyName" : "Smultekjappa",
             "dataDefault" : 2000,
             "dataNotified" : false,
-            "dataTotal" : 12000,
-            "dataUsed" : 6837,
-            "name" : "ole nordmann",
+            "dataTotal" : 69000,
+            "dataUsed" : 64000,
+            "name" : "Per Lauvas",
             "priceDefault" : 299,
-            "priceTotal" : 637,
+            "priceTotal" : 2890,
             "puk" : 126543
           }
         }
+      }
+    }
+  },
+  "messages" : {
+    "mibi" : {
+      "-KlXk1LX2NcACpuAg3AX" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "hei"
+      },
+      "-KlXk1Tb7gIEy_mzpdkQ" : {
+        "quickreplies" : "",
+        "text" : "Hei!"
+      }
+    },
+    "mobo" : {
+      "-KlXk58Q6wpDaYT2mNVC" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Hei"
+      },
+      "-KlXk5FlG9pmWx__vfCV" : {
+        "quickreplies" : "",
+        "text" : "Hei!"
+      },
+      "-KlY0E-iqR9CPfT4grfj" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Kan jeg få puk til Line?"
+      },
+      "-KlY0ENFwk7ofs-y6SUe" : {
+        "quickreplies" : "",
+        "text" : "Line Johnsen sin PUK med nummer 94685512 er: 689461"
+      },
+      "-KlY0IdnOBkzWKzfQgh_" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Du er flink!"
+      },
+      "-KlY0ImETz8Gxj0S0JLk" : {
+        "quickreplies" : "",
+        "text" : "Takk, hyggelig å høre!"
+      },
+      "-KlY0OreLvkVY8LeMIDf" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Kan jeg få fakturakopi for april i fjor?"
+      },
+      "-KlY0P7H5NVuOEMDCbnL" : {
+        "quickreplies" : "",
+        "text" : " Selvfølgelig. Dere har totalt brukt Kr. 997 i 04/2016. Her er en link med flere detaljer:  <a href=\"https://fakturahotel.no/Lekebutikken/2016/4\" target=\"_blank\">https://fakturahotel.no/Lekebutikken/2016/4</a>"
+      },
+      "-KlY0PEbGclBt8-WwYMr" : {
+        "quickreplies" : [ "Send meg en email", "Jeg trenger ikke en email" ],
+        "text" : "Skal jeg sende det til deg på email også?"
+      },
+      "-KlY0UqoTg6la9VeAWjp" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Send meg en email"
+      },
+      "-KlY0V8xfWk8i5_0aPnF" : {
+        "quickreplies" : "",
+        "text" : " Da mottar du snart faktura på john.abrahamsen@lekebutikken.no "
+      },
+      "-KlY0b6p6wzWuhNpjuOy" : {
+        "quickreplies" : "",
+        "text" : "Tone Fjellheim har brukt 1800MB av sin datapakke på 1000MB og det er 29 dager til data fylles på."
+      },
+      "-KlY0bEX9a92lZ3cNz0q" : {
+        "quickreplies" : [ "Ja, takk, 1GB (79,-)", "Gi henne 3GB (129,-)", "Kjør på med 5GB (169,-)", "Det er ikke nødvendig med mer data" ],
+        "text" : " Vil du at jeg skal bestille en ny datapakke? "
+      },
+      "-KlY0gkqQQuDBgQs2baU" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Gi henne 3GB (129,-)"
+      },
+      "-KlY0h1408HQ48SoQwgX" : {
+        "quickreplies" : "",
+        "text" : "Strålende!"
+      },
+      "-KlY0hAK0dksBfgst29l" : {
+        "quickreplies" : "",
+        "text" : "Da har jeg bestilt 3GB"
+      },
+      "-KlY0toaGX8GDuobVQgR" : {
+        "quickreplies" : "",
+        "text" : "Tone Fjellheim har brukt 3800MB av sin datapakke på 4000MB og det er 29 dager til data fylles på."
+      },
+      "-KlY0tw6EBnGZPe_f3Po" : {
+        "quickreplies" : [ "Ja, takk, 1GB (79,-)", "Gi henne 3GB (129,-)", "Kjør på med 5GB (169,-)", "Det er ikke nødvendig med mer data" ],
+        "text" : " Vil du at jeg skal bestille en ny datapakke? "
+      },
+      "-KlY0wH_H54cZBk_TwTE" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Kjør på med 5GB (169,-)"
+      },
+      "-KlY0w_LddPL7VbUOw0P" : {
+        "quickreplies" : "",
+        "text" : "Strålende!"
+      },
+      "-KlY0wgpSOXvJyUBTJoK" : {
+        "quickreplies" : "",
+        "text" : "Da har jeg bestilt  5GB"
+      },
+      "-KlY0zFRRTtOUVDnbZWf" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "En vits?"
+      },
+      "-KlY0z_CZB0PFxI21p2N" : {
+        "quickreplies" : "",
+        "text" : "Vet du et ord på tre bokstaver som starter med bensin? - Bil."
+      },
+      "-KlY128_4uP573a61Xfs" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Den er dum!"
+      },
+      "-KlY12GWCB6j0ZMSSPdg" : {
+        "quickreplies" : "",
+        "text" : "Beklager, jeg prøver bare å hjelpe."
+      },
+      "-KlY165_FT_9OKjMU_NC" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Kekenekdkeb"
+      },
+      "-KlY16KddZThNchPpoWJ" : {
+        "quickreplies" : "",
+        "text" : "Beklager, jeg forsto ikke helt hva du mente. Jeg lærer hele tiden og vil prøve å gjøre det bedre neste gang. Takk! "
+      }
+    },
+    "smulteringen" : {
+      "-KkUrrCs41oveLqucxaC" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Hei"
+      },
+      "-KkUrrMKoD3bdeylNc4o" : {
+        "quickreplies" : "",
+        "text" : "Hei!"
+      },
+      "-KkUs53cPr655cyxZsDd" : {
+        "hidden" : false,
+        "mine" : true,
+        "quickreplies" : "",
+        "reinit" : false,
+        "text" : "Kan jeg få PUK til Line?"
+      },
+      "-KkUs5O3V6_OLJ9it0WY" : {
+        "quickreplies" : "",
+        "text" : "Beklager, jeg finner ikke det navnet for din bedrift"
+      }
+    }
+  },
+  "updates" : {
+    "45696989" : {
+      "companyName" : "Smultekjappa",
+      "number" : "45696989",
+      "path" : "/companies/Smultekjappa/subscriptions/phoneNumbers/45696989/"
+    },
+    "admins" : {
+      "mibi" : {
+        "hasUpdate" : false
+      },
+      "mobo" : {
+        "hasUpdate" : false
+      },
+      "smulteringen" : {
+        "hasUpdate" : true
       }
     }
   }
